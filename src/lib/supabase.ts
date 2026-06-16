@@ -1,0 +1,142 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+import { createClient } from "@supabase/supabase-js";
+
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL as string;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY as string;
+
+if (!supabaseUrl || !supabaseAnonKey) {
+  throw new Error(
+    "Variáveis de ambiente VITE_SUPABASE_URL e VITE_SUPABASE_ANON_KEY são obrigatórias."
+  );
+}
+
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
+export interface ContactMessage {
+  name: string;
+  email: string;
+  message: string;
+}
+
+export interface ContactMessageRow extends ContactMessage {
+  id: string;
+  created_at: string;
+  is_read: boolean;
+}
+
+export interface ProjectRow {
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  tags: string[];
+  demo_link: string | null;
+  github_link: string | null;
+  icon: string;
+  featured: boolean;
+  order_idx: number;
+  created_at?: string;
+}
+
+/**
+ * Envia uma mensagem de contato para a tabela `contacts` no Supabase.
+ */
+export async function sendContactMessage(data: ContactMessage): Promise<void> {
+  const { error } = await supabase.from("contacts").insert([data]);
+
+  if (error) {
+    console.error("Erro ao enviar mensagem:", error);
+    throw new Error(error.message);
+  }
+}
+
+/**
+ * Busca todas as mensagens de contato (requer autenticação).
+ */
+export async function fetchContactMessages(): Promise<ContactMessageRow[]> {
+  const { data, error } = await supabase
+    .from("contacts")
+    .select("*")
+    .order("created_at", { ascending: false });
+
+  if (error) {
+    console.error("Erro ao buscar mensagens:", error);
+    throw new Error(error.message);
+  }
+
+  return data as ContactMessageRow[];
+}
+
+/**
+ * Marca uma mensagem como lida.
+ */
+export async function markMessageAsRead(id: string): Promise<void> {
+  const { error } = await supabase
+    .from("contacts")
+    .update({ is_read: true })
+    .eq("id", id);
+
+  if (error) {
+    console.error("Erro ao marcar como lida:", error);
+    throw new Error(error.message);
+  }
+}
+
+/**
+ * PROJECT FUNCTIONS
+ */
+
+export async function fetchProjects(): Promise<ProjectRow[]> {
+  const { data, error } = await supabase
+    .from("projects")
+    .select("*")
+    .order("order_idx", { ascending: true })
+    .order("created_at", { ascending: false });
+
+  if (error) throw new Error(error.message);
+  return data as ProjectRow[];
+}
+
+export async function createProject(project: Omit<ProjectRow, "id" | "created_at">): Promise<void> {
+  const { error } = await supabase.from("projects").insert([project]);
+  if (error) throw new Error(error.message);
+}
+
+export async function updateProject(id: string, updates: Partial<ProjectRow>): Promise<void> {
+  const { error } = await supabase.from("projects").update(updates).eq("id", id);
+  if (error) throw new Error(error.message);
+}
+
+export async function deleteProject(id: string): Promise<void> {
+  const { error } = await supabase.from("projects").delete().eq("id", id);
+  if (error) throw new Error(error.message);
+}
+
+/**
+ * AUTH FUNCTIONS
+ */
+export async function signInWithEmail(email: string, password: string) {
+  const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+  if (error) throw new Error(error.message);
+  return data;
+}
+
+/**
+ * Faz logout do Supabase.
+ */
+export async function signOut() {
+  const { error } = await supabase.auth.signOut();
+  if (error) throw new Error(error.message);
+}
+
+/**
+ * Retorna a sessão atual.
+ */
+export async function getSession() {
+  const { data } = await supabase.auth.getSession();
+  return data.session;
+}

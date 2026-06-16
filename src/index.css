@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100..900;1,100..900&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-georama: "Georama", sans-serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+/* Custom styles for variable font text animation to prevent layout shifting and ensure smooth transitions */
+.font-georama {
+  font-family: var(--font-georama);
+  display: inline-block;
+  transition: font-variation-settings 0.15s ease-out;
+  will-change: font-variation-settings;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #0d0e11;
+  color: #f3f4f6;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: rgba(243, 244, 246, 0.15);
+  color: #fff;
+}
+
