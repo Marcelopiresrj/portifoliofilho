@@ -22,11 +22,13 @@ interface WindowProps {
   title: string;
   isOpen: boolean;
   onClose: () => void;
+  onFocus?: () => void;
   children: ReactNode;
   noPadding?: boolean;
+  zIndex?: number;
 }
 
-const Window = ({ title, isOpen, onClose, children, noPadding }: WindowProps) => {
+const Window = ({ title, isOpen, onClose, onFocus, children, noPadding, zIndex = 0 }: WindowProps) => {
   if (!isOpen) return null;
 
   return (
@@ -37,15 +39,16 @@ const Window = ({ title, isOpen, onClose, children, noPadding }: WindowProps) =>
       drag
       dragConstraints={{ left: -300, right: 300, top: -100, bottom: 500 }}
       dragMomentum={false}
+      onPointerDown={onFocus}
       className="absolute top-20 left-1/2 -translate-x-1/2 w-full max-w-4xl bg-[#1e1e1e]/95 backdrop-blur-2xl border border-white/10 rounded-xl shadow-2xl overflow-hidden z-50 flex flex-col max-h-[80vh]"
-      style={{ touchAction: "none" }}
+      style={{ touchAction: "none", zIndex: 50 + zIndex }}
     >
       {/* Window Header */}
       <div className="h-12 bg-[#2d2d2d]/80 border-b border-black/20 flex items-center px-4 flex-shrink-0 cursor-grab active:cursor-grabbing">
         <div className="flex items-center gap-2 w-20">
-          <button onClick={onClose} className="w-3.5 h-3.5 rounded-full bg-[#ff5f56] hover:bg-[#ff5f56]/80 flex items-center justify-center transition-colors shadow-sm" />
-          <button className="w-3.5 h-3.5 rounded-full bg-[#ffbd2e] shadow-sm" />
-          <button className="w-3.5 h-3.5 rounded-full bg-[#27c93f] shadow-sm" />
+          <button onClick={onClose} onPointerDown={e => e.stopPropagation()} className="cursor-pointer w-3.5 h-3.5 rounded-full bg-[#ff5f56] hover:bg-[#ff5f56]/80 flex items-center justify-center transition-colors shadow-sm" />
+          <button onPointerDown={e => e.stopPropagation()} className="cursor-pointer w-3.5 h-3.5 rounded-full bg-[#ffbd2e] shadow-sm" />
+          <button onPointerDown={e => e.stopPropagation()} className="cursor-pointer w-3.5 h-3.5 rounded-full bg-[#27c93f] shadow-sm" />
         </div>
         <div className="flex-1 text-center text-sm font-semibold text-gray-300 pointer-events-none">
           {title}
@@ -64,8 +67,31 @@ const Window = ({ title, isOpen, onClose, children, noPadding }: WindowProps) =>
 // ── Main Component ───────────────────────────────────────────────────────────
 export default function MacOsDesktop() {
   const [time, setTime] = useState(new Date());
-  const [activeWindow, setActiveWindow] = useState<WindowType>(null);
+  const [activeWindows, setActiveWindows] = useState<WindowType[]>([]);
   const [dbProjects, setDbProjects] = useState<ProjectRow[]>([]);
+
+  const openWindow = (type: WindowType) => {
+    if (!type) return;
+    setActiveWindows(prev => {
+      if (prev.includes(type)) {
+        return [...prev.filter(w => w !== type), type];
+      }
+      return [...prev, type];
+    });
+  };
+
+  const closeWindow = (type: WindowType) => {
+    setActiveWindows(prev => prev.filter(w => w !== type));
+  };
+
+  const bringToFront = (type: WindowType) => {
+    setActiveWindows(prev => {
+      if (!prev.includes(type)) return prev;
+      return [...prev.filter(w => w !== type), type];
+    });
+  };
+
+  const getZIndex = (type: WindowType) => activeWindows.indexOf(type);
 
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000);
@@ -98,10 +124,6 @@ export default function MacOsDesktop() {
     return date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' }) +
       ' ' +
       date.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
-  };
-
-  const openWindow = (type: WindowType) => {
-    setActiveWindow(type);
   };
 
   // Helper to render a specific project's details inside a window
@@ -190,7 +212,7 @@ export default function MacOsDesktop() {
       </header>
 
       {/* 2. Desktop Area */}
-      <main className="flex-1 relative w-full" onClick={() => setActiveWindow(null)}>
+      <main className="flex-1 relative w-full" onClick={() => setActiveWindows([])}>
         
         {/* Dynamic Desktop Folders (Projects) */}
         <div className="absolute top-8 left-4 flex flex-col gap-6 z-40" onClick={e => e.stopPropagation()}>
@@ -213,33 +235,33 @@ export default function MacOsDesktop() {
         {/* Windows Rendering */}
         <div onClick={e => e.stopPropagation()}>
           <AnimatePresence>
-            {activeWindow === 'about' && (
-              <Window title="About Me" isOpen={true} onClose={() => setActiveWindow(null)}>
+            {activeWindows.includes('about') && (
+              <Window key="about" title="About Me" isOpen={true} onClose={() => closeWindow('about')} onFocus={() => bringToFront('about')} zIndex={getZIndex('about')}>
                 <About />
               </Window>
             )}
-            {activeWindow === 'projects' && (
-              <Window title="All Projects" isOpen={true} onClose={() => setActiveWindow(null)}>
+            {activeWindows.includes('projects') && (
+              <Window key="projects" title="All Projects" isOpen={true} onClose={() => closeWindow('projects')} onFocus={() => bringToFront('projects')} zIndex={getZIndex('projects')}>
                 <Projects />
               </Window>
             )}
-            {activeWindow === 'skills' && (
-              <Window title="Editing Stack" isOpen={true} onClose={() => setActiveWindow(null)} noPadding>
+            {activeWindows.includes('skills') && (
+              <Window key="skills" title="Editing Stack" isOpen={true} onClose={() => closeWindow('skills')} onFocus={() => bringToFront('skills')} noPadding zIndex={getZIndex('skills')}>
                 <Skills />
               </Window>
             )}
-            {activeWindow === 'contact' && (
-              <Window title="Contact Me" isOpen={true} onClose={() => setActiveWindow(null)} noPadding>
+            {activeWindows.includes('contact') && (
+              <Window key="contact" title="Contact Me" isOpen={true} onClose={() => closeWindow('contact')} onFocus={() => bringToFront('contact')} noPadding zIndex={getZIndex('contact')}>
                 <Contact />
               </Window>
             )}
-            {activeWindow === 'photos' && (
-              <Window title="Photos" isOpen={true} onClose={() => setActiveWindow(null)} noPadding>
+            {activeWindows.includes('photos') && (
+              <Window key="photos" title="Photos" isOpen={true} onClose={() => closeWindow('photos')} onFocus={() => bringToFront('photos')} noPadding zIndex={getZIndex('photos')}>
                 <Photos />
               </Window>
             )}
-            {activeWindow === 'finder' && (
-              <Window title="Portfolio" isOpen={true} onClose={() => setActiveWindow(null)} noPadding>
+            {activeWindows.includes('finder') && (
+              <Window key="finder" title="Portfolio" isOpen={true} onClose={() => closeWindow('finder')} onFocus={() => bringToFront('finder')} noPadding zIndex={getZIndex('finder')}>
                 <Finder 
                   projects={dbProjects} 
                   onOpenProject={(id) => openWindow(`project-${id}`)} 
@@ -247,8 +269,8 @@ export default function MacOsDesktop() {
                 />
               </Window>
             )}
-            {activeWindow === 'resume' && (
-              <Window title="Resume" isOpen={true} onClose={() => setActiveWindow(null)}>
+            {activeWindows.includes('resume') && (
+              <Window key="resume" title="Resume" isOpen={true} onClose={() => closeWindow('resume')} onFocus={() => bringToFront('resume')} zIndex={getZIndex('resume')}>
                 <div className="p-10 text-center space-y-4">
                   <h2 className="text-2xl font-bold">Marcelo Pires</h2>
                   <p className="text-gray-400">Software Engineer</p>
@@ -257,15 +279,21 @@ export default function MacOsDesktop() {
               </Window>
             )}
             {/* Dynamic Project Windows */}
-            {typeof activeWindow === 'string' && activeWindow.startsWith('project-') && (
-              <Window 
-                title={dbProjects.find(p => p.id === activeWindow.replace('project-', ''))?.title || "Project"} 
-                isOpen={true} 
-                onClose={() => setActiveWindow(null)}
-              >
-                {renderProjectDetail(activeWindow.replace('project-', ''))}
-              </Window>
-            )}
+            {activeWindows.filter(w => w && w.startsWith('project-')).map(windowType => {
+              const projId = windowType!.replace('project-', '');
+              return (
+                <Window 
+                  key={windowType}
+                  title={dbProjects.find(p => p.id === projId)?.title || "Project"} 
+                  isOpen={true} 
+                  onClose={() => closeWindow(windowType)}
+                  onFocus={() => bringToFront(windowType)}
+                  zIndex={getZIndex(windowType)}
+                >
+                  {renderProjectDetail(projId)}
+                </Window>
+              )
+            })}
           </AnimatePresence>
         </div>
       </main>
