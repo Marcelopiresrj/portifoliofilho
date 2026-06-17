@@ -26,7 +26,7 @@ export default function Projects() {
   return (
     <section 
       id="projects" 
-      className="py-24 px-6 md:py-32 bg-[#0d0e11] relative overflow-hidden"
+      className="relative w-full mb-8"
     >
       {/* Decorative Blur Backgrounds */}
       <div className="absolute top-1/4 left-1/3 w-80 h-80 rounded-full bg-blue-500/5 blur-[120px] pointer-events-none" />

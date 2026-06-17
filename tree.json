@@ -1,0 +1,3536 @@
+{
+  "sha": "f0d4d4db147a1e5706bd3262e5aec5a08cef4026",
+  "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/f0d4d4db147a1e5706bd3262e5aec5a08cef4026",
+  "tree": [
+    {
+      "path": ".github",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "dc8118e58f6a294db732e0d25b20a9036625f7b6",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/dc8118e58f6a294db732e0d25b20a9036625f7b6"
+    },
+    {
+      "path": ".github/FUNDING.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a1f22aed84c4e886d09ef6611338cb6b4cb58cd3",
+      "size": 61,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/a1f22aed84c4e886d09ef6611338cb6b4cb58cd3"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "684c8ba0c10d2b812e92455d87d08e471a3d723e",
+      "size": 48,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/684c8ba0c10d2b812e92455d87d08e471a3d723e"
+    },
+    {
+      "path": ".gitpod.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d8f00a7c8f9f8327fa5ae3de82d80474d7829eca",
+      "size": 233,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/d8f00a7c8f9f8327fa5ae3de82d80474d7829eca"
+    },
+    {
+      "path": ".prettierrc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e434c8ebfe8c1f03624f88e9920d59903fa9cbd4",
+      "size": 203,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/e434c8ebfe8c1f03624f88e9920d59903fa9cbd4"
+    },
+    {
+      "path": ".stackblitzrc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "749cfae28663fbe54a2fafa4992852dbf0fe4fd4",
+      "size": 35,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/749cfae28663fbe54a2fafa4992852dbf0fe4fd4"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0563547114be3d8946d11cc335417591e2fd1dc4",
+      "size": 1067,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/0563547114be3d8946d11cc335417591e2fd1dc4"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d8dcb3f02b22638f8beb8468c07b65550c191bf6",
+      "size": 1157,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/d8dcb3f02b22638f8beb8468c07b65550c191bf6"
+    },
+    {
+      "path": "index.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "21e2d0f26a63eb7f80e1844e15a356f2e27c0ab6",
+      "size": 1273,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/21e2d0f26a63eb7f80e1844e15a356f2e27c0ab6"
+    },
+    {
+      "path": "package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dddcfe2679d4059d56e989eb8b01ef73f198b054",
+      "size": 1132,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/dddcfe2679d4059d56e989eb8b01ef73f198b054"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0f68236a4e07a4147ef85daa8ee3ab06a45361d6",
+      "size": 163887,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/0f68236a4e07a4147ef85daa8ee3ab06a45361d6"
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d0b7dbe2294f3a9d38db0bcd4f6328326fcd520c",
+      "size": 45,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/d0b7dbe2294f3a9d38db0bcd4f6328326fcd520c"
+    },
+    {
+      "path": "prefetch-plugin.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "abcf0711e1f6a576e4f8ae9978fbc188cf906f27",
+      "size": 546,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/abcf0711e1f6a576e4f8ae9978fbc188cf906f27"
+    },
+    {
+      "path": "public",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8c34a33c13dd4f989bf656237129ca9ab073b8b1",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/8c34a33c13dd4f989bf656237129ca9ab073b8b1"
+    },
+    {
+      "path": "public/app-icons",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "38c95e6a76aa6038287ab27eda4571d4afd4d5e0",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/38c95e6a76aa6038287ab27eda4571d4afd4d5e0"
+    },
+    {
+      "path": "public/app-icons/appstore",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "061b3a2574107627157348f9f1c06ecff57de9d0",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/061b3a2574107627157348f9f1c06ecff57de9d0"
+    },
+    {
+      "path": "public/app-icons/appstore/1024.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a509d4882cfa1eb08b7df6e51930cd29d9c5d51",
+      "size": 585136,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/9a509d4882cfa1eb08b7df6e51930cd29d9c5d51"
+    },
+    {
+      "path": "public/app-icons/appstore/128.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3c48f033e0f9795d509d75fc32cbb37bd28541a6",
+      "size": 5646,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/3c48f033e0f9795d509d75fc32cbb37bd28541a6"
+    },
+    {
+      "path": "public/app-icons/appstore/16.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fe73a7e431d76e5e889aeb4e197cd3243d8f2d1f",
+      "size": 591,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/fe73a7e431d76e5e889aeb4e197cd3243d8f2d1f"
+    },
+    {
+      "path": "public/app-icons/appstore/256.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e38d33a45c97326a67c4bfcedda69ae52ac897df",
+      "size": 56032,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/e38d33a45c97326a67c4bfcedda69ae52ac897df"
+    },
+    {
+      "path": "public/app-icons/appstore/256.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e8694c24d51cfcc730b1e4b57f1c6853fe050983",
+      "size": 7050,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/e8694c24d51cfcc730b1e4b57f1c6853fe050983"
+    },
+    {
+      "path": "public/app-icons/appstore/32.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "57a137c04c27b58dd5d3d26caec51fefa4bd269b",
+      "size": 1757,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/57a137c04c27b58dd5d3d26caec51fefa4bd269b"
+    },
+    {
+      "path": "public/app-icons/appstore/512.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1ccf263eff1711460baf3417b655b12bfa2fc8ee",
+      "size": 179329,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/1ccf263eff1711460baf3417b655b12bfa2fc8ee"
+    },
+    {
+      "path": "public/app-icons/calculator",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "00d7e3dcf74d379382f0ab4c93bda3aaf4adca90",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/00d7e3dcf74d379382f0ab4c93bda3aaf4adca90"
+    },
+    {
+      "path": "public/app-icons/calculator/1024.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "64364843e3a4af32d9823d5d2c5ebefdb84afb1d",
+      "size": 225544,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/64364843e3a4af32d9823d5d2c5ebefdb84afb1d"
+    },
+    {
+      "path": "public/app-icons/calculator/128.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "18d9062c11e46cc319f92a58a97709b416e8d722",
+      "size": 4274,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/18d9062c11e46cc319f92a58a97709b416e8d722"
+    },
+    {
+      "path": "public/app-icons/calculator/16.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "776165a276b5e42a9257f8e87f0ad83a64923900",
+      "size": 652,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/776165a276b5e42a9257f8e87f0ad83a64923900"
+    },
+    {
+      "path": "public/app-icons/calculator/256.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2ddc8e40ddd26badab46143c22afe54890409daf",
+      "size": 24481,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/2ddc8e40ddd26badab46143c22afe54890409daf"
+    },
+    {
+      "path": "public/app-icons/calculator/256.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a52c3af027b4e90c28617bd1d38412c29f8fa8aa",
+      "size": 6866,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/a52c3af027b4e90c28617bd1d38412c29f8fa8aa"
+    },
+    {
+      "path": "public/app-icons/calculator/32.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c10ecbc83a864be75e476112ff8d62e70da7627e",
+      "size": 1638,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/c10ecbc83a864be75e476112ff8d62e70da7627e"
+    },
+    {
+      "path": "public/app-icons/calculator/512.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aa3c3925dad20540cca1ab474795ac59047ffd4c",
+      "size": 59785,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/aa3c3925dad20540cca1ab474795ac59047ffd4c"
+    },
+    {
+      "path": "public/app-icons/calendar",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ed875f00a7e1aa2ac825bd522f36bf52198bcef9",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/ed875f00a7e1aa2ac825bd522f36bf52198bcef9"
+    },
+    {
+      "path": "public/app-icons/calendar/1024.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f79b9c0b728963bccd5c151b34c3e8bc03382f8c",
+      "size": 536202,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/f79b9c0b728963bccd5c151b34c3e8bc03382f8c"
+    },
+    {
+      "path": "public/app-icons/calendar/128.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "55d5b1b745433e8f9ad2c655bab3a743c71cc453",
+      "size": 5146,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/55d5b1b745433e8f9ad2c655bab3a743c71cc453"
+    },
+    {
+      "path": "public/app-icons/calendar/16.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b99114359bf51b4f4d624db3d21dfd885e18f089",
+      "size": 476,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/b99114359bf51b4f4d624db3d21dfd885e18f089"
+    },
+    {
+      "path": "public/app-icons/calendar/256.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cb03654e7acd3a8878bbbdb856e816bf34ffa334",
+      "size": 47145,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/cb03654e7acd3a8878bbbdb856e816bf34ffa334"
+    },
+    {
+      "path": "public/app-icons/calendar/256.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f9d94965036a62f4ba9bf7582d59942513e4cf16",
+      "size": 15424,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/f9d94965036a62f4ba9bf7582d59942513e4cf16"
+    },
+    {
+      "path": "public/app-icons/calendar/32.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ab034f57005d599ea86331fafc22ea0f3b1e3ad2",
+      "size": 1369,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/ab034f57005d599ea86331fafc22ea0f3b1e3ad2"
+    },
+    {
+      "path": "public/app-icons/calendar/512.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bdf6958832c6d71f6309254fec1fae6ed7c6ef96",
+      "size": 162072,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/bdf6958832c6d71f6309254fec1fae6ed7c6ef96"
+    },
+    {
+      "path": "public/app-icons/contacts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4141e1dd97c503805192af40914a0b2eddb4640f",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/4141e1dd97c503805192af40914a0b2eddb4640f"
+    },
+    {
+      "path": "public/app-icons/contacts/256.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "16d1a5c7fe08c652578960f4189be8624249c01d",
+      "size": 9924,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/16d1a5c7fe08c652578960f4189be8624249c01d"
+    },
+    {
+      "path": "public/app-icons/devutils",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4be8914b616f8a0b9044f58cb4d95bc02c7f9dc7",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/4be8914b616f8a0b9044f58cb4d95bc02c7f9dc7"
+    },
+    {
+      "path": "public/app-icons/devutils/256.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ea631ac2b796369b5ce37cddb6d2c432f27e9913",
+      "size": 35638,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/ea631ac2b796369b5ce37cddb6d2c432f27e9913"
+    },
+    {
+      "path": "public/app-icons/facetime",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5674f74271df6cfe4ff82596d0c9cbe0c98486bf",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/5674f74271df6cfe4ff82596d0c9cbe0c98486bf"
+    },
+    {
+      "path": "public/app-icons/facetime/1024.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a161efe7ad1549c6c96603165da277ef7b116cf5",
+      "size": 500862,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/a161efe7ad1549c6c96603165da277ef7b116cf5"
+    },
+    {
+      "path": "public/app-icons/facetime/128.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f7a12b9c5812b4d064f3af8f6e888df6726e4871",
+      "size": 4364,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/f7a12b9c5812b4d064f3af8f6e888df6726e4871"
+    },
+    {
+      "path": "public/app-icons/facetime/16.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ebd58670c4bef94f1195ae5f75f283a4de2bd96b",
+      "size": 534,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/ebd58670c4bef94f1195ae5f75f283a4de2bd96b"
+    },
+    {
+      "path": "public/app-icons/facetime/256.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "515f8785c0624dbb233e6d4e66a145b6883afc89",
+      "size": 50182,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/515f8785c0624dbb233e6d4e66a145b6883afc89"
+    },
+    {
+      "path": "public/app-icons/facetime/256.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1e44dc02baf7791dfa9f10ce4735ea30d14c7de2",
+      "size": 10320,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/1e44dc02baf7791dfa9f10ce4735ea30d14c7de2"
+    },
+    {
+      "path": "public/app-icons/facetime/32.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "95f03137be46d768471eba1fee76d7722aae8cd3",
+      "size": 1538,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/95f03137be46d768471eba1fee76d7722aae8cd3"
+    },
+    {
+      "path": "public/app-icons/facetime/512.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4f1a2e372bf18950f5249e16204f04612757ae92",
+      "size": 152948,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/4f1a2e372bf18950f5249e16204f04612757ae92"
+    },
+    {
+      "path": "public/app-icons/finder",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "49dd5c66ed56495e9ff6cb858506b6c3501a2c21",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/49dd5c66ed56495e9ff6cb858506b6c3501a2c21"
+    },
+    {
+      "path": "public/app-icons/finder/1024.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7a524ebcfc12d942a2df118764a9c261b712f446",
+      "size": 205133,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/7a524ebcfc12d942a2df118764a9c261b712f446"
+    },
+    {
+      "path": "public/app-icons/finder/128.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2d3861bff3dfcb1193ff10d8d2a6da0ff804838a",
+      "size": 10791,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/2d3861bff3dfcb1193ff10d8d2a6da0ff804838a"
+    },
+    {
+      "path": "public/app-icons/finder/128.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "94dabfdaf801f45b82ba1414a27ca0e02868894c",
+      "size": 4806,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/94dabfdaf801f45b82ba1414a27ca0e02868894c"
+    },
+    {
+      "path": "public/app-icons/finder/16.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6cd8bcddb940b0b6c37ad067bc5af680a2702015",
+      "size": 692,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/6cd8bcddb940b0b6c37ad067bc5af680a2702015"
+    },
+    {
+      "path": "public/app-icons/finder/192.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5741a69e1599748c6595754a9cc0436240921263",
+      "size": 18370,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/5741a69e1599748c6595754a9cc0436240921263"
+    },
+    {
+      "path": "public/app-icons/finder/256.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1edc372737ef0be77f680b11ad855b3b77269ce9",
+      "size": 29709,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/1edc372737ef0be77f680b11ad855b3b77269ce9"
+    },
+    {
+      "path": "public/app-icons/finder/256.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "96b5826595498e9d5d8a89a1375c55404633a4d7",
+      "size": 10488,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/96b5826595498e9d5d8a89a1375c55404633a4d7"
+    },
+    {
+      "path": "public/app-icons/finder/32.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3e99c5ca5760c587ce2bc16f56a4de6026ef1ca5",
+      "size": 1598,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/3e99c5ca5760c587ce2bc16f56a4de6026ef1ca5"
+    },
+    {
+      "path": "public/app-icons/finder/512.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "847fde3f41eadccf888df169e89bcc90ff4ea53e",
+      "size": 84912,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/847fde3f41eadccf888df169e89bcc90ff4ea53e"
+    },
+    {
+      "path": "public/app-icons/keynote",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c390416e66d1818b8a449882d4de103476015330",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/c390416e66d1818b8a449882d4de103476015330"
+    },
+    {
+      "path": "public/app-icons/keynote/1024.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8165d6b04d5eadb2b19e96a3592c5c7b98766e00",
+      "size": 124904,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/8165d6b04d5eadb2b19e96a3592c5c7b98766e00"
+    },
+    {
+      "path": "public/app-icons/keynote/128.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "776d42b6f5c63071a1f63fdc63cf8c13c709a221",
+      "size": 9343,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/776d42b6f5c63071a1f63fdc63cf8c13c709a221"
+    },
+    {
+      "path": "public/app-icons/keynote/16.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c21d8337c1661ef64baa34d441ca38b3ca749307",
+      "size": 733,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/c21d8337c1661ef64baa34d441ca38b3ca749307"
+    },
+    {
+      "path": "public/app-icons/keynote/256.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7a52880b848c8b6408b319f70f7deb7a4b0002c4",
+      "size": 21518,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/7a52880b848c8b6408b319f70f7deb7a4b0002c4"
+    },
+    {
+      "path": "public/app-icons/keynote/32.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b7fc8cd08181af29318a71e8648b3194e474346d",
+      "size": 1577,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/b7fc8cd08181af29318a71e8648b3194e474346d"
+    },
+    {
+      "path": "public/app-icons/keynote/512.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "01854ece03fc06c663cd84f6a4488d01099dba73",
+      "size": 49856,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/01854ece03fc06c663cd84f6a4488d01099dba73"
+    },
+    {
+      "path": "public/app-icons/launchpad",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "281c7c645f38a513a81382f144f3335d49df9ffa",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/281c7c645f38a513a81382f144f3335d49df9ffa"
+    },
+    {
+      "path": "public/app-icons/launchpad/1024.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6f837f401ee463557a974988f53eea0fee2973fb",
+      "size": 249233,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/6f837f401ee463557a974988f53eea0fee2973fb"
+    },
+    {
+      "path": "public/app-icons/launchpad/16.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "627fb1b12e4b5f0d4dc3395b9ab18773bf41ea72",
+      "size": 464,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/627fb1b12e4b5f0d4dc3395b9ab18773bf41ea72"
+    },
+    {
+      "path": "public/app-icons/launchpad/256.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "65188ecb760107074e3c681b739437f4ce3d7d41",
+      "size": 23794,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/65188ecb760107074e3c681b739437f4ce3d7d41"
+    },
+    {
+      "path": "public/app-icons/launchpad/32.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dd424d2c2c7d268facddfc09837573fdea2d74e7",
+      "size": 1013,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/dd424d2c2c7d268facddfc09837573fdea2d74e7"
+    },
+    {
+      "path": "public/app-icons/launchpad/512.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf055a092ffce63d71a3ede6d28d2576e7b46492",
+      "size": 77227,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/cf055a092ffce63d71a3ede6d28d2576e7b46492"
+    },
+    {
+      "path": "public/app-icons/mail",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ea52a0000b8065c43889a972b41bfb40d0a22b7b",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/ea52a0000b8065c43889a972b41bfb40d0a22b7b"
+    },
+    {
+      "path": "public/app-icons/mail/1024.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "811bcb055330afc3aa444c117e013f529e4edcf2",
+      "size": 523300,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/811bcb055330afc3aa444c117e013f529e4edcf2"
+    },
+    {
+      "path": "public/app-icons/mail/128.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "49b141a943d5a4f03b7aab27d2a94cfe283071f2",
+      "size": 4274,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/49b141a943d5a4f03b7aab27d2a94cfe283071f2"
+    },
+    {
+      "path": "public/app-icons/mail/16.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e61aa8577f551019809f607b84d21fee16a4ecce",
+      "size": 473,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/e61aa8577f551019809f607b84d21fee16a4ecce"
+    },
+    {
+      "path": "public/app-icons/mail/256.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fc7449c9dc6e9fea0054e8041540ac084e0eb307",
+      "size": 46820,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/fc7449c9dc6e9fea0054e8041540ac084e0eb307"
+    },
+    {
+      "path": "public/app-icons/mail/256.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d2a0bd293c897b3b6c53cee861286c3082dc0999",
+      "size": 10366,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/d2a0bd293c897b3b6c53cee861286c3082dc0999"
+    },
+    {
+      "path": "public/app-icons/mail/32.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7833dbb00362591e1196d831b10f969b24146f32",
+      "size": 1402,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/7833dbb00362591e1196d831b10f969b24146f32"
+    },
+    {
+      "path": "public/app-icons/mail/512.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "941c67a5166443c0663b7683349e68a1b603a9de",
+      "size": 154135,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/941c67a5166443c0663b7683349e68a1b603a9de"
+    },
+    {
+      "path": "public/app-icons/maps",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e7d46657644476c9073acb4d29f70f7cdfba7e64",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/e7d46657644476c9073acb4d29f70f7cdfba7e64"
+    },
+    {
+      "path": "public/app-icons/maps/1024.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cb31183bd2dca6d27cf61c773139785079cbd85e",
+      "size": 286647,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/cb31183bd2dca6d27cf61c773139785079cbd85e"
+    },
+    {
+      "path": "public/app-icons/maps/16.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "00e44fd5e58e9e3098640ee006eb441b98d2216a",
+      "size": 593,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/00e44fd5e58e9e3098640ee006eb441b98d2216a"
+    },
+    {
+      "path": "public/app-icons/maps/256.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8f2486eb33c593d9a97cd8a24b7138546fc91937",
+      "size": 44671,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/8f2486eb33c593d9a97cd8a24b7138546fc91937"
+    },
+    {
+      "path": "public/app-icons/maps/32.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ac4c69885a339e89ebceb567bbe5627e2027ccde",
+      "size": 1730,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/ac4c69885a339e89ebceb567bbe5627e2027ccde"
+    },
+    {
+      "path": "public/app-icons/maps/512.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8929942d4ae4432f835ac2a3defdb8632781b855",
+      "size": 114358,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/8929942d4ae4432f835ac2a3defdb8632781b855"
+    },
+    {
+      "path": "public/app-icons/messages",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f5cb3557c724e0eb01f78950da950d6502dacfc0",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/f5cb3557c724e0eb01f78950da950d6502dacfc0"
+    },
+    {
+      "path": "public/app-icons/messages/1024.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "35567417a6c5f5bf8b6f8a8f14f87071326a1378",
+      "size": 336296,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/35567417a6c5f5bf8b6f8a8f14f87071326a1378"
+    },
+    {
+      "path": "public/app-icons/messages/128.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b86e6341c4dd4c701c9318e3d7e2e2174ba83f15",
+      "size": 5010,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/b86e6341c4dd4c701c9318e3d7e2e2174ba83f15"
+    },
+    {
+      "path": "public/app-icons/messages/16.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "545f02356c9bbee19c8e877fc632010534dda46e",
+      "size": 550,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/545f02356c9bbee19c8e877fc632010534dda46e"
+    },
+    {
+      "path": "public/app-icons/messages/256.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5c3688ba31e1aabe4d2542f253f7c304ad47f6e9",
+      "size": 41335,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/5c3688ba31e1aabe4d2542f253f7c304ad47f6e9"
+    },
+    {
+      "path": "public/app-icons/messages/256.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "557f45f2ee073a086af2ee1dc2a24bad4f28a017",
+      "size": 11870,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/557f45f2ee073a086af2ee1dc2a24bad4f28a017"
+    },
+    {
+      "path": "public/app-icons/messages/32.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "93f42afcd27345051366ec2b656161611521ada7",
+      "size": 1605,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/93f42afcd27345051366ec2b656161611521ada7"
+    },
+    {
+      "path": "public/app-icons/messages/512.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2b94b8b9908b083d44cd3788f4f9787a11440d92",
+      "size": 115721,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/2b94b8b9908b083d44cd3788f4f9787a11440d92"
+    },
+    {
+      "path": "public/app-icons/music",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "598d6911f5b69939309b86eee23431b14a968500",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/598d6911f5b69939309b86eee23431b14a968500"
+    },
+    {
+      "path": "public/app-icons/music/1024.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4adb1914a4c0c86878963e3c31085d0fefdc1af3",
+      "size": 254036,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/4adb1914a4c0c86878963e3c31085d0fefdc1af3"
+    },
+    {
+      "path": "public/app-icons/music/16.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a60406b9534fbef2e2a439b7e78f6437761ef166",
+      "size": 173,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/a60406b9534fbef2e2a439b7e78f6437761ef166"
+    },
+    {
+      "path": "public/app-icons/music/256.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cc3c823825cbb43d1b30d49d404e6b0ff73fc825",
+      "size": 22372,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/cc3c823825cbb43d1b30d49d404e6b0ff73fc825"
+    },
+    {
+      "path": "public/app-icons/music/32.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "206993abe0ba5073126d1d3ab2c85030414d84f9",
+      "size": 636,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/206993abe0ba5073126d1d3ab2c85030414d84f9"
+    },
+    {
+      "path": "public/app-icons/music/512.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9420126226289a880c95a60301a50547822ddbf7",
+      "size": 75622,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/9420126226289a880c95a60301a50547822ddbf7"
+    },
+    {
+      "path": "public/app-icons/news",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9aa32e8287d54d313db43fd9649fcfb91d3c5485",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/9aa32e8287d54d313db43fd9649fcfb91d3c5485"
+    },
+    {
+      "path": "public/app-icons/news/1024.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "830558344220863b516f2948d600a3baf2ebb9da",
+      "size": 82376,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/830558344220863b516f2948d600a3baf2ebb9da"
+    },
+    {
+      "path": "public/app-icons/news/16.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "53fb89d034841d63af73e95bca3195267bfecaa5",
+      "size": 157,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/53fb89d034841d63af73e95bca3195267bfecaa5"
+    },
+    {
+      "path": "public/app-icons/news/256.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a78bafd7ef33de081a2d98ce353ba67a04228866",
+      "size": 9912,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/a78bafd7ef33de081a2d98ce353ba67a04228866"
+    },
+    {
+      "path": "public/app-icons/news/32.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e790bddd0107f24a517c2765484cf578db8c9ac1",
+      "size": 499,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/e790bddd0107f24a517c2765484cf578db8c9ac1"
+    },
+    {
+      "path": "public/app-icons/news/512.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "748418b8cce21322ff074194b0fe043a8b2b671e",
+      "size": 27395,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/748418b8cce21322ff074194b0fe043a8b2b671e"
+    },
+    {
+      "path": "public/app-icons/notes",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "396e9cea2dec623b4ce4afa42d8f4cc0ec646217",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/396e9cea2dec623b4ce4afa42d8f4cc0ec646217"
+    },
+    {
+      "path": "public/app-icons/notes/1024.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "05cbc1d2ece51ec3aba4105cb89ca91e34fccd51",
+      "size": 260513,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/05cbc1d2ece51ec3aba4105cb89ca91e34fccd51"
+    },
+    {
+      "path": "public/app-icons/notes/16.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "43c4f60d285f368958417346d9ba5047de886ba8",
+      "size": 324,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/43c4f60d285f368958417346d9ba5047de886ba8"
+    },
+    {
+      "path": "public/app-icons/notes/256.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "947eaf0682599c07028cbd2a678eee18f527fcd3",
+      "size": 28517,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/947eaf0682599c07028cbd2a678eee18f527fcd3"
+    },
+    {
+      "path": "public/app-icons/notes/32.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "21965962a7f4d0f290ad26e793f29c0792fa0612",
+      "size": 829,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/21965962a7f4d0f290ad26e793f29c0792fa0612"
+    },
+    {
+      "path": "public/app-icons/notes/512.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a19f9a443a187e8cd8ddf24fdf1749d25208ebab",
+      "size": 88766,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/a19f9a443a187e8cd8ddf24fdf1749d25208ebab"
+    },
+    {
+      "path": "public/app-icons/photos",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0214d3748c12b277f0a268c73a83e8700520692f",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/0214d3748c12b277f0a268c73a83e8700520692f"
+    },
+    {
+      "path": "public/app-icons/photos/1024.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "16ce49a2638a25ffcac92a63e1b5ae6fa040fa81",
+      "size": 674509,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/16ce49a2638a25ffcac92a63e1b5ae6fa040fa81"
+    },
+    {
+      "path": "public/app-icons/photos/128.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f7b46f8e532cb14e238b3850ed63921e4279ffd7",
+      "size": 6112,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/f7b46f8e532cb14e238b3850ed63921e4279ffd7"
+    },
+    {
+      "path": "public/app-icons/photos/16.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2ce9265849777dbe669237eea0d3ffd1540fb94a",
+      "size": 534,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/2ce9265849777dbe669237eea0d3ffd1540fb94a"
+    },
+    {
+      "path": "public/app-icons/photos/256.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d3844704fab82f99807d50b7df3813312b2fbd18",
+      "size": 63793,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/d3844704fab82f99807d50b7df3813312b2fbd18"
+    },
+    {
+      "path": "public/app-icons/photos/256.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2fa638f6ed7f6d134f3694a0ddd044b7130982a1",
+      "size": 14230,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/2fa638f6ed7f6d134f3694a0ddd044b7130982a1"
+    },
+    {
+      "path": "public/app-icons/photos/32.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2bcc97e23b633c1fdb5d685bbd5f0c056ac511e5",
+      "size": 1731,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/2bcc97e23b633c1fdb5d685bbd5f0c056ac511e5"
+    },
+    {
+      "path": "public/app-icons/photos/512.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "742cc27d0608d3340919a93fb5c782fdf17af62e",
+      "size": 207153,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/742cc27d0608d3340919a93fb5c782fdf17af62e"
+    },
+    {
+      "path": "public/app-icons/podcasts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "079d5b86aae2175ce2c00928e2cce16e3374e9a6",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/079d5b86aae2175ce2c00928e2cce16e3374e9a6"
+    },
+    {
+      "path": "public/app-icons/podcasts/1024.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c4d03eef280cda86d6ba0d96d35db15b8b63b723",
+      "size": 565647,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/c4d03eef280cda86d6ba0d96d35db15b8b63b723"
+    },
+    {
+      "path": "public/app-icons/podcasts/16.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f34ae81f1a4982a130f811783889d09a7f169072",
+      "size": 641,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/f34ae81f1a4982a130f811783889d09a7f169072"
+    },
+    {
+      "path": "public/app-icons/podcasts/256.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "de795e1f3fd7d982e9993880fae2ee641acf6c05",
+      "size": 50875,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/de795e1f3fd7d982e9993880fae2ee641acf6c05"
+    },
+    {
+      "path": "public/app-icons/podcasts/32.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7f8f756040b5ccd2d959fac35554427bd2575be8",
+      "size": 1741,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/7f8f756040b5ccd2d959fac35554427bd2575be8"
+    },
+    {
+      "path": "public/app-icons/podcasts/512.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ae7eb999dc85e1532ab84597411b259e5d2f00a4",
+      "size": 166581,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/ae7eb999dc85e1532ab84597411b259e5d2f00a4"
+    },
+    {
+      "path": "public/app-icons/purus-twitter",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c571ad225f8fc0a154d5d6d40b3a34e5883afb28",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/c571ad225f8fc0a154d5d6d40b3a34e5883afb28"
+    },
+    {
+      "path": "public/app-icons/purus-twitter/128.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7ce4f859b7100ccc00551016e9717d17ce15bf65",
+      "size": 6078,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/7ce4f859b7100ccc00551016e9717d17ce15bf65"
+    },
+    {
+      "path": "public/app-icons/purus-twitter/256.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4989a75f17a39c1356b9ab56943e22301fcc6ed0",
+      "size": 56133,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/4989a75f17a39c1356b9ab56943e22301fcc6ed0"
+    },
+    {
+      "path": "public/app-icons/purus-twitter/256.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "522b192b3896afbdc828d5526e1db0ddebc05d13",
+      "size": 12704,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/522b192b3896afbdc828d5526e1db0ddebc05d13"
+    },
+    {
+      "path": "public/app-icons/reminders",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2d8f234e74e3be31fff2cef045dbd0d2020c0383",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/2d8f234e74e3be31fff2cef045dbd0d2020c0383"
+    },
+    {
+      "path": "public/app-icons/reminders/1024.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2ec12cb38cb3b4db7bc817c8418e5477ae615a0c",
+      "size": 208452,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/2ec12cb38cb3b4db7bc817c8418e5477ae615a0c"
+    },
+    {
+      "path": "public/app-icons/reminders/16.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "319ea8d35a7c9cd165b11d6cd32efed0e586cab0",
+      "size": 286,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/319ea8d35a7c9cd165b11d6cd32efed0e586cab0"
+    },
+    {
+      "path": "public/app-icons/reminders/256.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "82584182e369c34be33d219a7052fdb17601a82a",
+      "size": 21424,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/82584182e369c34be33d219a7052fdb17601a82a"
+    },
+    {
+      "path": "public/app-icons/reminders/32.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2030a1ff1e59e74ca7cdeac2ca57d0d646c1aa1c",
+      "size": 694,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/2030a1ff1e59e74ca7cdeac2ca57d0d646c1aa1c"
+    },
+    {
+      "path": "public/app-icons/reminders/512.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c93e539c32088bebc99289f9fdafa2930475cbef",
+      "size": 68018,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/c93e539c32088bebc99289f9fdafa2930475cbef"
+    },
+    {
+      "path": "public/app-icons/safari",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6aaf70d46fb9f1f0c28f5590ee5b8d206e749d35",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/6aaf70d46fb9f1f0c28f5590ee5b8d206e749d35"
+    },
+    {
+      "path": "public/app-icons/safari/1024.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e031a5c729364da296059099e4cb6fbd771ae38c",
+      "size": 337487,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/e031a5c729364da296059099e4cb6fbd771ae38c"
+    },
+    {
+      "path": "public/app-icons/safari/128.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fadb17c8fac93e2949d3933219367a8e7d269977",
+      "size": 7926,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/fadb17c8fac93e2949d3933219367a8e7d269977"
+    },
+    {
+      "path": "public/app-icons/safari/16.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ccbf2bc2a4deef864932e6befa49402c5b607773",
+      "size": 471,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/ccbf2bc2a4deef864932e6befa49402c5b607773"
+    },
+    {
+      "path": "public/app-icons/safari/256.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "23fad3408b87b4dd499b483fda95f7f91be5f824",
+      "size": 42277,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/23fad3408b87b4dd499b483fda95f7f91be5f824"
+    },
+    {
+      "path": "public/app-icons/safari/256.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e1be87cb8a1450ba229a1df09e068ebaacc635c6",
+      "size": 21172,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/e1be87cb8a1450ba229a1df09e068ebaacc635c6"
+    },
+    {
+      "path": "public/app-icons/safari/32.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e2cc1b930497d0141bf157d6bf105ccba0808703",
+      "size": 1348,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/e2cc1b930497d0141bf157d6bf105ccba0808703"
+    },
+    {
+      "path": "public/app-icons/safari/512.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9b2662bfb31394eea0e645692bd6c7066919bd91",
+      "size": 121393,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/9b2662bfb31394eea0e645692bd6c7066919bd91"
+    },
+    {
+      "path": "public/app-icons/system-preferences",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7b9ceef1ab1ccb6343a80e4edf8551f8abcccbed",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/7b9ceef1ab1ccb6343a80e4edf8551f8abcccbed"
+    },
+    {
+      "path": "public/app-icons/system-preferences/1024.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "60f9c4febed23d06f393fd1770178b561f3f2e6e",
+      "size": 435512,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/60f9c4febed23d06f393fd1770178b561f3f2e6e"
+    },
+    {
+      "path": "public/app-icons/system-preferences/128.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "929afe9b6c26a30603929e59bbf8550549ce9358",
+      "size": 8056,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/929afe9b6c26a30603929e59bbf8550549ce9358"
+    },
+    {
+      "path": "public/app-icons/system-preferences/16.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "05796e7a1bd472a5b0b2dd560a52d0ee1b8c9f7d",
+      "size": 549,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/05796e7a1bd472a5b0b2dd560a52d0ee1b8c9f7d"
+    },
+    {
+      "path": "public/app-icons/system-preferences/256.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7030b1e09e3c0f0828c97c3a1a392eb6e87c8425",
+      "size": 50093,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/7030b1e09e3c0f0828c97c3a1a392eb6e87c8425"
+    },
+    {
+      "path": "public/app-icons/system-preferences/256.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "987aba6b6858ae3a3ad3f817cbd6f5d1a17760ea",
+      "size": 20726,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/987aba6b6858ae3a3ad3f817cbd6f5d1a17760ea"
+    },
+    {
+      "path": "public/app-icons/system-preferences/32.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b8b952d6bffcdb5999d43111403b9dfaac31fcdd",
+      "size": 1682,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/b8b952d6bffcdb5999d43111403b9dfaac31fcdd"
+    },
+    {
+      "path": "public/app-icons/system-preferences/512.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3057feaa76f3aa15781c76910ef54fed4795b6de",
+      "size": 145272,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/3057feaa76f3aa15781c76910ef54fed4795b6de"
+    },
+    {
+      "path": "public/app-icons/terminal",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "eac6e71b7d2d1cb6cf34867c053d6b499c8e61d1",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/eac6e71b7d2d1cb6cf34867c053d6b499c8e61d1"
+    },
+    {
+      "path": "public/app-icons/terminal/1024.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b44496cde5942625e57bc696bd4990d3793c04f6",
+      "size": 50633,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/b44496cde5942625e57bc696bd4990d3793c04f6"
+    },
+    {
+      "path": "public/app-icons/terminal/16.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "64720fabe4194d60ad908a39766997bb40344375",
+      "size": 174,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/64720fabe4194d60ad908a39766997bb40344375"
+    },
+    {
+      "path": "public/app-icons/terminal/256.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cded298ab572038e7489540946c55573c612a29a",
+      "size": 7692,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/cded298ab572038e7489540946c55573c612a29a"
+    },
+    {
+      "path": "public/app-icons/terminal/32.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1ed579906297e7f3861932508770eb051314f2cb",
+      "size": 354,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/1ed579906297e7f3861932508770eb051314f2cb"
+    },
+    {
+      "path": "public/app-icons/terminal/512.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ed35aa37bbf4e12dd31ced983b42e9158a509b46",
+      "size": 18354,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/ed35aa37bbf4e12dd31ced983b42e9158a509b46"
+    },
+    {
+      "path": "public/app-icons/tv",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "10813e6b2738fde756382f268e943b126aa9d665",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/10813e6b2738fde756382f268e943b126aa9d665"
+    },
+    {
+      "path": "public/app-icons/tv/1024.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "13cbc6089fbbb19eb7224cbfe77ca1bce288ba8c",
+      "size": 337455,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/13cbc6089fbbb19eb7224cbfe77ca1bce288ba8c"
+    },
+    {
+      "path": "public/app-icons/tv/16.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5b3390f6d0887c622facb09470df32e3606e3237",
+      "size": 355,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/5b3390f6d0887c622facb09470df32e3606e3237"
+    },
+    {
+      "path": "public/app-icons/tv/256.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ef2ec280472b6725ccd97dbf62754c7496f83299",
+      "size": 26111,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/ef2ec280472b6725ccd97dbf62754c7496f83299"
+    },
+    {
+      "path": "public/app-icons/tv/32.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4387a62ffdc5cf48be55f81949466accfbcd81e6",
+      "size": 867,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/4387a62ffdc5cf48be55f81949466accfbcd81e6"
+    },
+    {
+      "path": "public/app-icons/tv/512.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "626333631a785ab15e8b896ac3535045e22d6eb5",
+      "size": 91582,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/626333631a785ab15e8b896ac3535045e22d6eb5"
+    },
+    {
+      "path": "public/app-icons/ukraine",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c42e6eb1d46ae4e73d66029fae81f748bb54fa39",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/c42e6eb1d46ae4e73d66029fae81f748bb54fa39"
+    },
+    {
+      "path": "public/app-icons/ukraine/256.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d03b25b28671423c84f97da6960377796832a105",
+      "size": 3386,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/d03b25b28671423c84f97da6960377796832a105"
+    },
+    {
+      "path": "public/app-icons/vercel",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "03ae2ef16b3aa0a04a192fc602738cafeddb5dfb",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/03ae2ef16b3aa0a04a192fc602738cafeddb5dfb"
+    },
+    {
+      "path": "public/app-icons/vercel/256.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7efd188a70ff3cf1153105fb40555750e72cde4d",
+      "size": 3170,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/7efd188a70ff3cf1153105fb40555750e72cde4d"
+    },
+    {
+      "path": "public/app-icons/view-source",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f845baeabe62a5d6b73dc89657b49675c97c3315",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/f845baeabe62a5d6b73dc89657b49675c97c3315"
+    },
+    {
+      "path": "public/app-icons/view-source/1024.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0dbc69eca5068716c23dd941af3d8963eebfe16e",
+      "size": 256776,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/0dbc69eca5068716c23dd941af3d8963eebfe16e"
+    },
+    {
+      "path": "public/app-icons/view-source/128.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "46f3c493d08127be853e4fc0c0ef44405cbf8f4b",
+      "size": 11526,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/46f3c493d08127be853e4fc0c0ef44405cbf8f4b"
+    },
+    {
+      "path": "public/app-icons/view-source/128.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b74160f8f57fffbdeceac38deef450c3b2ba69d2",
+      "size": 5046,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/b74160f8f57fffbdeceac38deef450c3b2ba69d2"
+    },
+    {
+      "path": "public/app-icons/view-source/16.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f70db2f99a1865134814ac4bb498227d82a54004",
+      "size": 840,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/f70db2f99a1865134814ac4bb498227d82a54004"
+    },
+    {
+      "path": "public/app-icons/view-source/256.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8b4c2c43be0e0793f6651c3e609e89a421061b86",
+      "size": 30107,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/8b4c2c43be0e0793f6651c3e609e89a421061b86"
+    },
+    {
+      "path": "public/app-icons/view-source/256.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "523223910718f81f95ab4d0097809dab96126ca5",
+      "size": 10802,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/523223910718f81f95ab4d0097809dab96126ca5"
+    },
+    {
+      "path": "public/app-icons/view-source/32.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c6d18accd2b8cbe55cee0d5c8c72e3c1fb4eb773",
+      "size": 1825,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/c6d18accd2b8cbe55cee0d5c8c72e3c1fb4eb773"
+    },
+    {
+      "path": "public/app-icons/view-source/512.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "978bc47b9bf130f5c77a6b913473e80db318fea5",
+      "size": 86269,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/978bc47b9bf130f5c77a6b913473e80db318fea5"
+    },
+    {
+      "path": "public/app-icons/vscode",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b33a6ee8855de02897c29a3665bd306b5123d26f",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/b33a6ee8855de02897c29a3665bd306b5123d26f"
+    },
+    {
+      "path": "public/app-icons/vscode/1024.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8d29070afeeeda4755e87a3a9bfcfadf5f069063",
+      "size": 313264,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/8d29070afeeeda4755e87a3a9bfcfadf5f069063"
+    },
+    {
+      "path": "public/app-icons/vscode/128.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b29c07d8942feb054aea6434d952d5a08f44071",
+      "size": 5422,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/3b29c07d8942feb054aea6434d952d5a08f44071"
+    },
+    {
+      "path": "public/app-icons/vscode/16.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e74d1e2e317adf54a2fff3f909c3727b72485e6",
+      "size": 715,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/4e74d1e2e317adf54a2fff3f909c3727b72485e6"
+    },
+    {
+      "path": "public/app-icons/vscode/256.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b08974e952225377f01a95afdd3c9438e360c267",
+      "size": 34429,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/b08974e952225377f01a95afdd3c9438e360c267"
+    },
+    {
+      "path": "public/app-icons/vscode/256.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a1d26602c192cb79bcab663607fc59d5bc0b6a93",
+      "size": 12020,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/a1d26602c192cb79bcab663607fc59d5bc0b6a93"
+    },
+    {
+      "path": "public/app-icons/vscode/32.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2afd03b6bc458018c435ee24c568b3b4f0bfb3ca",
+      "size": 1700,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/2afd03b6bc458018c435ee24c568b3b4f0bfb3ca"
+    },
+    {
+      "path": "public/app-icons/vscode/512.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a396d93e473e3aa3470d0fc506aeec6d109a3cb3",
+      "size": 95542,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/a396d93e473e3aa3470d0fc506aeec6d109a3cb3"
+    },
+    {
+      "path": "public/app-icons/wallpapers",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9fb32bc945101a55142bb775a3240c0d87779394",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/9fb32bc945101a55142bb775a3240c0d87779394"
+    },
+    {
+      "path": "public/app-icons/wallpapers/1024.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9f86cbbceecedd3452cebe8c8342f1d74329d5fb",
+      "size": 764383,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/9f86cbbceecedd3452cebe8c8342f1d74329d5fb"
+    },
+    {
+      "path": "public/app-icons/wallpapers/16.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "67c873ed59cdce59b61ddc5cb635c99ee48e4c3d",
+      "size": 773,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/67c873ed59cdce59b61ddc5cb635c99ee48e4c3d"
+    },
+    {
+      "path": "public/app-icons/wallpapers/256.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d05c69b2b1af9cd180f0818e31be0f2830cb15be",
+      "size": 57007,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/d05c69b2b1af9cd180f0818e31be0f2830cb15be"
+    },
+    {
+      "path": "public/app-icons/wallpapers/256.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3d7aaed1a569ca98ab562774b6ef8982edda5453",
+      "size": 8294,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/3d7aaed1a569ca98ab562774b6ef8982edda5453"
+    },
+    {
+      "path": "public/app-icons/wallpapers/32.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5832be851cbe61da50a72e463e0c99d6fd9a3580",
+      "size": 2300,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/5832be851cbe61da50a72e463e0c99d6fd9a3580"
+    },
+    {
+      "path": "public/app-icons/wallpapers/512.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2189eb77095359a0951afc68bc5bb49b31257128",
+      "size": 206328,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/2189eb77095359a0951afc68bc5bb49b31257128"
+    },
+    {
+      "path": "public/cover-image.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5adee3d555a49416b0d71f6f6daf35bbb050b3a1",
+      "size": 777406,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/5adee3d555a49416b0d71f6f6daf35bbb050b3a1"
+    },
+    {
+      "path": "public/cursors",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "79d76b1dea795870d48d3ed72a39aeb8153fd578",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/79d76b1dea795870d48d3ed72a39aeb8153fd578"
+    },
+    {
+      "path": "public/cursors/alt-select.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e214e86ab1c3efc0a53df533e3d627ce9a9bb027",
+      "size": 1256,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/e214e86ab1c3efc0a53df533e3d627ce9a9bb027"
+    },
+    {
+      "path": "public/cursors/busy.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b3d68475013798149950c203472950b71c1911a5",
+      "size": 15646,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/b3d68475013798149950c203472950b71c1911a5"
+    },
+    {
+      "path": "public/cursors/diagonal-resize-1.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "11bb008524d08220c557b49f4e3873fd70923918",
+      "size": 2139,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/11bb008524d08220c557b49f4e3873fd70923918"
+    },
+    {
+      "path": "public/cursors/diagonal-resize-2.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5848e375d88188dfcb9f6369ee735fadcddbfab9",
+      "size": 2123,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/5848e375d88188dfcb9f6369ee735fadcddbfab9"
+    },
+    {
+      "path": "public/cursors/handwriting.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6d5e7b1da76ef6f35c4e676fe6e9153892575719",
+      "size": 1256,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/6d5e7b1da76ef6f35c4e676fe6e9153892575719"
+    },
+    {
+      "path": "public/cursors/link-select.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a6cda82302a6dafad86398490c9e6910f998b175",
+      "size": 1608,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/a6cda82302a6dafad86398490c9e6910f998b175"
+    },
+    {
+      "path": "public/cursors/move.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b7c08e0dd2e986a11ec9c1426bd9698b6d3b8956",
+      "size": 2682,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/b7c08e0dd2e986a11ec9c1426bd9698b6d3b8956"
+    },
+    {
+      "path": "public/cursors/normal-select.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1f228ed07eeb29d5442b8525cdefb5af1aae3829",
+      "size": 1454,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/1f228ed07eeb29d5442b8525cdefb5af1aae3829"
+    },
+    {
+      "path": "public/cursors/pirate.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "341f0e03adcd5d5ceb9913168c0f0260e93e680b",
+      "size": 2686,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/341f0e03adcd5d5ceb9913168c0f0260e93e680b"
+    },
+    {
+      "path": "public/cursors/precision-select.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3fe5f4b43c835e95e1817f3459ce53403921dc5a",
+      "size": 1045,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/3fe5f4b43c835e95e1817f3459ce53403921dc5a"
+    },
+    {
+      "path": "public/cursors/text-select.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ecbeb3cdca5e60018d1f5fb1ccebf35a95221f4b",
+      "size": 1308,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/ecbeb3cdca5e60018d1f5fb1ccebf35a95221f4b"
+    },
+    {
+      "path": "public/cursors/unavailable.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7ffb4317792f3e338a4b97bae303ea393d16cd37",
+      "size": 2597,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/7ffb4317792f3e338a4b97bae303ea393d16cd37"
+    },
+    {
+      "path": "public/cursors/vertical-resize.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "533962637fdf593bc57faa7857e8c1761bf3350c",
+      "size": 2017,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/533962637fdf593bc57faa7857e8c1761bf3350c"
+    },
+    {
+      "path": "public/cursors/working-in-background.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5ddeb2c52c3d58eaa1b953aa5bce4d21539386db",
+      "size": 9444,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/5ddeb2c52c3d58eaa1b953aa5bce4d21539386db"
+    },
+    {
+      "path": "public/emojis",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f34e895a7ef56dba7fd240b03562fde6a41ec92f",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/f34e895a7ef56dba7fd240b03562fde6a41ec92f"
+    },
+    {
+      "path": "public/emojis/star-struck.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f1c2bd33dfb78683818aa4fb7ec76e522a8a3c9d",
+      "size": 33492,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/f1c2bd33dfb78683818aa4fb7ec76e522a8a3c9d"
+    },
+    {
+      "path": "public/emojis/wink.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0dbe2ff2bed369648957d5ec3507ad43750e6a76",
+      "size": 25072,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/0dbe2ff2bed369648957d5ec3507ad43750e6a76"
+    },
+    {
+      "path": "public/favicon.ico",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bcd5dfd67cd0361b78123e95c2dd96031f27f743",
+      "size": 3150,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/bcd5dfd67cd0361b78123e95c2dd96031f27f743"
+    },
+    {
+      "path": "public/google7cdade01e9ae4685.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6c2ce45c590efc2537f15201756c7d9c4d9d77ea",
+      "size": 54,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/6c2ce45c590efc2537f15201756c7d9c4d9d77ea"
+    },
+    {
+      "path": "public/purus-profile",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "10d1c506da50ae7fc7292b182c3a7c09595254c5",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/10d1c506da50ae7fc7292b182c3a7c09595254c5"
+    },
+    {
+      "path": "public/purus-profile/puru.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "327a38ab6916a4dd41da74369f13a9271e6fced4",
+      "size": 26178,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/327a38ab6916a4dd41da74369f13a9271e6fced4"
+    },
+    {
+      "path": "public/robots.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e9e57dc4d41b9b46e05112e9f45b7ea6ac0ba15e",
+      "size": 67,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/e9e57dc4d41b9b46e05112e9f45b7ea6ac0ba15e"
+    },
+    {
+      "path": "public/sounds",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a72c686a4b39989e57db5d8f5f2007ce4297e553",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/a72c686a4b39989e57db5d8f5f2007ce4297e553"
+    },
+    {
+      "path": "public/sounds/mac-startup-sound.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "456cf3c9aa13cdc6915b1cf758517745878184dc",
+      "size": 79131,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/456cf3c9aa13cdc6915b1cf758517745878184dc"
+    },
+    {
+      "path": "src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "56b698b93ee31639bd778a33c51d5f4b51c74e02",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/56b698b93ee31639bd778a33c51d5f4b51c74e02"
+    },
+    {
+      "path": "src/actions",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ccc470f2034d2134252a6cd448ecd255eb067e0a",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/ccc470f2034d2134252a6cd448ecd255eb067e0a"
+    },
+    {
+      "path": "src/actions/click-outside.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "85fa97d346a8c0c507535ae50541eddafdc128a1",
+      "size": 379,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/85fa97d346a8c0c507535ae50541eddafdc128a1"
+    },
+    {
+      "path": "src/actions/elevation.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2c5b10cc62faa615841494750d6a718ccad82eee",
+      "size": 541,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/2c5b10cc62faa615841494750d6a718ccad82eee"
+    },
+    {
+      "path": "src/actions/focus-outside.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "288a2439f68c7acfabc6a0b643c3ef8cf134ee92",
+      "size": 402,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/288a2439f68c7acfabc6a0b643c3ef8cf134ee92"
+    },
+    {
+      "path": "src/actions/index.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8c81a964b814a17bba96b8cce45822d6d29c1a3b",
+      "size": 264,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/8c81a964b814a17bba96b8cce45822d6d29c1a3b"
+    },
+    {
+      "path": "src/actions/portal.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "234b169fb39f8560a23f8c7cca3c421ce3c23fb3",
+      "size": 1159,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/234b169fb39f8560a23f8c7cca3c421ce3c23fb3"
+    },
+    {
+      "path": "src/actions/trap-focus.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a3e9fe238662d745c47308fcff9b15a793a4234e",
+      "size": 1238,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/a3e9fe238662d745c47308fcff9b15a793a4234e"
+    },
+    {
+      "path": "src/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "16d7259118a80460542d406e7ef92613cfd5a067",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/16d7259118a80460542d406e7ef92613cfd5a067"
+    },
+    {
+      "path": "src/assets/wallpapers",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "114826b8bed216e6050a2c552558ce59b45fd4c0",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/114826b8bed216e6050a2c552558ce59b45fd4c0"
+    },
+    {
+      "path": "src/assets/wallpapers/38.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e0ef9d80dd13d1528f75d24a1fd90b63ee34fd6f",
+      "size": 1300070,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/e0ef9d80dd13d1528f75d24a1fd90b63ee34fd6f"
+    },
+    {
+      "path": "src/assets/wallpapers/39.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d1c081f50eda764da195a4ae57b29fc3490d9cd6",
+      "size": 274574,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/d1c081f50eda764da195a4ae57b29fc3490d9cd6"
+    },
+    {
+      "path": "src/assets/wallpapers/40.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cd4270ef20b64c60acbe6c1de6866f991f755bbf",
+      "size": 271815,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/cd4270ef20b64c60acbe6c1de6866f991f755bbf"
+    },
+    {
+      "path": "src/assets/wallpapers/41.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5b5931a8f2694d267b6e9283ba93269eaef1ca6c",
+      "size": 465733,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/5b5931a8f2694d267b6e9283ba93269eaef1ca6c"
+    },
+    {
+      "path": "src/assets/wallpapers/42.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7c17ecedc4b201051c889fb32e22526ca1ebc22b",
+      "size": 486003,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/7c17ecedc4b201051c889fb32e22526ca1ebc22b"
+    },
+    {
+      "path": "src/assets/wallpapers/43.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "addfc5d756436769cc53a2a840f90ea100a7e7e2",
+      "size": 229904,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/addfc5d756436769cc53a2a840f90ea100a7e7e2"
+    },
+    {
+      "path": "src/assets/wallpapers/44.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f9d114d158a5726c36ea7200f8ec6d045ac67bb6",
+      "size": 233408,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/f9d114d158a5726c36ea7200f8ec6d045ac67bb6"
+    },
+    {
+      "path": "src/assets/wallpapers/45.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2d8baab280c3e2d453aa2de79a1b9d94a29e2880",
+      "size": 282658,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/2d8baab280c3e2d453aa2de79a1b9d94a29e2880"
+    },
+    {
+      "path": "src/assets/wallpapers/46.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "423c89579d42402373bd2bc366f49ff13d5c24e1",
+      "size": 420638,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/423c89579d42402373bd2bc366f49ff13d5c24e1"
+    },
+    {
+      "path": "src/assets/wallpapers/47.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fbc7bb689042a5dd7fd1369b327b51bf4579c5c2",
+      "size": 247830,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/fbc7bb689042a5dd7fd1369b327b51bf4579c5c2"
+    },
+    {
+      "path": "src/assets/wallpapers/48.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ac61ce30960fb7871ebd60fa7db32ba2bdd8b236",
+      "size": 511834,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/ac61ce30960fb7871ebd60fa7db32ba2bdd8b236"
+    },
+    {
+      "path": "src/assets/wallpapers/49.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d3d75ddec5e263976c054fe27f8d4ec6defc2f8d",
+      "size": 495770,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/d3d75ddec5e263976c054fe27f8d4ec6defc2f8d"
+    },
+    {
+      "path": "src/assets/wallpapers/50.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d4ea64e043053e1ccb5dd44ec57aa57560c9b396",
+      "size": 437867,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/d4ea64e043053e1ccb5dd44ec57aa57560c9b396"
+    },
+    {
+      "path": "src/assets/wallpapers/51.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "831a4f1a4355c7ca7faa0df7a36d445f0fa3f774",
+      "size": 223695,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/831a4f1a4355c7ca7faa0df7a36d445f0fa3f774"
+    },
+    {
+      "path": "src/assets/wallpapers/52.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5aed303ea509094eb286cd88c02fa0c31c0d2235",
+      "size": 359569,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/5aed303ea509094eb286cd88c02fa0c31c0d2235"
+    },
+    {
+      "path": "src/assets/wallpapers/53.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "366591a9f11010c2daee34fd36df905e82d670a1",
+      "size": 272621,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/366591a9f11010c2daee34fd36df905e82d670a1"
+    },
+    {
+      "path": "src/assets/wallpapers/54.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3fcb3c201ae1b95bc7a25f0034e7d13471f85d21",
+      "size": 258859,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/3fcb3c201ae1b95bc7a25f0034e7d13471f85d21"
+    },
+    {
+      "path": "src/assets/wallpapers/55.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "090a672753d51b44e5e6f0cf7ba814c239cfbf08",
+      "size": 237436,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/090a672753d51b44e5e6f0cf7ba814c239cfbf08"
+    },
+    {
+      "path": "src/assets/wallpapers/56.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c172f60db1bac3b40514ca1b78077fd9680473c4",
+      "size": 371963,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/c172f60db1bac3b40514ca1b78077fd9680473c4"
+    },
+    {
+      "path": "src/assets/wallpapers/57.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5f592f418a123332c71afd0f1b55e3cfe256963a",
+      "size": 283735,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/5f592f418a123332c71afd0f1b55e3cfe256963a"
+    },
+    {
+      "path": "src/assets/wallpapers/58.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f0a6f10d9cccddc389428b2a3c0bfdb5f81ebef3",
+      "size": 1567758,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/f0a6f10d9cccddc389428b2a3c0bfdb5f81ebef3"
+    },
+    {
+      "path": "src/assets/wallpapers/59.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "18d51bf9fd6c421908370d69d837981cf9dbc675",
+      "size": 961302,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/18d51bf9fd6c421908370d69d837981cf9dbc675"
+    },
+    {
+      "path": "src/assets/wallpapers/60.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8b1372eff1898158d80692f2ccf031942461939a",
+      "size": 939616,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/8b1372eff1898158d80692f2ccf031942461939a"
+    },
+    {
+      "path": "src/assets/wallpapers/61.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "62c9f86e7aabcb11fb19d28f9a6819f86cb5d5e5",
+      "size": 1259364,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/62c9f86e7aabcb11fb19d28f9a6819f86cb5d5e5"
+    },
+    {
+      "path": "src/assets/wallpapers/62.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "213b0df93d066a270570f0b07d97839fd3591f29",
+      "size": 802769,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/213b0df93d066a270570f0b07d97839fd3591f29"
+    },
+    {
+      "path": "src/assets/wallpapers/63.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fc125d3562a40e1d3457f1f65f1c73d5c31f5cc4",
+      "size": 475977,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/fc125d3562a40e1d3457f1f65f1c73d5c31f5cc4"
+    },
+    {
+      "path": "src/assets/wallpapers/64.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aff915aa62f727441c8cce38435652ab413dcaa4",
+      "size": 273339,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/aff915aa62f727441c8cce38435652ab413dcaa4"
+    },
+    {
+      "path": "src/assets/wallpapers/big-sur-1.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a2ca082c456aafdbca790341c61b8e6eb421efb5",
+      "size": 309390,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/a2ca082c456aafdbca790341c61b8e6eb421efb5"
+    },
+    {
+      "path": "src/assets/wallpapers/big-sur-2.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8c4cd3cb49c29a9fd3673543c0416c5881cf1ef4",
+      "size": 318178,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/8c4cd3cb49c29a9fd3673543c0416c5881cf1ef4"
+    },
+    {
+      "path": "src/assets/wallpapers/big-sur-3.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "14483935e63dcc7e66356e6641d7c62bcfc67ae2",
+      "size": 515850,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/14483935e63dcc7e66356e6641d7c62bcfc67ae2"
+    },
+    {
+      "path": "src/assets/wallpapers/big-sur-4.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d8dd3b0005716d10c4165c5eeb3a26a6517944b8",
+      "size": 659123,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/d8dd3b0005716d10c4165c5eeb3a26a6517944b8"
+    },
+    {
+      "path": "src/assets/wallpapers/big-sur-5.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "75eb190fa5d65753eb37ca15fc3271ac0481f354",
+      "size": 671820,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/75eb190fa5d65753eb37ca15fc3271ac0481f354"
+    },
+    {
+      "path": "src/assets/wallpapers/big-sur-6.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b8a7a9ad57ba9d35ceeff4be2d68c11918f9dc32",
+      "size": 539357,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/b8a7a9ad57ba9d35ceeff4be2d68c11918f9dc32"
+    },
+    {
+      "path": "src/assets/wallpapers/big-sur-7.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7d0d9214584781ef24e056c431afd7610c6f51ac",
+      "size": 417272,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/7d0d9214584781ef24e056c431afd7610c6f51ac"
+    },
+    {
+      "path": "src/assets/wallpapers/big-sur-8.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a3f923506bbad3f1f59159e2b0c087f3c978877",
+      "size": 381785,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/8a3f923506bbad3f1f59159e2b0c087f3c978877"
+    },
+    {
+      "path": "src/assets/wallpapers/big-sur-graphic-1.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ef67f491e7cdc176b6d1e0003df59eaedb4bc7c3",
+      "size": 306258,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/ef67f491e7cdc176b6d1e0003df59eaedb4bc7c3"
+    },
+    {
+      "path": "src/assets/wallpapers/big-sur-graphic-2.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bde52891336f5107276524624b42639e00977624",
+      "size": 67251,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/bde52891336f5107276524624b42639e00977624"
+    },
+    {
+      "path": "src/assets/wallpapers/catalina-0.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf74d3a6fa10d273793fb675236a3acd4b9fe389",
+      "size": 384124,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/cf74d3a6fa10d273793fb675236a3acd4b9fe389"
+    },
+    {
+      "path": "src/assets/wallpapers/catalina-1.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0fa0ad14a6d9f535e96ad34c329d12ee2e4dd202",
+      "size": 292020,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/0fa0ad14a6d9f535e96ad34c329d12ee2e4dd202"
+    },
+    {
+      "path": "src/assets/wallpapers/catalina-2.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "227d3cb5ce5345c6905e7819611df4e426c0d262",
+      "size": 373326,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/227d3cb5ce5345c6905e7819611df4e426c0d262"
+    },
+    {
+      "path": "src/assets/wallpapers/catalina-3.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "716d3000c34995fd0bbfc9cd75837dd4587e63f3",
+      "size": 370547,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/716d3000c34995fd0bbfc9cd75837dd4587e63f3"
+    },
+    {
+      "path": "src/assets/wallpapers/catalina-4.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "679b21708a9f3c73d581d34acb1c4ed945f360f4",
+      "size": 504052,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/679b21708a9f3c73d581d34acb1c4ed945f360f4"
+    },
+    {
+      "path": "src/assets/wallpapers/catalina-5.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3095ac58227b0be1b1785143a8869cc14c41b37f",
+      "size": 593775,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/3095ac58227b0be1b1785143a8869cc14c41b37f"
+    },
+    {
+      "path": "src/assets/wallpapers/catalina-6.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0fe01a387e66d9528ce1fe65895b8807490a9b4f",
+      "size": 529522,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/0fe01a387e66d9528ce1fe65895b8807490a9b4f"
+    },
+    {
+      "path": "src/assets/wallpapers/catalina-7.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a079c5b61d4b6406518fa737ee582b579383991c",
+      "size": 393277,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/a079c5b61d4b6406518fa737ee582b579383991c"
+    },
+    {
+      "path": "src/assets/wallpapers/catalina-8.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0fa0ad14a6d9f535e96ad34c329d12ee2e4dd202",
+      "size": 292020,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/0fa0ad14a6d9f535e96ad34c329d12ee2e4dd202"
+    },
+    {
+      "path": "src/assets/wallpapers/desert-1.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6f49fed63f2c839afb3c5c9bcbc9af5de463d884",
+      "size": 161887,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/6f49fed63f2c839afb3c5c9bcbc9af5de463d884"
+    },
+    {
+      "path": "src/assets/wallpapers/desert-2.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5e9d759582aedd78ba412233c02ffeab8f2601d1",
+      "size": 196457,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/5e9d759582aedd78ba412233c02ffeab8f2601d1"
+    },
+    {
+      "path": "src/assets/wallpapers/desert-3.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "221e589fd51848b3a8cf51a48adf067b7ab589dd",
+      "size": 228386,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/221e589fd51848b3a8cf51a48adf067b7ab589dd"
+    },
+    {
+      "path": "src/assets/wallpapers/desert-4.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1f971ae45b73dfa99dfc75dab51a740c136c86fc",
+      "size": 228920,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/1f971ae45b73dfa99dfc75dab51a740c136c86fc"
+    },
+    {
+      "path": "src/assets/wallpapers/desert-5.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1f8f0e8daa7edc2d3758919d51c7e69b3ec3e56b",
+      "size": 239088,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/1f8f0e8daa7edc2d3758919d51c7e69b3ec3e56b"
+    },
+    {
+      "path": "src/assets/wallpapers/desert-6.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "71a93077e20dfe58a636f4314a76400367d450bb",
+      "size": 248914,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/71a93077e20dfe58a636f4314a76400367d450bb"
+    },
+    {
+      "path": "src/assets/wallpapers/desert-7.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "24ece71973c996db49bf3b703970fe4b5d17dd86",
+      "size": 233601,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/24ece71973c996db49bf3b703970fe4b5d17dd86"
+    },
+    {
+      "path": "src/assets/wallpapers/desert-8.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "638bc38f5d57464360c564971dc9989d422822fd",
+      "size": 205326,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/638bc38f5d57464360c564971dc9989d422822fd"
+    },
+    {
+      "path": "src/assets/wallpapers/dome-1.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "064edc99daf08f805116849419944e97737866d7",
+      "size": 442532,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/064edc99daf08f805116849419944e97737866d7"
+    },
+    {
+      "path": "src/assets/wallpapers/dome-2.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2580e9ada9f6dd34a33335c03fde56f30f4fd122",
+      "size": 470491,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/2580e9ada9f6dd34a33335c03fde56f30f4fd122"
+    },
+    {
+      "path": "src/assets/wallpapers/iridescence-1.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "85567cc825e14c8d23f500621f36d0d6727a214c",
+      "size": 193113,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/85567cc825e14c8d23f500621f36d0d6727a214c"
+    },
+    {
+      "path": "src/assets/wallpapers/iridescence-2.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c47d91a931f478cd0198e21c7eea88e5ccc696d1",
+      "size": 242195,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/c47d91a931f478cd0198e21c7eea88e5ccc696d1"
+    },
+    {
+      "path": "src/assets/wallpapers/lake-1.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8951782fd786818e9abdf5bf15165d141c54aa60",
+      "size": 219013,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/8951782fd786818e9abdf5bf15165d141c54aa60"
+    },
+    {
+      "path": "src/assets/wallpapers/lake-2.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ea51f7147467545da9c2685e3e63c1a03169d182",
+      "size": 277287,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/ea51f7147467545da9c2685e3e63c1a03169d182"
+    },
+    {
+      "path": "src/assets/wallpapers/lake-3.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a6ee081e0bd7abb5d1262b8d9a7db2e00c85cbcb",
+      "size": 314591,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/a6ee081e0bd7abb5d1262b8d9a7db2e00c85cbcb"
+    },
+    {
+      "path": "src/assets/wallpapers/lake-4.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "808dfddf4fc961d3fb49ef66027103fc5f91a748",
+      "size": 348688,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/808dfddf4fc961d3fb49ef66027103fc5f91a748"
+    },
+    {
+      "path": "src/assets/wallpapers/lake-5.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "34e65bfcd49b7dc76bbb41c4bfebda981545842d",
+      "size": 352689,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/34e65bfcd49b7dc76bbb41c4bfebda981545842d"
+    },
+    {
+      "path": "src/assets/wallpapers/lake-6.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e7db7647de8158aecd8e1d87ee6061f221858eb5",
+      "size": 336378,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/e7db7647de8158aecd8e1d87ee6061f221858eb5"
+    },
+    {
+      "path": "src/assets/wallpapers/lake-7.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9549a2f54e4264c24ecc4f8a2863aba43486cd1f",
+      "size": 309636,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/9549a2f54e4264c24ecc4f8a2863aba43486cd1f"
+    },
+    {
+      "path": "src/assets/wallpapers/lake-8.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "47a1a6fb6aa8a5fa76d47946b3f7fa2ecbe56909",
+      "size": 279908,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/47a1a6fb6aa8a5fa76d47946b3f7fa2ecbe56909"
+    },
+    {
+      "path": "src/assets/wallpapers/mojave-1.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0787c24e6dc6ac8dbc8568fa2c2601883d00d536",
+      "size": 83842,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/0787c24e6dc6ac8dbc8568fa2c2601883d00d536"
+    },
+    {
+      "path": "src/assets/wallpapers/mojave-2.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f8e5c1d02867ece9f528c41ebff9b52d99127b88",
+      "size": 96872,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/f8e5c1d02867ece9f528c41ebff9b52d99127b88"
+    },
+    {
+      "path": "src/assets/wallpapers/monterey-1.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "31dbede67e3efc58498ffc4bf96ff8a8aafe126a",
+      "size": 186849,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/31dbede67e3efc58498ffc4bf96ff8a8aafe126a"
+    },
+    {
+      "path": "src/assets/wallpapers/monterey-2.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1f9470d878651b1620f9a682c71abab3af406552",
+      "size": 66565,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/1f9470d878651b1620f9a682c71abab3af406552"
+    },
+    {
+      "path": "src/assets/wallpapers/monterey-3.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "83c925e88893e601d4395d5b93389dc25a6f940f",
+      "size": 75895,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/83c925e88893e601d4395d5b93389dc25a6f940f"
+    },
+    {
+      "path": "src/assets/wallpapers/monterey-4.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fde97cd6b840a71f01298d0d5383731cd8042dad",
+      "size": 69000,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/fde97cd6b840a71f01298d0d5383731cd8042dad"
+    },
+    {
+      "path": "src/assets/wallpapers/monterey-5.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d8d8574f11b603154d8aaf2c33dacb5e4f61f784",
+      "size": 134477,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/d8d8574f11b603154d8aaf2c33dacb5e4f61f784"
+    },
+    {
+      "path": "src/assets/wallpapers/monterey-6.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a990eac997f117a3ff54b6f6bf788748f584bcf",
+      "size": 71862,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/5a990eac997f117a3ff54b6f6bf788748f584bcf"
+    },
+    {
+      "path": "src/assets/wallpapers/monterey-7.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a38acd955e02ee7f1223dcd8eacf28dfe7b1cb5a",
+      "size": 66026,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/a38acd955e02ee7f1223dcd8eacf28dfe7b1cb5a"
+    },
+    {
+      "path": "src/assets/wallpapers/monterey-8.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b02c10432d3f37d59ead8730867dc8a043b4d7a7",
+      "size": 59115,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/b02c10432d3f37d59ead8730867dc8a043b4d7a7"
+    },
+    {
+      "path": "src/assets/wallpapers/peak-1.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a417981a7c14ed5947c591ceeb3eb582833df08",
+      "size": 351873,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/8a417981a7c14ed5947c591ceeb3eb582833df08"
+    },
+    {
+      "path": "src/assets/wallpapers/peak-2.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f7e7d0f43f33d5390d435caec92b7c3a96c786f9",
+      "size": 456965,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/f7e7d0f43f33d5390d435caec92b7c3a96c786f9"
+    },
+    {
+      "path": "src/assets/wallpapers/solar-grad-1.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a5466a9f804b453cc82278b96be0791742f600ab",
+      "size": 12714,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/a5466a9f804b453cc82278b96be0791742f600ab"
+    },
+    {
+      "path": "src/assets/wallpapers/solar-grad-10.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ff04e3976a16159682d327f2aaff4043502a85b1",
+      "size": 19121,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/ff04e3976a16159682d327f2aaff4043502a85b1"
+    },
+    {
+      "path": "src/assets/wallpapers/solar-grad-11.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "413928c7500646591ee2ba52954529ccb86a4e06",
+      "size": 19991,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/413928c7500646591ee2ba52954529ccb86a4e06"
+    },
+    {
+      "path": "src/assets/wallpapers/solar-grad-12.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eded79918a213917bc1e3cf9153c4b99d292d61c",
+      "size": 19546,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/eded79918a213917bc1e3cf9153c4b99d292d61c"
+    },
+    {
+      "path": "src/assets/wallpapers/solar-grad-13.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "807429de53eabb62d9b12e5337ec27283516983b",
+      "size": 17842,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/807429de53eabb62d9b12e5337ec27283516983b"
+    },
+    {
+      "path": "src/assets/wallpapers/solar-grad-14.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c9e63a8e97fa831ff81418ad9d3e2e212e3450c4",
+      "size": 16973,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/c9e63a8e97fa831ff81418ad9d3e2e212e3450c4"
+    },
+    {
+      "path": "src/assets/wallpapers/solar-grad-15.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d08948b13f711a7624d843c0ac010b86abdb609c",
+      "size": 16782,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/d08948b13f711a7624d843c0ac010b86abdb609c"
+    },
+    {
+      "path": "src/assets/wallpapers/solar-grad-16.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "39be737398b32da163952a2e66c114d4c47fc2eb",
+      "size": 13655,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/39be737398b32da163952a2e66c114d4c47fc2eb"
+    },
+    {
+      "path": "src/assets/wallpapers/solar-grad-2.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7dbe5dd9a31df09f16b02e3e069b6b0c51f88836",
+      "size": 13851,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/7dbe5dd9a31df09f16b02e3e069b6b0c51f88836"
+    },
+    {
+      "path": "src/assets/wallpapers/solar-grad-3.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6221cb91c0778ba86933b3e83a178ab7346929ce",
+      "size": 17075,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/6221cb91c0778ba86933b3e83a178ab7346929ce"
+    },
+    {
+      "path": "src/assets/wallpapers/solar-grad-4.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9191ecb626a394aae3276661a522fcaff894dd01",
+      "size": 19142,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/9191ecb626a394aae3276661a522fcaff894dd01"
+    },
+    {
+      "path": "src/assets/wallpapers/solar-grad-5.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f016523a1a922f47b030c7707c4e8b4ca814adc0",
+      "size": 18322,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/f016523a1a922f47b030c7707c4e8b4ca814adc0"
+    },
+    {
+      "path": "src/assets/wallpapers/solar-grad-6.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5497e1f12661f0b072d36b4d670cc52e1953f8d9",
+      "size": 19506,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/5497e1f12661f0b072d36b4d670cc52e1953f8d9"
+    },
+    {
+      "path": "src/assets/wallpapers/solar-grad-7.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "06774cc18286c6768b80ab2989ebe3a050cd85f0",
+      "size": 22518,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/06774cc18286c6768b80ab2989ebe3a050cd85f0"
+    },
+    {
+      "path": "src/assets/wallpapers/solar-grad-8.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2fd904a6c0203440d7a3dd8eed8d502bcfad4a25",
+      "size": 15661,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/2fd904a6c0203440d7a3dd8eed8d502bcfad4a25"
+    },
+    {
+      "path": "src/assets/wallpapers/solar-grad-9.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2fd904a6c0203440d7a3dd8eed8d502bcfad4a25",
+      "size": 15661,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/2fd904a6c0203440d7a3dd8eed8d502bcfad4a25"
+    },
+    {
+      "path": "src/assets/wallpapers/unused",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8bf7c46789228cacfeacce8d5fb7234b68ad3491",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/8bf7c46789228cacfeacce8d5fb7234b68ad3491"
+    },
+    {
+      "path": "src/assets/wallpapers/unused/1.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dfd2f2c04ebb103a319848d7f5539bee36d89390",
+      "size": 445592,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/dfd2f2c04ebb103a319848d7f5539bee36d89390"
+    },
+    {
+      "path": "src/assets/wallpapers/unused/10.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "216283bd00207a84d57e574043911c82a5fb50be",
+      "size": 273705,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/216283bd00207a84d57e574043911c82a5fb50be"
+    },
+    {
+      "path": "src/assets/wallpapers/unused/11.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1423ba141aca79ff5b5ad25a2992ca5329536bf7",
+      "size": 916658,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/1423ba141aca79ff5b5ad25a2992ca5329536bf7"
+    },
+    {
+      "path": "src/assets/wallpapers/unused/13.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "170b70da7ec8a46a9eb51dc6de08d696f342afd0",
+      "size": 703217,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/170b70da7ec8a46a9eb51dc6de08d696f342afd0"
+    },
+    {
+      "path": "src/assets/wallpapers/unused/14.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a16050a46cf1ceff16ed7719fc437ed534cecfbf",
+      "size": 270997,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/a16050a46cf1ceff16ed7719fc437ed534cecfbf"
+    },
+    {
+      "path": "src/assets/wallpapers/unused/15.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f05422d5e7017cc1c1cb0b48e0a9c9d0d9dc3a4a",
+      "size": 452165,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/f05422d5e7017cc1c1cb0b48e0a9c9d0d9dc3a4a"
+    },
+    {
+      "path": "src/assets/wallpapers/unused/16.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3fe2483e53e09f5ad4001c75f6e21fc4134dd2e5",
+      "size": 258822,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/3fe2483e53e09f5ad4001c75f6e21fc4134dd2e5"
+    },
+    {
+      "path": "src/assets/wallpapers/unused/17.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9e5080040e239910e844c71164816d0f1b3b6f4b",
+      "size": 371216,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/9e5080040e239910e844c71164816d0f1b3b6f4b"
+    },
+    {
+      "path": "src/assets/wallpapers/unused/18.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a567574b5781328ebb59a78227b66a9f42d7890",
+      "size": 604529,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/8a567574b5781328ebb59a78227b66a9f42d7890"
+    },
+    {
+      "path": "src/assets/wallpapers/unused/19.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1116306bb2a58a96a0fa738f1fea5cdd07532bdf",
+      "size": 587204,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/1116306bb2a58a96a0fa738f1fea5cdd07532bdf"
+    },
+    {
+      "path": "src/assets/wallpapers/unused/2.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "02132f4145f23bf20e070f65b0c5ab678070c311",
+      "size": 760565,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/02132f4145f23bf20e070f65b0c5ab678070c311"
+    },
+    {
+      "path": "src/assets/wallpapers/unused/20.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e9d5f5dc1496678ac648568264e6f5c4d852aee9",
+      "size": 902426,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/e9d5f5dc1496678ac648568264e6f5c4d852aee9"
+    },
+    {
+      "path": "src/assets/wallpapers/unused/21.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6829cea5e12528a9887492fa1eb7a241dfc21f0a",
+      "size": 955083,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/6829cea5e12528a9887492fa1eb7a241dfc21f0a"
+    },
+    {
+      "path": "src/assets/wallpapers/unused/22.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "852a503a60c34fd7cf0ef35bc735d1bb8a019f32",
+      "size": 577745,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/852a503a60c34fd7cf0ef35bc735d1bb8a019f32"
+    },
+    {
+      "path": "src/assets/wallpapers/unused/23.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "78ad56d38e564b036ba780669996e1e26d699040",
+      "size": 120371,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/78ad56d38e564b036ba780669996e1e26d699040"
+    },
+    {
+      "path": "src/assets/wallpapers/unused/27.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "03c1ddbbc600469fa2e9e51cad1704d2db003334",
+      "size": 170604,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/03c1ddbbc600469fa2e9e51cad1704d2db003334"
+    },
+    {
+      "path": "src/assets/wallpapers/unused/28.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4adf5e8ba458f8eb04e27faa9cfa8fc01af7078e",
+      "size": 155935,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/4adf5e8ba458f8eb04e27faa9cfa8fc01af7078e"
+    },
+    {
+      "path": "src/assets/wallpapers/unused/30.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7ad111a10605e69fb7e95d60e7e419f7464e39ae",
+      "size": 76885,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/7ad111a10605e69fb7e95d60e7e419f7464e39ae"
+    },
+    {
+      "path": "src/assets/wallpapers/unused/31.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "28743a8614dc4d0872a3e3df3a8ff68c83f04741",
+      "size": 64856,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/28743a8614dc4d0872a3e3df3a8ff68c83f04741"
+    },
+    {
+      "path": "src/assets/wallpapers/unused/32.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a8ea9831b9894b6da3fbc0507be9bd41ca29f38c",
+      "size": 72819,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/a8ea9831b9894b6da3fbc0507be9bd41ca29f38c"
+    },
+    {
+      "path": "src/assets/wallpapers/unused/33.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ad0041eb4c163361b6b491de9eabb758100f73d7",
+      "size": 63641,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/ad0041eb4c163361b6b491de9eabb758100f73d7"
+    },
+    {
+      "path": "src/assets/wallpapers/unused/5.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1da41e856c25e2293cd0f34569ac20787fbc7d8a",
+      "size": 272402,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/1da41e856c25e2293cd0f34569ac20787fbc7d8a"
+    },
+    {
+      "path": "src/assets/wallpapers/unused/6.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bc91203521322325068c4c0ebf386d0a5c3ab5cd",
+      "size": 175527,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/bc91203521322325068c4c0ebf386d0a5c3ab5cd"
+    },
+    {
+      "path": "src/assets/wallpapers/unused/7.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2c2e430311752b11b4cbb0d1aa7970017b1779f2",
+      "size": 708478,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/2c2e430311752b11b4cbb0d1aa7970017b1779f2"
+    },
+    {
+      "path": "src/assets/wallpapers/unused/8.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3204640cf545f01266c31878c65418d716fb3221",
+      "size": 449087,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/3204640cf545f01266c31878c65418d716fb3221"
+    },
+    {
+      "path": "src/assets/wallpapers/unused/9.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2b553dcae83af8aafcceb8bf45a9b7a83d33ac75",
+      "size": 254725,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/2b553dcae83af8aafcceb8bf45a9b7a83d33ac75"
+    },
+    {
+      "path": "src/assets/wallpapers/unused/The Beach.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8c9d2818e1c75142a0e9158f779977be1ec7d326",
+      "size": 332867,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/8c9d2818e1c75142a0e9158f779977be1ec7d326"
+    },
+    {
+      "path": "src/assets/wallpapers/unused/The Cliffs.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "be6c1f6d8db88b634d0c95d351b74377b99223ce",
+      "size": 262694,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/be6c1f6d8db88b634d0c95d351b74377b99223ce"
+    },
+    {
+      "path": "src/assets/wallpapers/unused/The Desert.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "556fb8335c39ab2cdad8f9fb2507439aa8f1520a",
+      "size": 230331,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/556fb8335c39ab2cdad8f9fb2507439aa8f1520a"
+    },
+    {
+      "path": "src/assets/wallpapers/unused/The Lake.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "09a53e10836566c9f66955d8dcd9e0573e51391c",
+      "size": 366507,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/09a53e10836566c9f66955d8dcd9e0573e51391c"
+    },
+    {
+      "path": "src/assets/wallpapers/unused/Tree.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "76481900ac0c79c0b7513c8e048413b0e7195eb4",
+      "size": 464534,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/76481900ac0c79c0b7513c8e048413b0e7195eb4"
+    },
+    {
+      "path": "src/assets/wallpapers/unused/Valley.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e3ccb00658ca62121dcdfc57ddf9d7b4cbaee670",
+      "size": 528710,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/e3ccb00658ca62121dcdfc57ddf9d7b4cbaee670"
+    },
+    {
+      "path": "src/assets/wallpapers/ventura-1.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0eb74a32e44000c7f272525ea66d38236ac8caa6",
+      "size": 204944,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/0eb74a32e44000c7f272525ea66d38236ac8caa6"
+    },
+    {
+      "path": "src/assets/wallpapers/ventura-2.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "290921637f0659717c0df8fdded74c55851f8479",
+      "size": 194086,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/290921637f0659717c0df8fdded74c55851f8479"
+    },
+    {
+      "path": "src/assets/wallpapers/ventura-3.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dbacc2f62e2311c3dd58bfb5a5511ae5d922f50e",
+      "size": 192516,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/dbacc2f62e2311c3dd58bfb5a5511ae5d922f50e"
+    },
+    {
+      "path": "src/assets/wallpapers/ventura-4.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2cbcaa0ebcf672c009daea257dc38d67884a1919",
+      "size": 185338,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/2cbcaa0ebcf672c009daea257dc38d67884a1919"
+    },
+    {
+      "path": "src/assets/wallpapers/ventura-5.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "46bfc878145c78efe7c01914e26d875ed3629ad5",
+      "size": 184210,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/46bfc878145c78efe7c01914e26d875ed3629ad5"
+    },
+    {
+      "path": "src/components",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ea1606bc412680f5a72b9a06f1eb5c92b44f0f42",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/ea1606bc412680f5a72b9a06f1eb5c92b44f0f42"
+    },
+    {
+      "path": "src/components/Desktop",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1cbd50783a7264db5be90210d03d1d488a69704a",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/1cbd50783a7264db5be90210d03d1d488a69704a"
+    },
+    {
+      "path": "src/components/Desktop/BootupScreen.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0b1cee680c903b923cd1266f1ba6b48f63fdaf53",
+      "size": 1939,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/0b1cee680c903b923cd1266f1ba6b48f63fdaf53"
+    },
+    {
+      "path": "src/components/Desktop/ContextMenu.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0c3637b257d2699bcda4c124027c7f37498d87c7",
+      "size": 2894,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/0c3637b257d2699bcda4c124027c7f37498d87c7"
+    },
+    {
+      "path": "src/components/Desktop/Desktop.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2cbd4fc1b3d09cce81e763fb0e96555132bbf57d",
+      "size": 1096,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/2cbd4fc1b3d09cce81e763fb0e96555132bbf57d"
+    },
+    {
+      "path": "src/components/Desktop/SystemUpdate.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3a66986c5ebb398ed36d7f5c4de53a791e0b2061",
+      "size": 2877,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/3a66986c5ebb398ed36d7f5c4de53a791e0b2061"
+    },
+    {
+      "path": "src/components/Desktop/Window",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "83a8585d7268a859502f340783e8689b2a599e2c",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/83a8585d7268a859502f340783e8689b2a599e2c"
+    },
+    {
+      "path": "src/components/Desktop/Window/TrafficLights.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d99a5e52ed209c7bd0e3e011378372c88c7da058",
+      "size": 1877,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/d99a5e52ed209c7bd0e3e011378372c88c7da058"
+    },
+    {
+      "path": "src/components/Desktop/Window/Window.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3187fc43c817463c50527efef7ce3733d07d8783",
+      "size": 5035,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/3187fc43c817463c50527efef7ce3733d07d8783"
+    },
+    {
+      "path": "src/components/Desktop/Window/WindowsArea.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5e398e4818f697d0d6bd3f2693e99f8167105de2",
+      "size": 1327,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/5e398e4818f697d0d6bd3f2693e99f8167105de2"
+    },
+    {
+      "path": "src/components/Dock",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "da5dc2da48d310ead9230f182e0dcbdcd7c392fa",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/da5dc2da48d310ead9230f182e0dcbdcd7c392fa"
+    },
+    {
+      "path": "src/components/Dock/Dock.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e4db7ec1d764496aee62151c12db189bab07c72e",
+      "size": 3384,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/e4db7ec1d764496aee62151c12db189bab07c72e"
+    },
+    {
+      "path": "src/components/Dock/DockItem.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "135dad368a8401863804b334f5cf355e086bab0b",
+      "size": 5432,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/135dad368a8401863804b334f5cf355e086bab0b"
+    },
+    {
+      "path": "src/components/SVG",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c1315d03fd748ec20edc7041f5e79e3ec20a5188",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/c1315d03fd748ec20edc7041f5e79e3ec20a5188"
+    },
+    {
+      "path": "src/components/SVG/SwitchSVG.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1ba29c9dafafa8d05e6006ab54e3f7426d030fa9",
+      "size": 1612,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/1ba29c9dafafa8d05e6006ab54e3f7426d030fa9"
+    },
+    {
+      "path": "src/components/SVG/traffic-lights",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "92f9a3808dd3f26cbc62b23899ef80efcd51c839",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/92f9a3808dd3f26cbc62b23899ef80efcd51c839"
+    },
+    {
+      "path": "src/components/SVG/traffic-lights/CloseSVG.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ef6b6db11dcb785de4cfd6a7f76a59a2bcf40fc5",
+      "size": 202,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/ef6b6db11dcb785de4cfd6a7f76a59a2bcf40fc5"
+    },
+    {
+      "path": "src/components/SVG/traffic-lights/ExpandSVG.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1b3ac9a7cee786e22e815887614b52e8cb554039",
+      "size": 276,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/1b3ac9a7cee786e22e815887614b52e8cb554039"
+    },
+    {
+      "path": "src/components/SVG/traffic-lights/GreenLight.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "67633800c7ee0a7e1670b40575f1b582679c9063",
+      "size": 218,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/67633800c7ee0a7e1670b40575f1b582679c9063"
+    },
+    {
+      "path": "src/components/SVG/traffic-lights/MinimizeSVG.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2ae706f4c480644e7373dbb03d4480802ce07ca6",
+      "size": 162,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/2ae706f4c480644e7373dbb03d4480802ce07ca6"
+    },
+    {
+      "path": "src/components/SVG/traffic-lights/StretchSVG.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8895a226ffbdf58d501f33d4d88c4d15dca38a8d",
+      "size": 305,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/8895a226ffbdf58d501f33d4d88c4d15dca38a8d"
+    },
+    {
+      "path": "src/components/SystemUI",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "055b09e5de68ebe5e2b97f5507642dcd5038d257",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/055b09e5de68ebe5e2b97f5507642dcd5038d257"
+    },
+    {
+      "path": "src/components/SystemUI/SystemDialog.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf1709aede53d4dbb95403dd626b26afd9cb5d2a",
+      "size": 2480,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/cf1709aede53d4dbb95403dd626b26afd9cb5d2a"
+    },
+    {
+      "path": "src/components/TopBar",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "afd0af53217b32c3db670c09347d880374dd649d",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/afd0af53217b32c3db670c09347d880374dd649d"
+    },
+    {
+      "path": "src/components/TopBar/ActionCenter.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dedea108c15eb46f23d66806524f7a38656649b6",
+      "size": 6570,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/dedea108c15eb46f23d66806524f7a38656649b6"
+    },
+    {
+      "path": "src/components/TopBar/ActionCenterSurface.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bf1c632c4f408688d4625c81b2f072b949b88c1c",
+      "size": 1065,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/bf1c632c4f408688d4625c81b2f072b949b88c1c"
+    },
+    {
+      "path": "src/components/TopBar/ActionCenterTile.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "59e80ba64821c1ab8c6424e79ca90db472607640",
+      "size": 764,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/59e80ba64821c1ab8c6424e79ca90db472607640"
+    },
+    {
+      "path": "src/components/TopBar/ActionCenterToggle.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a36bd4609e7f1a5c54b250743cb4891c738c2023",
+      "size": 3611,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/a36bd4609e7f1a5c54b250743cb4891c738c2023"
+    },
+    {
+      "path": "src/components/TopBar/Menu.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eba04851fb64c197903ce0e22853b1be12431cb9",
+      "size": 1745,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/eba04851fb64c197903ce0e22853b1be12431cb9"
+    },
+    {
+      "path": "src/components/TopBar/MenuBar.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b35f26b2de739b8fd7ad92667103085bf90f1047",
+      "size": 2075,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/b35f26b2de739b8fd7ad92667103085bf90f1047"
+    },
+    {
+      "path": "src/components/TopBar/TopBar.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "71831417cd89edcd08923272e1c94feab5ec671a",
+      "size": 2131,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/71831417cd89edcd08923272e1c94feab5ec671a"
+    },
+    {
+      "path": "src/components/TopBar/TopBarTime.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "035a6a762c703c2e49cd57feccfc2be920919182",
+      "size": 278,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/035a6a762c703c2e49cd57feccfc2be920919182"
+    },
+    {
+      "path": "src/components/apps",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "21bcc7702b072e4d94e6148dd38c2ed693e6cdb7",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/21bcc7702b072e4d94e6148dd38c2ed693e6cdb7"
+    },
+    {
+      "path": "src/components/apps/AppNexus.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c16d953c12030bba6c8531cb20a543adf6ccd9d5",
+      "size": 1044,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/c16d953c12030bba6c8531cb20a543adf6ccd9d5"
+    },
+    {
+      "path": "src/components/apps/AppStore",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0cb9f6c04b4aa566a407e0068b9c919843e57b23",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/0cb9f6c04b4aa566a407e0068b9c919843e57b23"
+    },
+    {
+      "path": "src/components/apps/AppStore/AppStore.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2adf4568c7235f78eea598a84bb1f186bb741255",
+      "size": 1621,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/2adf4568c7235f78eea598a84bb1f186bb741255"
+    },
+    {
+      "path": "src/components/apps/Calculator",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "68982a8d978f47ed1ce8df997154cdcd84c57365",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/68982a8d978f47ed1ce8df997154cdcd84c57365"
+    },
+    {
+      "path": "src/components/apps/Calculator/Calculator.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ffbc763c07676507c2c51e742284c8a72caefea1",
+      "size": 2688,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/ffbc763c07676507c2c51e742284c8a72caefea1"
+    },
+    {
+      "path": "src/components/apps/Calendar",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a61ceaa4d5f87a486125ceae8978f7bbf883ea22",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/a61ceaa4d5f87a486125ceae8978f7bbf883ea22"
+    },
+    {
+      "path": "src/components/apps/Calendar/Calendar.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "97364ba8f36a875251c896aed16e606d8876ffce",
+      "size": 2931,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/97364ba8f36a875251c896aed16e606d8876ffce"
+    },
+    {
+      "path": "src/components/apps/Calendar/MonthView.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ce6d82bcf7db379fd49faa1a5f8a8a54f3bb26c7",
+      "size": 2920,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/ce6d82bcf7db379fd49faa1a5f8a8a54f3bb26c7"
+    },
+    {
+      "path": "src/components/apps/Calendar/calendar-constants.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "49fcb0a6cf4cc61149027ea2a0d69656e3992abb",
+      "size": 456,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/49fcb0a6cf4cc61149027ea2a0d69656e3992abb"
+    },
+    {
+      "path": "src/components/apps/Calendar/calendar-utils.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4f5d6cad14321a199fba8263792f20039a8774ac",
+      "size": 1718,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/4f5d6cad14321a199fba8263792f20039a8774ac"
+    },
+    {
+      "path": "src/components/apps/PurusProfile",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e4f7e08f2ac2b6c46aac24bc422b0de121fb0d95",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/e4f7e08f2ac2b6c46aac24bc422b0de121fb0d95"
+    },
+    {
+      "path": "src/components/apps/PurusProfile/PurusProfile.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1cc88c6292a92796244e2510340020f28d339a84",
+      "size": 4299,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/1cc88c6292a92796244e2510340020f28d339a84"
+    },
+    {
+      "path": "src/components/apps/VSCode",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "aa4d77a834c15e9d7e5017f9e4bb9715b7200aaf",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/aa4d77a834c15e9d7e5017f9e4bb9715b7200aaf"
+    },
+    {
+      "path": "src/components/apps/VSCode/VSCode.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cdc77c128addef420e1413e121799cb330f30c38",
+      "size": 789,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/cdc77c128addef420e1413e121799cb330f30c38"
+    },
+    {
+      "path": "src/components/apps/WallpaperApp",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "39feb68474aa12c904ab22fcf11222a6c2504173",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/39feb68474aa12c904ab22fcf11222a6c2504173"
+    },
+    {
+      "path": "src/components/apps/WallpaperApp/Wallpaper.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a673fbb6b50dc0db901d8d53642dae8b33fe6b42",
+      "size": 3194,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/a673fbb6b50dc0db901d8d53642dae8b33fe6b42"
+    },
+    {
+      "path": "src/components/apps/WallpaperApp/WallpaperSelectorApp.svelte",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5af08862d94a52d415086af5a94a4358c5355e91",
+      "size": 5566,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/5af08862d94a52d415086af5a94a4358c5355e91"
+    },
+    {
+      "path": "src/configs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "31030bf7e4e48b89dbf431ce93bd4a2ef6280120",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/31030bf7e4e48b89dbf431ce93bd4a2ef6280120"
+    },
+    {
+      "path": "src/configs/apps",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a41dd74b8cb0eaa0b10b5635c225e39bb8ae630f",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/a41dd74b8cb0eaa0b10b5635c225e39bb8ae630f"
+    },
+    {
+      "path": "src/configs/apps/apps-config.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e4df6437fb409d27b0f3718eabc212cdb1f84f53",
+      "size": 1763,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/e4df6437fb409d27b0f3718eabc212cdb1f84f53"
+    },
+    {
+      "path": "src/configs/menu",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0dc7fbe6d3a1f66a788d3ece9ed98897d01ad6b7",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/0dc7fbe6d3a1f66a788d3ece9ed98897d01ad6b7"
+    },
+    {
+      "path": "src/configs/menu/context.menu.config.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d8fcbae67fd75d10269b0a3e5b093b5bda078306",
+      "size": 630,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/d8fcbae67fd75d10269b0a3e5b093b5bda078306"
+    },
+    {
+      "path": "src/configs/menu/finder.menu.config.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d93289248ecf12baa6ba670040c8418f85da965d",
+      "size": 6302,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/d93289248ecf12baa6ba670040c8418f85da965d"
+    },
+    {
+      "path": "src/configs/theme",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2b4c3c23bf448d750ddfc6325af24a37bc5e38dd",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/2b4c3c23bf448d750ddfc6325af24a37bc5e38dd"
+    },
+    {
+      "path": "src/configs/theme/colors.config.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "24564ef41d3f804546ebe61afb3b3f445ab754dc",
+      "size": 1374,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/24564ef41d3f804546ebe61afb3b3f445ab754dc"
+    },
+    {
+      "path": "src/configs/wallpapers",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ec51f9700fb25b46852045940afda6d61c01f295",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/ec51f9700fb25b46852045940afda6d61c01f295"
+    },
+    {
+      "path": "src/configs/wallpapers/wallpaper.config.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2845ceb4a81e456efb83e3c0e4fdf779c6ee2893",
+      "size": 7941,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/2845ceb4a81e456efb83e3c0e4fdf779c6ee2893"
+    },
+    {
+      "path": "src/css",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "28ad89cd47fc0f2ce524c669b54d953e61df3f3d",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/28ad89cd47fc0f2ce524c669b54d953e61df3f3d"
+    },
+    {
+      "path": "src/css/global.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f66bc3e8adba79442eda21685394a78d819cede7",
+      "size": 1538,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/f66bc3e8adba79442eda21685394a78d819cede7"
+    },
+    {
+      "path": "src/css/reset.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "24ac76565f62375dc51f6773bc492b34e242e7d5",
+      "size": 988,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/24ac76565f62375dc51f6773bc492b34e242e7d5"
+    },
+    {
+      "path": "src/css/theme.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "90dde05a23ad0b4232830596d0ee8e137b0a9e5d",
+      "size": 3070,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/90dde05a23ad0b4232830596d0ee8e137b0a9e5d"
+    },
+    {
+      "path": "src/global.d.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6508ace8485049fe4a2056d5575cae2009b0ea12",
+      "size": 938,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/6508ace8485049fe4a2056d5575cae2009b0ea12"
+    },
+    {
+      "path": "src/helpers",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ba5eb39aaa6beffcf7170e33ac0b8feef5fcf5e0",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/ba5eb39aaa6beffcf7170e33ac0b8feef5fcf5e0"
+    },
+    {
+      "path": "src/helpers/create-app-config.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "50e464a09859835a2db16d8e2b12cb618a818adf",
+      "size": 552,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/50e464a09859835a2db16d8e2b12cb618a818adf"
+    },
+    {
+      "path": "src/helpers/create-menu-config.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e8c6f882410969440d083eafa1e6ee3f8c941165",
+      "size": 738,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/e8c6f882410969440d083eafa1e6ee3f8c941165"
+    },
+    {
+      "path": "src/helpers/fade.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9945a54c7e9ea938887af8fffbde6c08ae382bbf",
+      "size": 596,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/9945a54c7e9ea938887af8fffbde6c08ae382bbf"
+    },
+    {
+      "path": "src/helpers/random.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e9bf887acbaf67e2c55099e2d888cc80016624f5",
+      "size": 174,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/e9bf887acbaf67e2c55099e2d888cc80016624f5"
+    },
+    {
+      "path": "src/helpers/sleep.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ec603645118c3f47b688e527729262390dbf8673",
+      "size": 84,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/ec603645118c3f47b688e527729262390dbf8673"
+    },
+    {
+      "path": "src/helpers/smaller-closest-value.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c30710dae4462162604b1d7b9ee73cdfe7f34078",
+      "size": 372,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/c30710dae4462162604b1d7b9ee73cdfe7f34078"
+    },
+    {
+      "path": "src/main.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "74b5a964b18edbe167d9eb51972637a37555ab31",
+      "size": 223,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/74b5a964b18edbe167d9eb51972637a37555ab31"
+    },
+    {
+      "path": "src/state",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6f7de8cbb948bf470024ef22aa00aec6fa6dd2c2",
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/trees/6f7de8cbb948bf470024ef22aa00aec6fa6dd2c2"
+    },
+    {
+      "path": "src/state/apps.svelte.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "68cf20e4a0b54d780bfd8e3a7672c4410b40710d",
+      "size": 1146,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/68cf20e4a0b54d780bfd8e3a7672c4410b40710d"
+    },
+    {
+      "path": "src/state/auto-destroy-effect-root.svelte.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b306879a820ac4cd70fa175a9fa0e2210845164c",
+      "size": 627,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/b306879a820ac4cd70fa175a9fa0e2210845164c"
+    },
+    {
+      "path": "src/state/dock.svelte.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ad9141bcf9bde7ac37247363d42314ebdff189d8",
+      "size": 67,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/ad9141bcf9bde7ac37247363d42314ebdff189d8"
+    },
+    {
+      "path": "src/state/interval.svelte.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "711ff17091e986111e7035280a79a1f8e57c767c",
+      "size": 469,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/711ff17091e986111e7035280a79a1f8e57c767c"
+    },
+    {
+      "path": "src/state/menubar.svelte.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "06d1249be551124d65345e8ddc9b10e43d89e713",
+      "size": 373,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/06d1249be551124d65345e8ddc9b10e43d89e713"
+    },
+    {
+      "path": "src/state/persisted.svelte.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b1c81ee0cb87f9f6b16401dbcfc369991421de4c",
+      "size": 775,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/b1c81ee0cb87f9f6b16401dbcfc369991421de4c"
+    },
+    {
+      "path": "src/state/preferences.svelte.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9569a9efbb58ec82cbdd73da19ea957487a8737d",
+      "size": 1426,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/9569a9efbb58ec82cbdd73da19ea957487a8737d"
+    },
+    {
+      "path": "src/state/spring.svelte.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a96294b6b3d6a7ea972964b4608803e61962230a",
+      "size": 1244,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/a96294b6b3d6a7ea972964b4608803e61962230a"
+    },
+    {
+      "path": "src/state/system.svelte.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "149c0a9546d7cc2acf92a63857a0d608476b9fd2",
+      "size": 74,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/149c0a9546d7cc2acf92a63857a0d608476b9fd2"
+    },
+    {
+      "path": "svelte.config.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c0d8a6dfd384287a48632b644a9f8fb60448eb8b",
+      "size": 244,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/c0d8a6dfd384287a48632b644a9f8fb60448eb8b"
+    },
+    {
+      "path": "tsconfig.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "848a5591a42ddceed96985ef3fdbe9b4ff74fed4",
+      "size": 1015,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/848a5591a42ddceed96985ef3fdbe9b4ff74fed4"
+    },
+    {
+      "path": "vercel.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8f0714a58fac16fd0a1b193e7573e9da95d6e4b3",
+      "size": 375,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/8f0714a58fac16fd0a1b193e7573e9da95d6e4b3"
+    },
+    {
+      "path": "vite.config.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3ade34d4d4c77eca6735c153f408e13414aad3ad",
+      "size": 1769,
+      "url": "https://api.github.com/repos/PuruVJ/macos-web/git/blobs/3ade34d4d4c77eca6735c153f408e13414aad3ad"
+    }
+  ],
+  "truncated": false
+}

@@ -23,7 +23,7 @@ export default function About() {
   return (
     <section 
       id="about" 
-      className="py-24 px-6 md:py-32 bg-[#0a0b0d] border-t border-b border-gray-950 relative overflow-hidden"
+      className="relative w-full mb-8"
     >
       <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-80 h-80 rounded-full bg-purple-500/5 blur-[100px] pointer-events-none" />
 
