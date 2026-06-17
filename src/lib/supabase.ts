@@ -43,6 +43,12 @@ export interface ProjectRow {
   created_at?: string;
 }
 
+export interface SiteSettingsRow {
+  id: number;
+  about_text: string;
+  updated_at: string;
+}
+
 /**
  * Envia uma mensagem de contato para a tabela `contacts` no Supabase.
  */
@@ -112,9 +118,47 @@ export async function updateProject(id: string, updates: Partial<ProjectRow>): P
   if (error) throw new Error(error.message);
 }
 
+/**
+ * Exclui um projeto
+ */
 export async function deleteProject(id: string): Promise<void> {
   const { error } = await supabase.from("projects").delete().eq("id", id);
-  if (error) throw new Error(error.message);
+  if (error) {
+    console.error("Erro ao excluir projeto:", error);
+    throw error;
+  }
+}
+
+/**
+ * Busca as configurações do site (como o texto 'Sobre mim')
+ */
+export async function fetchSiteSettings(): Promise<SiteSettingsRow | null> {
+  const { data, error } = await supabase
+    .from("site_settings")
+    .select("*")
+    .eq("id", 1)
+    .single();
+
+  if (error) {
+    // Return null if table doesn't exist yet or row not found
+    console.error("Erro ao buscar configurações (tabela pode não existir ainda):", error.message);
+    return null;
+  }
+  return data;
+}
+
+/**
+ * Atualiza o texto do 'Sobre mim'
+ */
+export async function updateAboutText(text: string): Promise<void> {
+  const { error } = await supabase
+    .from("site_settings")
+    .upsert({ id: 1, about_text: text, updated_at: new Date().toISOString() });
+
+  if (error) {
+    console.error("Erro ao atualizar texto sobre mim:", error);
+    throw error;
+  }
 }
 
 /**

@@ -17,6 +17,7 @@ import {
   Trash2,
   Edit2,
   Save,
+  UserCircle,
 } from "lucide-react";
 import {
   fetchContactMessages,
@@ -28,6 +29,8 @@ import {
   signInWithEmail,
   signOut,
   getSession,
+  fetchSiteSettings,
+  updateAboutText,
   type ContactMessageRow,
   type ProjectRow,
 } from "../lib/supabase";
@@ -350,7 +353,7 @@ function ProjectForm({
 }
 
 // ── Main Admin Panel ─────────────────────────────────────────────────────────
-type Tab = 'messages' | 'projects';
+type Tab = 'messages' | 'projects' | 'settings';
 
 export default function AdminPanel({ onClose }: { onClose: () => void }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -364,6 +367,10 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
   // Projects State
   const [projects, setProjects] = useState<ProjectRow[]>([]);
   const [editingProject, setEditingProject] = useState<ProjectRow | "new" | null>(null);
+
+  // Settings State
+  const [aboutText, setAboutText] = useState("");
+
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -381,9 +388,12 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
       if (activeTab === 'messages') {
         const data = await fetchContactMessages();
         setMessages(data);
-      } else {
+      } else if (activeTab === 'projects') {
         const data = await fetchProjects();
         setProjects(data);
+      } else if (activeTab === 'settings') {
+        const data = await fetchSiteSettings();
+        if (data) setAboutText(data.about_text);
       }
     } catch (err) {
       setError(err instanceof Error ? err.message : "Erro ao carregar dados.");
@@ -443,6 +453,20 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
     }
   };
 
+  // Settings Handlers
+  const handleSaveSettings = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      await updateAboutText(aboutText);
+      alert("Texto salvo com sucesso!");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Erro ao salvar configurações.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const filteredMessages = messages.filter((m) => {
     if (msgFilter === "unread") return !m.is_read;
     if (msgFilter === "read") return m.is_read;
@@ -480,6 +504,12 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
                 className={`px-4 py-1.5 rounded-md text-xs font-mono transition-all flex items-center gap-2 ${activeTab === 'projects' ? "bg-gray-800 text-white" : "text-gray-500 hover:text-white"}`}
               >
                 <FolderGit2 className="w-3.5 h-3.5" /> Projects
+              </button>
+              <button
+                onClick={() => setActiveTab('settings')}
+                className={`px-4 py-1.5 rounded-md text-xs font-mono transition-all flex items-center gap-2 ${activeTab === 'settings' ? "bg-gray-800 text-white" : "text-gray-500 hover:text-white"}`}
+              >
+                <UserCircle className="w-3.5 h-3.5" /> Sobre Mim
               </button>
             </div>
           )}
@@ -572,6 +602,39 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
                       </div>
                     </div>
                   ))}
+                </div>
+              </>
+            )}
+
+            {/* SETTINGS TAB */}
+            {activeTab === 'settings' && (
+              <>
+                <div className="flex items-center justify-between mb-6">
+                  <h2 className="text-lg font-georama text-white font-semibold">Configurações do Site</h2>
+                </div>
+
+                <div className="p-6 rounded-xl border border-gray-800 bg-[#111214] space-y-4">
+                  <div>
+                    <label className="block text-xs font-mono text-gray-500 mb-2">SOBRE MIM (ABOUT TEXT)</label>
+                    <textarea 
+                      value={aboutText}
+                      onChange={e => setAboutText(e.target.value)}
+                      rows={12}
+                      className="w-full bg-black border border-gray-800 rounded-lg p-3 text-sm text-white font-sans focus:border-gray-600 focus:outline-none transition-colors leading-relaxed"
+                      placeholder="Escreva sobre você aqui... Pressione Enter para novos parágrafos."
+                    />
+                  </div>
+                  
+                  <div className="flex justify-end pt-2">
+                    <button 
+                      onClick={handleSaveSettings}
+                      disabled={loading}
+                      className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white text-black text-sm font-medium hover:bg-gray-200 active:scale-95 transition-all disabled:opacity-50"
+                    >
+                      {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
+                      Salvar Texto
+                    </button>
+                  </div>
                 </div>
               </>
             )}

@@ -1,7 +1,18 @@
+import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { User, Sparkles, Sliders, Smartphone } from "lucide-react";
+import { fetchSiteSettings } from "../lib/supabase";
 
 export default function About() {
+  const [aboutText, setAboutText] = useState<string | null>(null);
+
+  useEffect(() => {
+    fetchSiteSettings().then(data => {
+      if (data && data.about_text) {
+        setAboutText(data.about_text);
+      }
+    }).catch(console.error);
+  }, []);
   const cards = [
     {
       icon: <Smartphone className="w-6 h-6 text-emerald-400" />,
@@ -47,18 +58,26 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-12 items-start">
           {/* Main Story (3 Columns) */}
           <div className="md:col-span-3 space-y-6 text-gray-300 font-light leading-relaxed text-base sm:text-lg">
-            <p>
-              Hello! I'm <strong className="text-white font-medium">Marcelo</strong>, an software engineer and creative designer who loves building tactile, beautifully structured digital experiences. I believe software should be as delightful to touch as it is robust to run.
-            </p>
-            <p>
-              My design philosophy is grounded in 
-              <strong className="text-white font-mono text-sm px-2 py-0.5 bg-gray-900 rounded border border-gray-800 mx-1">
-                simplicity & responsive fluidism
-              </strong>. Whether it is adjusting typographic scales or writing custom GSAP interpolation equations for fine letters, I prioritize detail in every viewport.
-            </p>
-            <p>
-              I specialize in combining React, TypeScript, and Tailwind with high-fidelity performance. Adapting layouts to match perfectly across desktops, tablets, and gesture-heavy mobile screens is second nature to me.
-            </p>
+            {aboutText ? (
+              aboutText.split('\n').map((paragraph, index) => (
+                paragraph.trim() ? <p key={index}>{paragraph}</p> : null
+              ))
+            ) : (
+              <>
+                <p>
+                  Hello! I'm <strong className="text-white font-medium">Marcelo</strong>, an software engineer and creative designer who loves building tactile, beautifully structured digital experiences. I believe software should be as delightful to touch as it is robust to run.
+                </p>
+                <p>
+                  My design philosophy is grounded in 
+                  <strong className="text-white font-mono text-sm px-2 py-0.5 bg-gray-900 rounded border border-gray-800 mx-1">
+                    simplicity & responsive fluidism
+                  </strong>. Whether it is adjusting typographic scales or writing custom GSAP interpolation equations for fine letters, I prioritize detail in every viewport.
+                </p>
+                <p>
+                  I specialize in combining React, TypeScript, and Tailwind with high-fidelity performance. Adapting layouts to match perfectly across desktops, tablets, and gesture-heavy mobile screens is second nature to me.
+                </p>
+              </>
+            )}
           </div>
 
           {/* Core Values/Pillars (2 Columns) */}
