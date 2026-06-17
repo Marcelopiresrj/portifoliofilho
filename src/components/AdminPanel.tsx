@@ -249,6 +249,7 @@ function ProjectForm({
       tags: [],
       demo_link: "",
       github_link: "",
+      youtube_url: "",
       icon: "🚀",
       featured: false,
       order_idx: 0
@@ -311,6 +312,11 @@ function ProjectForm({
               <label className="text-xs font-mono text-gray-500 uppercase block mb-1">GitHub Link</label>
               <input value={form.github_link || ""} onChange={e => setForm({...form, github_link: e.target.value})} placeholder="https://" className="w-full px-3 py-2 rounded-lg border border-gray-800 bg-gray-950 text-white text-sm focus:border-gray-600 outline-none" />
             </div>
+          </div>
+
+          <div>
+            <label className="text-xs font-mono text-gray-500 uppercase block mb-1 text-red-400">YouTube Video URL</label>
+            <input value={form.youtube_url || ""} onChange={e => setForm({...form, youtube_url: e.target.value})} placeholder="https://www.youtube.com/watch?v=..." className="w-full px-3 py-2 rounded-lg border border-gray-800 bg-gray-950 text-white text-sm focus:border-red-900 outline-none" />
           </div>
 
           <div className="grid grid-cols-3 gap-4">

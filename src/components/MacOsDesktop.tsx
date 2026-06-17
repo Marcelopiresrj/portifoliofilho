@@ -10,6 +10,11 @@ import Photos from './Photos';
 import Finder from './Finder';
 import { fetchProjects, type ProjectRow } from "../lib/supabase";
 
+function getYouTubeEmbedUrl(url: string) {
+  const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^&]{11})/);
+  return match && match[1] ? `https://www.youtube.com/embed/${match[1]}` : null;
+}
+
 // ── Window Types ─────────────────────────────────────────────────────────────
 type WindowType = 'about' | 'projects' | 'skills' | 'contact' | 'resume' | 'photos' | 'finder' | `project-${string}` | null;
 
@@ -116,6 +121,21 @@ export default function MacOsDesktop() {
             </div>
           </div>
         </div>
+        
+        {project.youtube_url && getYouTubeEmbedUrl(project.youtube_url) ? (
+          <div className="w-full aspect-video rounded-xl overflow-hidden border border-gray-800 shadow-xl">
+            <iframe 
+              width="100%" 
+              height="100%" 
+              src={getYouTubeEmbedUrl(project.youtube_url) || ''} 
+              title="YouTube video player" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen
+            ></iframe>
+          </div>
+        ) : null}
+
         <p className="text-gray-300 leading-relaxed">{project.description}</p>
         <div className="flex flex-wrap gap-2">
           {project.tags.map(tag => (

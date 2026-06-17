@@ -36,6 +36,7 @@ export interface ProjectRow {
   tags: string[];
   demo_link: string | null;
   github_link: string | null;
+  youtube_url?: string | null;
   icon: string;
   featured: boolean;
   order_idx: number;

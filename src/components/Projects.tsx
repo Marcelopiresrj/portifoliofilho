@@ -3,6 +3,11 @@ import { motion } from "motion/react";
 import { FolderGit2, ArrowUpRight, Monitor, Smartphone, Globe, Loader2, AlertCircle } from "lucide-react";
 import { fetchProjects, type ProjectRow } from "../lib/supabase";
 
+function getYouTubeEmbedUrl(url: string) {
+  const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^&]{11})/);
+  return match && match[1] ? `https://www.youtube.com/embed/${match[1]}` : null;
+}
+
 export default function Projects() {
   const [projects, setProjects] = useState<ProjectRow[]>([]);
   const [loading, setLoading] = useState(true);
@@ -107,6 +112,20 @@ export default function Projects() {
                       {project.title}
                       <ArrowUpRight className="w-4 h-4 text-gray-600 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
                     </h3>
+
+                    {project.youtube_url && getYouTubeEmbedUrl(project.youtube_url) ? (
+                      <div className="w-full aspect-video rounded-xl overflow-hidden mt-4 border border-gray-800 shadow-xl">
+                        <iframe 
+                          width="100%" 
+                          height="100%" 
+                          src={getYouTubeEmbedUrl(project.youtube_url) || ''} 
+                          title="YouTube video player" 
+                          frameBorder="0" 
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                          allowFullScreen
+                        ></iframe>
+                      </div>
+                    ) : null}
 
                     <p className="text-sm sm:text-base text-gray-400 font-light mt-3 leading-relaxed">
                       {project.description}
