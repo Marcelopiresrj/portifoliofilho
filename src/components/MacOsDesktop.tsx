@@ -290,10 +290,16 @@ export default function MacOsDesktop() {
 // ── Helper Components ────────────────────────────────────────────────────────
 
 const DesktopFolder = ({ name, onClick }: { key?: string | number; name: string; onClick: () => void }) => (
-  <div onClick={onClick} className="flex flex-col items-center gap-1 w-24 cursor-pointer group">
+  <motion.div 
+    drag 
+    dragMomentum={false}
+    dragElastic={0}
+    onTap={onClick} 
+    className="flex flex-col items-center gap-1 w-24 cursor-pointer group"
+  >
     {/* High-fidelity macOS Folder SVG */}
     <div className="relative w-[72px] h-[56px] flex items-center justify-center">
-      <svg viewBox="0 0 100 80" className="w-full h-full drop-shadow-md group-hover:drop-shadow-xl transition-all duration-300 transform group-hover:scale-105">
+      <svg viewBox="0 0 100 80" className="w-full h-full drop-shadow-md group-hover:drop-shadow-xl transition-all duration-300 transform group-hover:scale-105 pointer-events-none">
         <defs>
           <linearGradient id="folder-back" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor="#4daeff" />
@@ -313,7 +319,7 @@ const DesktopFolder = ({ name, onClick }: { key?: string | number; name: string;
     <span className="text-xs font-medium leading-[1.1] text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)] text-center px-1.5 py-0.5 rounded group-hover:bg-blue-600/80 transition-colors line-clamp-3">
       {name}
     </span>
-  </div>
+  </motion.div>
 );
 
 const DockIcon = ({ icon, label, onClick }: { icon: ReactNode; label: string; onClick: () => void }) => (
