@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS public.projects (
   tags        text[] NOT NULL DEFAULT '{}',
   demo_link   text,
   github_link text,
+  youtube_url text,
   icon        text NOT NULL DEFAULT '🚀',
   featured    boolean NOT NULL DEFAULT false,
   created_at  timestamptz DEFAULT now() NOT NULL,

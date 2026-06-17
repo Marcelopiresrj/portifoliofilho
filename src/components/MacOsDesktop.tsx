@@ -1,4 +1,4 @@
-import { useState, useEffect, ReactNode } from 'react';
+import { useState, useEffect, ReactNode, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Wifi, Search, SlidersHorizontal, BatteryMedium, Folder, ExternalLink, Github } from 'lucide-react';
 import About from './About';
@@ -289,15 +289,26 @@ export default function MacOsDesktop() {
 
 // ── Helper Components ────────────────────────────────────────────────────────
 
-const DesktopFolder = ({ name, onClick }: { key?: string | number; name: string; onClick: () => void }) => (
-  <motion.div 
-    drag 
-    dragMomentum={false}
-    dragElastic={0}
-    onTap={onClick} 
-    className="flex flex-col items-center gap-1 w-24 cursor-pointer group"
-  >
-    {/* High-fidelity macOS Folder SVG */}
+const DesktopFolder = ({ name, onClick }: { key?: string | number; name: string; onClick: () => void }) => {
+  const isDragging = useRef(false);
+
+  return (
+    <motion.div 
+      drag 
+      dragMomentum={false}
+      dragElastic={0}
+      onDragStart={() => { isDragging.current = true; }}
+      onDragEnd={() => { setTimeout(() => { isDragging.current = false; }, 150); }}
+      onClick={(e) => {
+        if (isDragging.current) {
+          e.stopPropagation();
+          return;
+        }
+        onClick();
+      }}
+      className="flex flex-col items-center gap-1 w-24 cursor-pointer group"
+    >
+      {/* High-fidelity macOS Folder SVG */}
     <div className="relative w-[72px] h-[56px] flex items-center justify-center">
       <svg viewBox="0 0 100 80" className="w-full h-full drop-shadow-md group-hover:drop-shadow-xl transition-all duration-300 transform group-hover:scale-105 pointer-events-none">
         <defs>
@@ -316,11 +327,12 @@ const DesktopFolder = ({ name, onClick }: { key?: string | number; name: string;
         <path d="M0,32 L100,32 L96,80 L4,80 Z" fill="url(#folder-front)" />
       </svg>
     </div>
-    <span className="text-xs font-medium leading-[1.1] text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)] text-center px-1.5 py-0.5 rounded group-hover:bg-blue-600/80 transition-colors line-clamp-3">
-      {name}
-    </span>
-  </motion.div>
-);
+      <span className="text-xs font-medium leading-[1.1] text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)] text-center px-1.5 py-0.5 rounded group-hover:bg-blue-600/80 transition-colors line-clamp-3">
+        {name}
+      </span>
+    </motion.div>
+  );
+};
 
 const DockIcon = ({ icon, label, onClick }: { icon: ReactNode; label: string; onClick: () => void }) => (
   <div 
