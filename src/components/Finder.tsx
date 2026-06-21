@@ -1,10 +1,10 @@
+import { useState, ReactNode } from 'react';
 import { Folder, Info, FileText, Trash2 } from 'lucide-react';
 import { type ProjectRow } from '../lib/supabase';
 
 interface FinderProps {
   projects: ProjectRow[];
-  onOpenProject: (id: string) => void;
-  onOpenWindow: (type: string) => void;
+  renderContent: (view: string) => ReactNode;
 }
 
 const FinderFolder = ({ name, onClick }: { name: string; onClick: () => void; key?: string }) => (
@@ -32,7 +32,13 @@ const FinderFolder = ({ name, onClick }: { name: string; onClick: () => void; ke
   </div>
 );
 
-export default function Finder({ projects, onOpenProject, onOpenWindow }: FinderProps) {
+export default function Finder({ projects, renderContent }: FinderProps) {
+  const [activeView, setActiveView] = useState<string>('work');
+
+  const navItemClass = (view: string) => 
+    `w-full flex items-center gap-2.5 px-2 py-1.5 rounded-md text-sm font-medium transition-colors text-left ` +
+    (activeView === view ? 'bg-white/10 text-white' : 'hover:bg-white/5 text-gray-300');
+
   return (
     <div className="flex h-full w-full bg-[#1e1e1e] text-gray-200">
       {/* Sidebar */}
@@ -41,19 +47,19 @@ export default function Finder({ projects, onOpenProject, onOpenWindow }: Finder
         <div>
           <h3 className="text-[11px] font-semibold text-gray-500 uppercase tracking-wider mb-2 px-2">Favorites</h3>
           <nav className="space-y-0.5">
-            <button className="w-full flex items-center gap-2.5 px-2 py-1.5 bg-white/10 rounded-md text-sm font-medium text-white transition-colors">
+            <button onClick={() => setActiveView('work')} className={navItemClass('work')}>
               <Folder className="w-4 h-4 text-blue-400" fill="currentColor" />
               Work
             </button>
-            <button onClick={() => onOpenWindow('about')} className="w-full flex items-center gap-2.5 px-2 py-1.5 hover:bg-white/5 rounded-md text-sm font-medium text-gray-300 transition-colors">
+            <button onClick={() => setActiveView('about')} className={navItemClass('about')}>
               <Info className="w-4 h-4 text-blue-400" />
               About me
             </button>
-            <button onClick={() => onOpenWindow('resume')} className="w-full flex items-center gap-2.5 px-2 py-1.5 hover:bg-white/5 rounded-md text-sm font-medium text-gray-300 transition-colors">
+            <button onClick={() => setActiveView('resume')} className={navItemClass('resume')}>
               <FileText className="w-4 h-4 text-blue-400" />
               Resume
             </button>
-            <button className="w-full flex items-center gap-2.5 px-2 py-1.5 hover:bg-white/5 rounded-md text-sm font-medium text-gray-300 transition-colors">
+            <button className={navItemClass('trash')}>
               <Trash2 className="w-4 h-4 text-blue-400" />
               Trash
             </button>
@@ -64,11 +70,11 @@ export default function Finder({ projects, onOpenProject, onOpenWindow }: Finder
         <div>
           <h3 className="text-[11px] font-semibold text-gray-500 uppercase tracking-wider mb-2 px-2">Work</h3>
           <nav className="space-y-0.5">
-            {projects.slice(0, 5).map(project => (
+            {projects.map(project => (
               <button 
                 key={project.id}
-                onClick={() => onOpenProject(project.id)}
-                className="w-full flex items-center gap-2.5 px-2 py-1.5 hover:bg-white/5 rounded-md text-sm font-medium text-gray-300 transition-colors text-left"
+                onClick={() => setActiveView(`project-${project.id}`)}
+                className={navItemClass(`project-${project.id}`)}
               >
                 <Folder className="w-4 h-4 text-blue-400 flex-shrink-0" fill="currentColor" />
                 <span className="truncate">{project.title}</span>
@@ -78,17 +84,21 @@ export default function Finder({ projects, onOpenProject, onOpenWindow }: Finder
         </div>
       </div>
 
-      {/* Main Content Area (Folders Grid) */}
-      <div className="flex-1 p-8 overflow-y-auto bg-[#1e1e1e]">
-        <div className="flex flex-wrap gap-10">
-          {projects.map(project => (
-            <FinderFolder 
-              key={project.id}
-              name={project.title}
-              onClick={() => onOpenProject(project.id)}
-            />
-          ))}
-        </div>
+      {/* Main Content Area */}
+      <div className="flex-1 overflow-y-auto bg-[#1e1e1e]">
+        {activeView === 'work' ? (
+          <div className="p-8 flex flex-wrap gap-10">
+            {projects.map(project => (
+              <FinderFolder 
+                key={project.id}
+                name={project.title}
+                onClick={() => setActiveView(`project-${project.id}`)}
+              />
+            ))}
+          </div>
+        ) : (
+          renderContent(activeView)
+        )}
       </div>
     </div>
   );

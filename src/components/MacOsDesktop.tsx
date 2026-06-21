@@ -265,8 +265,20 @@ export default function MacOsDesktop() {
               <Window key="finder" title="Portfolio" isOpen={true} onClose={() => closeWindow('finder')} onFocus={() => bringToFront('finder')} noPadding zIndex={getZIndex('finder')}>
                 <Finder 
                   projects={dbProjects} 
-                  onOpenProject={(id) => openWindow(`project-${id}`)} 
-                  onOpenWindow={openWindow} 
+                  renderContent={(view) => {
+                    if (view === 'about') return <About />;
+                    if (view === 'resume') return (
+                      <div className="p-10 text-center space-y-4">
+                        <h2 className="text-2xl font-bold text-white">Marcelo Pires</h2>
+                        <p className="text-gray-400">Software Engineer</p>
+                        <a href="#" className="inline-block mt-4 px-6 py-2 bg-blue-600 rounded-lg font-medium hover:bg-blue-500 transition-colors text-white">Download PDF</a>
+                      </div>
+                    );
+                    if (view.startsWith('project-')) {
+                      return renderProjectDetail(view.replace('project-', ''));
+                    }
+                    return null;
+                  }}
                 />
               </Window>
             )}
