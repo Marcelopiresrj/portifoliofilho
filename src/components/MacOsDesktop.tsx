@@ -1,6 +1,6 @@
 import { useState, useEffect, ReactNode, useRef } from 'react';
 import { motion, AnimatePresence, useDragControls } from 'motion/react';
-import { Wifi, Search, SlidersHorizontal, BatteryMedium, Bell, LayoutGrid, ChevronLeft, ChevronRight, Shield, RotateCw, Share, Plus, Sidebar, X } from 'lucide-react';
+import { Wifi, Search, SlidersHorizontal, BatteryMedium, Bell, LayoutGrid, ChevronLeft, ChevronRight, Shield, RotateCw, Share, Plus, Sidebar, X, User } from 'lucide-react';
 import About from './About';
 import Welcome from './Welcome';
 import Projects from './Projects';
@@ -71,7 +71,7 @@ const Window = ({ title, isOpen, onClose, onFocus, children, noPadding, zIndex =
             {/* Address Bar */}
             <div className="flex-1 max-w-2xl mx-auto flex items-center bg-[#2b2b36] rounded-md h-7 px-3 text-sm text-gray-300 border border-white/5">
               <Shield className="w-3.5 h-3.5 text-green-500 mr-2" />
-              <div className="flex-1 text-center truncate">remoteeditorstoolkit.com</div>
+              <div className="flex-1 text-center truncate">marcelosclients.com</div>
               <RotateCw className="w-3.5 h-3.5 text-gray-400 cursor-pointer hover:text-gray-200" />
             </div>
 
@@ -85,7 +85,9 @@ const Window = ({ title, isOpen, onClose, onFocus, children, noPadding, zIndex =
           {/* Tab Row */}
           <div className="h-9 bg-[#1a1a1f] flex items-end px-2 gap-1 pt-1">
             <div className="h-8 bg-[#2b2b36] rounded-t-md border-t border-x border-white/10 flex items-center px-3 min-w-[160px] relative group">
-              <div className="w-4 h-4 rounded-full bg-black flex items-center justify-center mr-2 text-[8px] font-bold text-white">RET</div>
+              <div className="w-4 h-4 rounded-full bg-black flex items-center justify-center mr-2">
+                <User className="w-2.5 h-2.5 text-white" />
+              </div>
               <span className="text-xs font-semibold text-gray-200 flex-1">{title}</span>
               <X className="w-3.5 h-3.5 text-gray-400 cursor-pointer hover:text-white rounded hover:bg-white/10 p-0.5 opacity-0 group-hover:opacity-100 transition-all" />
             </div>
@@ -464,7 +466,7 @@ export default function MacOsDesktop() {
               </Window>
             )}
             {activeWindows.includes('projects') && (
-              <Window key="projects" title="Toolkit" isOpen={true} onClose={() => closeWindow('projects')} onFocus={() => bringToFront('projects')} zIndex={getZIndex('projects')} variant="safari">
+              <Window key="projects" title="MyClients" isOpen={true} onClose={() => closeWindow('projects')} onFocus={() => bringToFront('projects')} zIndex={getZIndex('projects')} variant="safari">
                 <Clients />
               </Window>
             )}
