@@ -7,6 +7,7 @@ interface FinderProps {
   renderContent: (view: string) => ReactNode;
   activeView: string;
   onViewChange: (view: string) => void;
+  onOpenWindow: (view: string) => void;
 }
 
 const FinderFolder = ({ name, onClick }: { name: string; onClick: () => void; key?: string }) => (
@@ -51,7 +52,7 @@ const FinderFile = ({ name, onClick }: { name: string; onClick: () => void }) =>
   </div>
 );
 
-export default function Finder({ projects, renderContent, activeView, onViewChange }: FinderProps) {
+export default function Finder({ projects, renderContent, activeView, onViewChange, onOpenWindow }: FinderProps) {
 
   const navItemClass = (view: string | string[]) => {
     const isActive = Array.isArray(view) ? view.includes(activeView) : activeView === view;
@@ -120,7 +121,7 @@ export default function Finder({ projects, renderContent, activeView, onViewChan
           <div className="p-8 flex flex-wrap gap-10">
             <FinderFile 
               name="about-me.txt"
-              onClick={() => onViewChange('about-text')}
+              onClick={() => onOpenWindow('about-text')}
             />
           </div>
         ) : (

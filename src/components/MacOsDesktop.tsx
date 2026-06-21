@@ -16,7 +16,7 @@ function getYouTubeEmbedUrl(url: string) {
 }
 
 // ── Window Types ─────────────────────────────────────────────────────────────
-type WindowType = 'about' | 'projects' | 'skills' | 'contact' | 'resume' | 'photos' | 'finder' | `project-${string}` | null;
+type WindowType = 'about' | 'about-text' | 'projects' | 'skills' | 'contact' | 'resume' | 'photos' | 'finder' | `project-${string}` | null;
 
 interface WindowProps {
   title: string;
@@ -265,14 +265,19 @@ export default function MacOsDesktop() {
                 <Photos />
               </Window>
             )}
+            {activeWindows.includes('about-text') && (
+              <Window key="about-text" title="about-me.txt" isOpen={true} onClose={() => closeWindow('about-text')} onFocus={() => bringToFront('about-text')} noPadding zIndex={getZIndex('about-text')}>
+                <About />
+              </Window>
+            )}
             {activeWindows.includes('finder') && (
               <Window key="finder" title="Portfolio" isOpen={true} onClose={() => closeWindow('finder')} onFocus={() => bringToFront('finder')} noPadding zIndex={getZIndex('finder')}>
                 <Finder 
                   projects={dbProjects} 
                   activeView={finderView}
                   onViewChange={setFinderView}
+                  onOpenWindow={openWindow}
                   renderContent={(view) => {
-                    if (view === 'about-text') return <About />;
                     if (view === 'resume') return (
                       <div className="p-10 text-center space-y-4">
                         <h2 className="text-2xl font-bold text-white">Marcelo Pires</h2>
