@@ -26,6 +26,7 @@ interface WindowProps {
   children: ReactNode;
   noPadding?: boolean;
   zIndex?: number;
+  key?: string;
 }
 
 const Window = ({ title, isOpen, onClose, onFocus, children, noPadding, zIndex = 0 }: WindowProps) => {
@@ -380,38 +381,36 @@ const DockIcon = ({ icon, label, onClick }: { icon: ReactNode; label: string; on
 // High-fidelity SVG icons to perfectly match macOS without relying on broken image URLs
 const FinderIcon = () => (
   <div className="w-full h-full drop-shadow-md group-hover:drop-shadow-xl transition-all duration-300 transform group-hover:scale-105 p-1">
-    <img src="/portifolio.jpg" alt="Portfolio" className="w-full h-full object-contain" />
+    <img src="/icons/finder.png" alt="Portfolio" className="w-full h-full object-contain" />
   </div>
 );
 
 const SafariIcon = () => (
   <div className="w-full h-full drop-shadow-md group-hover:drop-shadow-xl transition-all duration-300 transform group-hover:scale-105 p-1">
-    <img src="/bussula.jpg" alt="Safari" className="w-full h-full object-contain" />
+    <img src="/icons/safari.png" alt="Safari" className="w-full h-full object-contain" />
   </div>
 );
 
 const PhotosIcon = () => (
   <div className="w-full h-full drop-shadow-md group-hover:drop-shadow-xl transition-all duration-300 transform group-hover:scale-105 p-1">
-    <img src="/fotos.jpg" alt="Photos" className="w-full h-full object-contain" />
+    <img src="/icons/photos.png" alt="Photos" className="w-full h-full object-contain" />
   </div>
 );
 
 const ContactsIcon = () => (
   <div className="w-full h-full drop-shadow-md group-hover:drop-shadow-xl transition-all duration-300 transform group-hover:scale-105 p-1">
-    <img src="/contacts.jpg" alt="Contacts" className="w-full h-full object-contain" />
+    <img src="/icons/contacts.png" alt="Contacts" className="w-full h-full object-contain" />
   </div>
 );
 
 const TerminalIcon = () => (
-  <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-md group-hover:drop-shadow-xl transition-all duration-300 transform group-hover:scale-105">
-    <rect width="100" height="100" rx="22" fill="#1c1c1e" stroke="#3a3a3c" strokeWidth="3"/>
-    <text x="18" y="45" fill="#fff" fontFamily="monospace" fontSize="32" fontWeight="bold">{`>`}</text>
-    <rect x="42" y="40" width="16" height="4" fill="#fff"/>
-  </svg>
+  <div className="w-full h-full drop-shadow-md group-hover:drop-shadow-xl transition-all duration-300 transform group-hover:scale-105 p-1">
+    <img src="/icons/terminal.png" alt="Terminal" className="w-full h-full object-contain" />
+  </div>
 );
 
 const TrashIcon = () => (
   <div className="w-full h-full drop-shadow-md group-hover:drop-shadow-xl transition-all duration-300 transform group-hover:scale-105 p-1">
-    <img src="/trash.jpg" alt="Trash" className="w-full h-full object-contain" />
+    <img src="/icons/trash.png" alt="Trash" className="w-full h-full object-contain" />
   </div>
 );

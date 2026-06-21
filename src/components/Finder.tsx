@@ -7,7 +7,7 @@ interface FinderProps {
   onOpenWindow: (type: string) => void;
 }
 
-const FinderFolder = ({ name, onClick }: { name: string; onClick: () => void }) => (
+const FinderFolder = ({ name, onClick }: { name: string; onClick: () => void; key?: string }) => (
   <div onClick={onClick} className="flex flex-col items-center gap-2 w-28 cursor-pointer group p-2 rounded-xl hover:bg-white/5 transition-colors">
     {/* High-fidelity macOS Folder SVG (Same as Desktop) */}
     <div className="relative w-[72px] h-[56px] flex items-center justify-center">
