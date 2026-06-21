@@ -18,6 +18,7 @@ import {
   Edit2,
   Save,
   UserCircle,
+  Users,
 } from "lucide-react";
 import {
   fetchContactMessages,
@@ -31,8 +32,13 @@ import {
   getSession,
   fetchSiteSettings,
   updateAboutText,
+  fetchClients,
+  createClientRow,
+  updateClientRow,
+  deleteClientRow,
   type ContactMessageRow,
   type ProjectRow,
+  type ClientRow,
 } from "../lib/supabase";
 
 // ── Login Modal ──────────────────────────────────────────────────────────────
@@ -353,7 +359,85 @@ function ProjectForm({
 }
 
 // ── Main Admin Panel ─────────────────────────────────────────────────────────
-type Tab = 'messages' | 'projects' | 'settings';
+type Tab = 'messages' | 'projects' | 'clients' | 'settings';
+
+// ── Client Components ───────────────────────────────────────────────────────
+function ClientForm({ 
+  client, 
+  onSave, 
+  onCancel 
+}: { 
+  client?: ClientRow, 
+  onSave: (p: Partial<ClientRow>) => Promise<void>, 
+  onCancel: () => void 
+}) {
+  const [form, setForm] = useState<Partial<ClientRow>>(
+    client || {
+      name: "",
+      subs: "",
+      category: "",
+      avatar: "https://i.pravatar.cc/150?u=temp",
+      order_idx: 0
+    }
+  );
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      await onSave(form);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 z-60 flex items-center justify-center bg-black/70 backdrop-blur-sm px-4">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="w-full max-w-lg bg-[#111214] border border-gray-800 rounded-2xl p-7 shadow-2xl"
+      >
+        <div className="flex items-center justify-between mb-6">
+          <h3 className="text-lg font-semibold text-white font-georama">{client ? 'Edit Client' : 'New Client'}</h3>
+          <button onClick={onCancel} className="p-2 rounded-lg hover:bg-white/5 text-gray-500 hover:text-white transition-all"><X className="w-4 h-4" /></button>
+        </div>
+
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label className="text-xs font-mono text-gray-500 uppercase block mb-1">Name</label>
+            <input required value={form.name} onChange={e => setForm({...form, name: e.target.value})} className="w-full px-3 py-2 rounded-lg border border-gray-800 bg-gray-950 text-white text-sm focus:border-gray-600 outline-none" />
+          </div>
+          <div>
+            <label className="text-xs font-mono text-gray-500 uppercase block mb-1">Subscribers</label>
+            <input required value={form.subs} onChange={e => setForm({...form, subs: e.target.value})} placeholder="e.g. 4.7M" className="w-full px-3 py-2 rounded-lg border border-gray-800 bg-gray-950 text-white text-sm focus:border-gray-600 outline-none" />
+          </div>
+          <div>
+            <label className="text-xs font-mono text-gray-500 uppercase block mb-1">Category</label>
+            <input required value={form.category} onChange={e => setForm({...form, category: e.target.value})} placeholder="e.g. GAMING" className="w-full px-3 py-2 rounded-lg border border-gray-800 bg-gray-950 text-white text-sm focus:border-gray-600 outline-none" />
+          </div>
+          <div>
+            <label className="text-xs font-mono text-gray-500 uppercase block mb-1">Avatar URL</label>
+            <input required value={form.avatar} onChange={e => setForm({...form, avatar: e.target.value})} className="w-full px-3 py-2 rounded-lg border border-gray-800 bg-gray-950 text-white text-sm focus:border-gray-600 outline-none" />
+          </div>
+          <div>
+            <label className="text-xs font-mono text-gray-500 uppercase block mb-1">Order Index</label>
+            <input type="number" required value={form.order_idx} onChange={e => setForm({...form, order_idx: parseInt(e.target.value)})} className="w-full px-3 py-2 rounded-lg border border-gray-800 bg-gray-950 text-white text-sm focus:border-gray-600 outline-none" />
+          </div>
+
+          <div className="flex justify-end gap-3 pt-4 border-t border-gray-900 mt-6">
+            <button type="button" onClick={onCancel} className="px-4 py-2 rounded-lg text-sm text-gray-400 hover:text-white transition-colors">Cancel</button>
+            <button type="submit" disabled={loading} className="px-5 py-2 rounded-lg bg-white text-black text-sm font-medium hover:bg-gray-200 active:scale-95 transition-all disabled:opacity-50 flex items-center gap-2">
+              {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
+              Save Client
+            </button>
+          </div>
+        </form>
+      </motion.div>
+    </div>
+  );
+}
 
 export default function AdminPanel({ onClose }: { onClose: () => void }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -367,6 +451,10 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
   // Projects State
   const [projects, setProjects] = useState<ProjectRow[]>([]);
   const [editingProject, setEditingProject] = useState<ProjectRow | "new" | null>(null);
+
+  // Clients State
+  const [clients, setClients] = useState<ClientRow[]>([]);
+  const [editingClient, setEditingClient] = useState<ClientRow | "new" | null>(null);
 
   // Settings State
   const [aboutText, setAboutText] = useState("");
@@ -391,6 +479,9 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
       } else if (activeTab === 'projects') {
         const data = await fetchProjects();
         setProjects(data);
+      } else if (activeTab === 'clients') {
+        const data = await fetchClients();
+        setClients(data);
       } else if (activeTab === 'settings') {
         const data = await fetchSiteSettings();
         if (data) setAboutText(data.about_text);
@@ -453,6 +544,31 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
     }
   };
 
+  // Clients Handlers
+  const handleSaveClient = async (c: Partial<ClientRow>) => {
+    try {
+      if (editingClient === "new") {
+        await createClientRow(c as Omit<ClientRow, "id" | "created_at">);
+      } else {
+        await updateClientRow((editingClient as ClientRow).id, c);
+      }
+      setEditingClient(null);
+      await loadData();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Erro ao salvar cliente.");
+    }
+  };
+
+  const handleDeleteClient = async (id: string) => {
+    if (!confirm("Are you sure you want to delete this client?")) return;
+    try {
+      await deleteClientRow(id);
+      await loadData();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Erro ao deletar cliente.");
+    }
+  };
+
   // Settings Handlers
   const handleSaveSettings = async () => {
     setLoading(true);
@@ -504,6 +620,12 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
                 className={`px-4 py-1.5 rounded-md text-xs font-mono transition-all flex items-center gap-2 ${activeTab === 'projects' ? "bg-gray-800 text-white" : "text-gray-500 hover:text-white"}`}
               >
                 <FolderGit2 className="w-3.5 h-3.5" /> Projects
+              </button>
+              <button
+                onClick={() => setActiveTab('clients')}
+                className={`px-4 py-1.5 rounded-md text-xs font-mono transition-all flex items-center gap-2 ${activeTab === 'clients' ? "bg-gray-800 text-white" : "text-gray-500 hover:text-white"}`}
+              >
+                <Users className="w-3.5 h-3.5" /> Clients
               </button>
               <button
                 onClick={() => setActiveTab('settings')}
@@ -606,6 +728,39 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
               </>
             )}
 
+            {/* CLIENTS TAB */}
+            {activeTab === 'clients' && (
+              <>
+                <div className="flex items-center justify-between mb-6">
+                  <h2 className="text-lg font-georama text-white font-semibold">Clients Showcase</h2>
+                  <button onClick={() => setEditingClient("new")} className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-white text-black text-xs font-medium hover:bg-gray-200 active:scale-95 transition-all">
+                    <Plus className="w-3.5 h-3.5" /> Add Client
+                  </button>
+                </div>
+
+                {loading && !clients.length && <div className="py-24 text-center text-gray-600 text-sm font-mono"><Loader2 className="w-6 h-6 animate-spin mx-auto mb-3" />Loading...</div>}
+                {!loading && clients.length === 0 && <div className="py-24 text-center text-gray-700 text-sm font-mono"><Users className="w-10 h-10 mx-auto mb-4 opacity-40" />No clients yet.</div>}
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {clients.map((c) => (
+                    <div key={c.id} className="p-4 rounded-xl border border-gray-800 bg-[#111214] flex items-center justify-between group">
+                      <div className="flex items-center gap-4">
+                        <img src={c.avatar} alt={c.name} className="w-10 h-10 rounded-full border border-gray-700 object-cover" />
+                        <div>
+                          <h3 className="text-sm font-semibold text-white">{c.name} <span className="text-[#a0f046] ml-2">{c.subs}</span></h3>
+                          <p className="text-xs text-gray-500 font-mono mt-0.5">{c.category}</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <button onClick={() => setEditingClient(c)} className="p-2 rounded-lg hover:bg-white/5 text-gray-400 hover:text-white transition-all"><Edit2 className="w-4 h-4" /></button>
+                        <button onClick={() => handleDeleteClient(c.id)} className="p-2 rounded-lg hover:bg-red-500/10 text-gray-400 hover:text-red-400 transition-all"><Trash2 className="w-4 h-4" /></button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
+
             {/* SETTINGS TAB */}
             {activeTab === 'settings' && (
               <>
@@ -648,6 +803,7 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
 
       {expandedMsg && <MessageModal msg={expandedMsg} onClose={() => setExpandedMsg(null)} onMarkRead={handleMarkRead} />}
       {editingProject && <ProjectForm project={editingProject === "new" ? undefined : editingProject} onSave={handleSaveProject} onCancel={() => setEditingProject(null)} />}
+      {editingClient && <ClientForm client={editingClient === "new" ? undefined : editingClient} onSave={handleSaveClient} onCancel={() => setEditingClient(null)} />}
     </>
   );
 }

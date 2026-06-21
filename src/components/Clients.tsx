@@ -1,18 +1,33 @@
-import { useEffect, useRef } from 'react';
-import { motion } from 'motion/react';
+import { useEffect, useState } from 'react';
+import { fetchClients, ClientRow } from '../lib/supabase';
 
-const clients = [
-  { name: 'iBella', subs: '4.7M', category: 'GAMING', color: '#e5e7eb', avatar: 'https://i.pravatar.cc/150?u=ibella' },
-  { name: 'CashBlox', subs: '4.6M', category: 'GAMING', color: '#e5e7eb', avatar: 'https://i.pravatar.cc/150?u=cashblox' },
-  { name: 'Kiply', subs: '3.1M', category: 'GAMING', color: '#e5e7eb', avatar: 'https://i.pravatar.cc/150?u=kiply' },
-  { name: 'Mongo', subs: '1.9M', category: 'GAMING', color: '#e5e7eb', avatar: 'https://i.pravatar.cc/150?u=mongo' },
-  { name: 'Dash', subs: '1.8M', category: 'GAMING', color: '#e5e7eb', avatar: 'https://i.pravatar.cc/150?u=dash' },
-  { name: 'Ayzo', subs: '1.6M', category: 'GAMING', color: '#e5e7eb', avatar: 'https://i.pravatar.cc/150?u=ayzo' },
-  { name: 'Skiddzie', subs: '1.4M', category: 'GAMING', color: '#e5e7eb', avatar: 'https://i.pravatar.cc/150?u=skiddzie' },
-  { name: 'Kaido Lee', subs: '1M', category: 'ENTERTAINMENT', color: '#e5e7eb', avatar: 'https://i.pravatar.cc/150?u=kaido' },
+const defaultClients: ClientRow[] = [
+  { id: '1', name: 'iBella', subs: '4.7M', category: 'GAMING', avatar: 'https://i.pravatar.cc/150?u=ibella', order_idx: 1 },
+  { id: '2', name: 'CashBlox', subs: '4.6M', category: 'GAMING', avatar: 'https://i.pravatar.cc/150?u=cashblox', order_idx: 2 },
+  { id: '3', name: 'Kiply', subs: '3.1M', category: 'GAMING', avatar: 'https://i.pravatar.cc/150?u=kiply', order_idx: 3 },
+  { id: '4', name: 'Mongo', subs: '1.9M', category: 'GAMING', avatar: 'https://i.pravatar.cc/150?u=mongo', order_idx: 4 },
+  { id: '5', name: 'Dash', subs: '1.8M', category: 'GAMING', avatar: 'https://i.pravatar.cc/150?u=dash', order_idx: 5 },
+  { id: '6', name: 'Ayzo', subs: '1.6M', category: 'GAMING', avatar: 'https://i.pravatar.cc/150?u=ayzo', order_idx: 6 },
+  { id: '7', name: 'Skiddzie', subs: '1.4M', category: 'GAMING', avatar: 'https://i.pravatar.cc/150?u=skiddzie', order_idx: 7 },
+  { id: '8', name: 'Kaido Lee', subs: '1M', category: 'ENTERTAINMENT', avatar: 'https://i.pravatar.cc/150?u=kaido', order_idx: 8 },
 ];
 
 export default function Clients() {
+  const [clients, setClients] = useState<ClientRow[]>([]);
+
+  useEffect(() => {
+    fetchClients().then((data) => {
+      if (data && data.length > 0) {
+        setClients(data);
+      } else {
+        setClients(defaultClients);
+      }
+    }).catch(err => {
+      console.error("Failed to fetch clients", err);
+      setClients(defaultClients);
+    });
+  }, []);
+
   return (
     <div className="bg-[#0a0a0a] min-h-full w-full py-16 flex flex-col items-center overflow-hidden">
       

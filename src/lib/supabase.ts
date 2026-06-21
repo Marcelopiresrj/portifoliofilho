@@ -43,6 +43,16 @@ export interface ProjectRow {
   created_at?: string;
 }
 
+export interface ClientRow {
+  id: string;
+  name: string;
+  subs: string;
+  category: string;
+  avatar: string;
+  order_idx: number;
+  created_at?: string;
+}
+
 export interface SiteSettingsRow {
   id: number;
   about_text: string;
@@ -125,6 +135,39 @@ export async function deleteProject(id: string): Promise<void> {
   const { error } = await supabase.from("projects").delete().eq("id", id);
   if (error) {
     console.error("Erro ao excluir projeto:", error);
+    throw error;
+  }
+}
+
+/**
+ * CLIENT FUNCTIONS
+ */
+
+export async function fetchClients(): Promise<ClientRow[]> {
+  const { data, error } = await supabase
+    .from("clients")
+    .select("*")
+    .order("order_idx", { ascending: true })
+    .order("created_at", { ascending: false });
+
+  if (error) throw new Error(error.message);
+  return data as ClientRow[];
+}
+
+export async function createClientRow(client: Omit<ClientRow, "id" | "created_at">): Promise<void> {
+  const { error } = await supabase.from("clients").insert([client]);
+  if (error) throw new Error(error.message);
+}
+
+export async function updateClientRow(id: string, updates: Partial<ClientRow>): Promise<void> {
+  const { error } = await supabase.from("clients").update(updates).eq("id", id);
+  if (error) throw new Error(error.message);
+}
+
+export async function deleteClientRow(id: string): Promise<void> {
+  const { error } = await supabase.from("clients").delete().eq("id", id);
+  if (error) {
+    console.error("Erro ao excluir cliente:", error);
     throw error;
   }
 }
