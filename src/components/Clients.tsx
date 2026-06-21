@@ -2,14 +2,14 @@ import { useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 
 const clients = [
-  { name: 'iBella', subs: '4.7M', category: 'GAMING', color: '#a0f046', avatar: 'https://i.pravatar.cc/150?u=ibella' },
-  { name: 'CashBlox', subs: '4.6M', category: 'GAMING', color: '#a0f046', avatar: 'https://i.pravatar.cc/150?u=cashblox' },
-  { name: 'Kiply', subs: '3.1M', category: 'GAMING', color: '#a0f046', avatar: 'https://i.pravatar.cc/150?u=kiply' },
-  { name: 'Mongo', subs: '1.9M', category: 'GAMING', color: '#a0f046', avatar: 'https://i.pravatar.cc/150?u=mongo' },
-  { name: 'Dash', subs: '1.8M', category: 'GAMING', color: '#a0f046', avatar: 'https://i.pravatar.cc/150?u=dash' },
-  { name: 'Ayzo', subs: '1.6M', category: 'GAMING', color: '#a0f046', avatar: 'https://i.pravatar.cc/150?u=ayzo' },
-  { name: 'Skiddzie', subs: '1.4M', category: 'GAMING', color: '#a0f046', avatar: 'https://i.pravatar.cc/150?u=skiddzie' },
-  { name: 'Kaido Lee', subs: '1M', category: 'ENTERTAINMENT', color: '#a0f046', avatar: 'https://i.pravatar.cc/150?u=kaido' },
+  { name: 'iBella', subs: '4.7M', category: 'GAMING', color: '#e5e7eb', avatar: 'https://i.pravatar.cc/150?u=ibella' },
+  { name: 'CashBlox', subs: '4.6M', category: 'GAMING', color: '#e5e7eb', avatar: 'https://i.pravatar.cc/150?u=cashblox' },
+  { name: 'Kiply', subs: '3.1M', category: 'GAMING', color: '#e5e7eb', avatar: 'https://i.pravatar.cc/150?u=kiply' },
+  { name: 'Mongo', subs: '1.9M', category: 'GAMING', color: '#e5e7eb', avatar: 'https://i.pravatar.cc/150?u=mongo' },
+  { name: 'Dash', subs: '1.8M', category: 'GAMING', color: '#e5e7eb', avatar: 'https://i.pravatar.cc/150?u=dash' },
+  { name: 'Ayzo', subs: '1.6M', category: 'GAMING', color: '#e5e7eb', avatar: 'https://i.pravatar.cc/150?u=ayzo' },
+  { name: 'Skiddzie', subs: '1.4M', category: 'GAMING', color: '#e5e7eb', avatar: 'https://i.pravatar.cc/150?u=skiddzie' },
+  { name: 'Kaido Lee', subs: '1M', category: 'ENTERTAINMENT', color: '#e5e7eb', avatar: 'https://i.pravatar.cc/150?u=kaido' },
 ];
 
 export default function Clients() {
@@ -18,17 +18,17 @@ export default function Clients() {
       
       {/* Header Section */}
       <div className="flex flex-col items-center text-center mb-16 space-y-4 px-4">
-        <span className="px-4 py-1.5 bg-[#152e18]/60 text-[#a0f046] border border-[#2a4e2e]/50 rounded-full text-[10px] tracking-[0.2em] font-mono uppercase shadow-[0_0_15px_rgba(160,240,70,0.1)]">
-          <span className="inline-block w-1.5 h-1.5 bg-[#a0f046] rounded-full mr-2 animate-pulse"></span>
+        <span className="px-4 py-1.5 bg-[#1e1e1e]/60 text-[#e5e7eb] border border-[#333333]/50 rounded-full text-[10px] tracking-[0.2em] font-mono uppercase shadow-[0_0_15px_rgba(255,255,255,0.05)]">
+          <span className="inline-block w-1.5 h-1.5 bg-[#e5e7eb] rounded-full mr-2 animate-pulse"></span>
           Clients
         </span>
         
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight font-sans">
-          Creators who trust <span className="text-[#a0f046]">Volt Studios</span>
+          Creators who trust <span className="text-[#e5e7eb]">Marcelo</span>
         </h2>
         
         <p className="text-[#666] text-xs md:text-sm tracking-[0.2em] font-mono uppercase mt-2">
-          Working with the biggest names on YouTube
+          Working with the best people
         </p>
       </div>
 
@@ -51,7 +51,7 @@ export default function Clients() {
                   <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 100 100">
                     <circle cx="50" cy="50" r="48" fill="none" stroke="#222" strokeWidth="2" />
                     <circle 
-                      cx="50" cy="50" r="48" fill="none" stroke="#a0f046" strokeWidth="2"
+                      cx="50" cy="50" r="48" fill="none" stroke="#e5e7eb" strokeWidth="2"
                       strokeDasharray="301.59" 
                       strokeDashoffset={301.59 * 0.3} // ~70% filled ring
                       className="opacity-60 group-hover/card:opacity-100 transition-opacity"
@@ -66,7 +66,7 @@ export default function Clients() {
                 <h3 className="text-white font-bold text-lg mb-2">{client.name}</h3>
                 
                 {/* Subs */}
-                <span className="text-[#a0f046] font-black text-xl mb-3 tracking-tight">{client.subs}</span>
+                <span className="text-[#e5e7eb] font-black text-xl mb-3 tracking-tight">{client.subs}</span>
                 
                 {/* Category Pill */}
                 <span className="px-3 py-1 bg-[#1a1a1a] text-[#666] border border-[#2a2a2a] rounded-full text-[10px] tracking-widest font-mono uppercase group-hover/card:border-[#444] transition-colors">
