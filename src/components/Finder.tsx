@@ -41,7 +41,7 @@ export default function Finder({ projects, renderContent, activeView, onViewChan
   };
 
   return (
-    <div className="flex h-full w-full bg-[#1c1c1c] text-gray-200">
+    <div className="flex h-[600px] w-full bg-[#1c1c1c] text-gray-200">
       {/* Sidebar */}
       <div className="w-[240px] bg-[#292929] border-r border-black/40 p-3 flex flex-col flex-shrink-0 overflow-y-auto custom-scrollbar">
         {/* Favorites Section */}

@@ -29,9 +29,10 @@ interface WindowProps {
   zIndex?: number;
   key?: string;
   variant?: 'default' | 'safari' | 'finder-new';
+  subtitle?: string;
 }
 
-const Window = ({ title, isOpen, onClose, onFocus, children, noPadding, zIndex = 0, variant = 'default' }: WindowProps) => {
+const Window = ({ title, subtitle, isOpen, onClose, onFocus, children, noPadding, zIndex = 0, variant = 'default' }: WindowProps) => {
   const dragControls = useDragControls();
 
   if (!isOpen) return null;
@@ -81,7 +82,7 @@ const Window = ({ title, isOpen, onClose, onFocus, children, noPadding, zIndex =
             </div>
 
             <div className="flex-1 flex justify-center items-center pointer-events-none">
-              <span className="text-sm font-semibold text-gray-200">Home</span>
+              <span className="text-sm font-semibold text-gray-200">{subtitle || 'Home'}</span>
             </div>
 
             <div className="flex items-center text-gray-400 ml-auto">
@@ -527,7 +528,24 @@ export default function MacOsDesktop() {
               </Window>
             )}
             {activeWindows.includes('finder') && (
-              <Window key="finder" title="Portfolio" isOpen={true} onClose={() => closeWindow('finder')} onFocus={() => bringToFront('finder')} noPadding zIndex={getZIndex('finder')} variant="finder-new">
+              <Window 
+                key="finder" 
+                title="Portfolio" 
+                subtitle={
+                  finderView === 'work' ? 'Work' :
+                  finderView === 'about' || finderView === 'about-text' ? 'About me' :
+                  finderView === 'resume' ? 'Resume' :
+                  finderView === 'trash' ? 'Trash' :
+                  finderView.startsWith('project-') ? dbProjects.find(p => p.id === finderView.replace('project-', ''))?.title :
+                  'Home'
+                }
+                isOpen={true} 
+                onClose={() => closeWindow('finder')} 
+                onFocus={() => bringToFront('finder')} 
+                noPadding 
+                zIndex={getZIndex('finder')} 
+                variant="finder-new"
+              >
                 <Finder 
                   projects={dbProjects} 
                   activeView={finderView}
