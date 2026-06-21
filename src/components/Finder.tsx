@@ -98,11 +98,8 @@ export default function Finder({ projects, renderContent, activeView, onViewChan
             />
           </div>
         ) : activeView.startsWith('project-') ? (
-          <div className="p-8">
-            <h2 className="text-2xl font-bold mb-4">{projects.find(p => p.id === activeView.replace('project-', ''))?.title}</h2>
-            <button onClick={() => onOpenWindow(activeView as any)} className="px-4 py-2 bg-blue-600 rounded text-white text-sm hover:bg-blue-500 transition-colors">
-              Open Details
-            </button>
+          <div className="w-full h-full">
+            {renderContent(activeView)}
           </div>
         ) : (
           <div className="flex items-center justify-center h-full text-gray-500">
