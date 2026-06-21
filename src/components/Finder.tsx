@@ -1,5 +1,5 @@
 import { useState, ReactNode } from 'react';
-import { Folder, Info, FileText, Trash2, ChevronRight } from 'lucide-react';
+import { Folder, Info, FileText, Trash2, ChevronRight, HardDrive } from 'lucide-react';
 import { type ProjectRow } from '../lib/supabase';
 
 interface FinderProps {
@@ -56,10 +56,7 @@ export default function Finder({ projects, renderContent, activeView, onViewChan
               <Info className={`w-4 h-4 ${activeView === 'about' || activeView === 'about-text' ? 'text-white' : 'text-blue-400'}`} />
               About me
             </button>
-            <button onClick={() => onViewChange('resume')} className={`w-full flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-[13px] font-medium transition-colors text-left ${activeView === 'resume' ? 'bg-blue-500 text-white shadow-sm' : 'hover:bg-white/5 text-gray-200'}`}>
-              <FileText className={`w-4 h-4 ${activeView === 'resume' ? 'text-white' : 'text-blue-400'}`} />
-              Resume
-            </button>
+
             <button className={`w-full flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-[13px] font-medium transition-colors text-left hover:bg-white/5 text-gray-200`}>
               <Trash2 className="w-4 h-4 text-blue-400" />
               Trash
@@ -86,6 +83,19 @@ export default function Finder({ projects, renderContent, activeView, onViewChan
                 </button>
               );
             })}
+          </nav>
+        </div>
+
+        <div className="h-px bg-white/5 my-4 mx-2" />
+
+        {/* Devices Section */}
+        <div>
+          <h3 className="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-2 px-3">DEVICES</h3>
+          <nav className="space-y-0.5">
+            <button className="w-full flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-[13px] font-medium transition-colors text-left hover:bg-white/5 text-gray-200">
+              <HardDrive className="w-4 h-4 text-gray-300" />
+              Macbook Pro
+            </button>
           </nav>
         </div>
       </div>
