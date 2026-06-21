@@ -181,9 +181,9 @@ export default function MacOsDesktop() {
   }, []);
 
   const formatTime = (date: Date) => {
-    return date.toLocaleDateString('pt-BR', { weekday: 'long', month: 'long', day: 'numeric' }) +
-      ' às ' +
-      date.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+    return date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' }) +
+      ' ' +
+      date.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
   };
 
   // Helper to render a specific project's details inside a window
@@ -247,57 +247,57 @@ export default function MacOsDesktop() {
 
   const menuItems = {
     apple: [
-      { label: 'Menu Apple', action: () => {} },
+      { label: 'Apple Menu', action: () => {} },
       { divider: true },
-      { label: 'Sobre este Mac', action: () => {} },
-      { label: 'Ajustes do Sistema', action: () => {} },
+      { label: 'About This Mac', action: () => {} },
+      { label: 'System Settings', action: () => {} },
       { divider: true },
-      { label: 'Repousar', action: () => {} },
-      { label: 'Reiniciar', action: () => {} },
-      { label: 'Desligar', action: () => {} },
+      { label: 'Sleep', action: () => {} },
+      { label: 'Restart', action: () => {} },
+      { label: 'Shut Down', action: () => {} },
     ],
     finder: [],
     arquivo: [
-      { label: 'Nova Janela', action: () => {} },
-      { label: 'Nova Aba', action: () => {} },
-      { label: 'Abrir...', action: () => {} },
-      { label: 'Fechar Janela', action: () => {} },
+      { label: 'New Window', action: () => {} },
+      { label: 'New Tab', action: () => {} },
+      { label: 'Open...', action: () => {} },
+      { label: 'Close Window', action: () => {} },
       { divider: true },
-      { label: 'Obter Informações', action: () => {} },
-      { label: 'Duplicar', action: () => {} },
+      { label: 'Get Info', action: () => {} },
+      { label: 'Duplicate', action: () => {} },
       { divider: true },
-      { label: 'Mover para Lixeira', action: () => {} },
+      { label: 'Move to Trash', action: () => {} },
     ],
     editar: [
-      { label: 'Desfazer', action: () => {} },
-      { label: 'Refazer', action: () => {} },
+      { label: 'Undo', action: () => {} },
+      { label: 'Redo', action: () => {} },
       { divider: true },
-      { label: 'Recortar', action: () => {} },
-      { label: 'Copiar', action: () => {} },
-      { label: 'Colar', action: () => {} },
-      { label: 'Selecionar Tudo', action: () => {} },
+      { label: 'Cut', action: () => {} },
+      { label: 'Copy', action: () => {} },
+      { label: 'Paste', action: () => {} },
+      { label: 'Select All', action: () => {} },
       { divider: true },
-      { label: 'Localizar', action: () => {} },
+      { label: 'Find', action: () => {} },
     ],
     visualizar: [
-      { label: 'Como Ícones', action: () => {} },
-      { label: 'Como Lista', action: () => {} },
-      { label: 'Como Colunas', action: () => {} },
+      { label: 'as Icons', action: () => {} },
+      { label: 'as List', action: () => {} },
+      { label: 'as Columns', action: () => {} },
       { divider: true },
-      { label: 'Barra de Ferramentas', action: () => {} },
-      { label: 'Barra de Status', action: () => {} },
+      { label: 'Toolbar', action: () => {} },
+      { label: 'Status Bar', action: () => {} },
     ],
     ir: [
-      { label: 'Voltar', action: () => {} },
-      { label: 'Avançar', action: () => {} },
+      { label: 'Back', action: () => {} },
+      { label: 'Forward', action: () => {} },
       { divider: true },
-      { label: 'Pasta Pessoal', action: () => {} },
-      { label: 'Área de Trabalho', action: () => {} },
+      { label: 'Home', action: () => {} },
+      { label: 'Desktop', action: () => {} },
       { label: 'Downloads', action: () => {} },
-      { label: 'Aplicativos', action: () => {} },
+      { label: 'Applications', action: () => {} },
     ],
     ajuda: [
-      { label: 'Centro de Ajuda', action: () => {} }
+      { label: 'Help Center', action: () => {} }
     ]
   };
 
@@ -358,27 +358,27 @@ export default function MacOsDesktop() {
           </div>
 
           <div className="relative">
-            <span className={`cursor-pointer px-3 py-1 rounded transition-colors ${activeMenu === 'arquivo' ? 'bg-white/20' : 'hover:bg-white/10'}`} onClick={(e) => handleMenuClick('arquivo', e)}>Arquivo</span>
+            <span className={`cursor-pointer px-3 py-1 rounded transition-colors ${activeMenu === 'arquivo' ? 'bg-white/20' : 'hover:bg-white/10'}`} onClick={(e) => handleMenuClick('arquivo', e)}>File</span>
             {renderDropdown('arquivo')}
           </div>
           
           <div className="relative">
-            <span className={`cursor-pointer px-3 py-1 rounded transition-colors ${activeMenu === 'editar' ? 'bg-white/20' : 'hover:bg-white/10'}`} onClick={(e) => handleMenuClick('editar', e)}>Editar</span>
+            <span className={`cursor-pointer px-3 py-1 rounded transition-colors ${activeMenu === 'editar' ? 'bg-white/20' : 'hover:bg-white/10'}`} onClick={(e) => handleMenuClick('editar', e)}>Edit</span>
             {renderDropdown('editar')}
           </div>
           
           <div className="relative">
-            <span className={`cursor-pointer px-3 py-1 rounded transition-colors ${activeMenu === 'visualizar' ? 'bg-white/20' : 'hover:bg-white/10'}`} onClick={(e) => handleMenuClick('visualizar', e)}>Visualizar</span>
+            <span className={`cursor-pointer px-3 py-1 rounded transition-colors ${activeMenu === 'visualizar' ? 'bg-white/20' : 'hover:bg-white/10'}`} onClick={(e) => handleMenuClick('visualizar', e)}>View</span>
             {renderDropdown('visualizar')}
           </div>
           
           <div className="relative">
-            <span className={`cursor-pointer px-3 py-1 rounded transition-colors ${activeMenu === 'ir' ? 'bg-white/20' : 'hover:bg-white/10'}`} onClick={(e) => handleMenuClick('ir', e)}>Ir</span>
+            <span className={`cursor-pointer px-3 py-1 rounded transition-colors ${activeMenu === 'ir' ? 'bg-white/20' : 'hover:bg-white/10'}`} onClick={(e) => handleMenuClick('ir', e)}>Go</span>
             {renderDropdown('ir')}
           </div>
           
           <div className="relative">
-            <span className={`cursor-pointer px-3 py-1 rounded transition-colors ${activeMenu === 'ajuda' ? 'bg-white/20' : 'hover:bg-white/10'}`} onClick={(e) => handleMenuClick('ajuda', e)}>Ajuda</span>
+            <span className={`cursor-pointer px-3 py-1 rounded transition-colors ${activeMenu === 'ajuda' ? 'bg-white/20' : 'hover:bg-white/10'}`} onClick={(e) => handleMenuClick('ajuda', e)}>Help</span>
             {renderDropdown('ajuda')}
           </div>
         </div>
