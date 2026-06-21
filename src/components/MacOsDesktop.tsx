@@ -460,14 +460,14 @@ export default function MacOsDesktop() {
       </main>
 
       {/* 3. Dock Inferior */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-2xl border border-white/20 rounded-2xl p-2.5 flex items-center -space-x-3 z-50 shadow-2xl">
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-2xl border border-white/20 rounded-2xl p-2.5 flex items-center -space-x-1 z-50 shadow-2xl">
         <DockIcon icon={<FinderIcon />} label="Portfolio" onClick={() => openWindow('finder')} />
         <DockIcon icon={<SafariIcon />} label="Safari" onClick={() => openWindow('projects')} />
         <DockIcon icon={<PhotosIcon />} label="Photos" onClick={() => openWindow('photos')} />
         <DockIcon icon={<ContactsIcon />} label="Contacts" onClick={() => openWindow('contact')} />
         <DockIcon icon={<TerminalIcon />} label="Terminal" onClick={() => openWindow('skills')} />
         
-        <div className="w-px h-12 bg-white/20 mx-4" /> {/* Divider */}
+        <div className="w-px h-12 bg-white/20 mx-2" /> {/* Divider */}
         
         <DockIcon icon={<TrashIcon />} label="Trash" onClick={() => {}} />
       </div>
