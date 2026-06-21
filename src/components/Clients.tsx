@@ -63,7 +63,7 @@ export default function Clients() {
               >
                 {/* Avatar with Ring */}
                 <div className="relative w-24 h-24 mb-4">
-                  <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 100 100">
+                  <svg className="absolute inset-0 w-full h-full -rotate-90 animate-spin [animation-duration:4s]" viewBox="0 0 100 100">
                     <circle cx="50" cy="50" r="48" fill="none" stroke="#222" strokeWidth="2" />
                     <circle 
                       cx="50" cy="50" r="48" fill="none" stroke="#e5e7eb" strokeWidth="2"
