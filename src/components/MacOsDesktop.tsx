@@ -272,7 +272,7 @@ export default function MacOsDesktop() {
                   activeView={finderView}
                   onViewChange={setFinderView}
                   renderContent={(view) => {
-                    if (view === 'about') return <About />;
+                    if (view === 'about-text') return <About />;
                     if (view === 'resume') return (
                       <div className="p-10 text-center space-y-4">
                         <h2 className="text-2xl font-bold text-white">Marcelo Pires</h2>

@@ -34,11 +34,30 @@ const FinderFolder = ({ name, onClick }: { name: string; onClick: () => void; ke
   </div>
 );
 
+const FinderFile = ({ name, onClick }: { name: string; onClick: () => void }) => (
+  <div onClick={onClick} className="flex flex-col items-center gap-2 w-28 cursor-pointer group p-2 rounded-xl hover:bg-white/5 transition-colors">
+    <div className="relative w-[56px] h-[72px] flex items-center justify-center drop-shadow-md group-hover:drop-shadow-xl transition-all duration-300 transform group-hover:scale-105">
+      <svg viewBox="0 0 48 64" className="w-full h-full drop-shadow-md group-hover:drop-shadow-xl transition-all duration-300 transform group-hover:scale-105">
+        <path d="M4 0C1.79086 0 0 1.79086 0 4V60C0 62.2091 1.79086 64 4 64H44C46.2091 64 48 62.2091 48 60V16L32 0H4Z" fill="#ffffff" />
+        <path d="M32 0V16H48L32 0Z" fill="#e2e8f0" />
+      </svg>
+      <div className="absolute inset-0 flex items-center justify-center pt-2">
+        <span className="text-[10px] font-bold text-gray-500 font-mono">TXT</span>
+      </div>
+    </div>
+    <span className="text-xs font-medium leading-[1.2] text-white text-center px-1 rounded transition-colors line-clamp-3">
+      {name}
+    </span>
+  </div>
+);
+
 export default function Finder({ projects, renderContent, activeView, onViewChange }: FinderProps) {
 
-  const navItemClass = (view: string) => 
-    `w-full flex items-center gap-2.5 px-2 py-1.5 rounded-md text-sm font-medium transition-colors text-left ` +
-    (activeView === view ? 'bg-white/10 text-white' : 'hover:bg-white/5 text-gray-300');
+  const navItemClass = (view: string | string[]) => {
+    const isActive = Array.isArray(view) ? view.includes(activeView) : activeView === view;
+    return `w-full flex items-center gap-2.5 px-2 py-1.5 rounded-md text-sm font-medium transition-colors text-left ` +
+      (isActive ? 'bg-white/10 text-white' : 'hover:bg-white/5 text-gray-300');
+  };
 
   return (
     <div className="flex h-full w-full bg-[#1e1e1e] text-gray-200">
@@ -52,7 +71,7 @@ export default function Finder({ projects, renderContent, activeView, onViewChan
               <Folder className="w-4 h-4 text-blue-400" fill="currentColor" />
               Work
             </button>
-            <button onClick={() => onViewChange('about')} className={navItemClass('about')}>
+            <button onClick={() => onViewChange('about')} className={navItemClass(['about', 'about-text'])}>
               <Info className="w-4 h-4 text-blue-400" />
               About me
             </button>
@@ -96,6 +115,13 @@ export default function Finder({ projects, renderContent, activeView, onViewChan
                 onClick={() => onViewChange(`project-${project.id}`)}
               />
             ))}
+          </div>
+        ) : activeView === 'about' ? (
+          <div className="p-8 flex flex-wrap gap-10">
+            <FinderFile 
+              name="about-me.txt"
+              onClick={() => onViewChange('about-text')}
+            />
           </div>
         ) : (
           renderContent(activeView)
