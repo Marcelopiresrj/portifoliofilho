@@ -237,52 +237,61 @@ export default function MacOsDesktop() {
   const renderProjectDetail = (projectId: string) => {
     const project = dbProjects.find(p => p.id === projectId);
     if (!project) return null;
-    return (
-      <div className="p-6 text-white max-w-2xl mx-auto space-y-6">
-        <div className="flex items-center justify-between border-b border-gray-800 pb-6">
-          <div className="flex items-center gap-4">
-            <div className="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center text-3xl border border-gray-800 shadow-inner">
-              {project.icon}
-            </div>
-            <div>
-              <h2 className="text-2xl font-bold font-georama">{project.title}</h2>
-              <span className="text-sm font-mono text-gray-500 uppercase tracking-widest">{project.category}</span>
-            </div>
-          </div>
-        </div>
-        
-        {project.youtube_url && getYouTubeEmbedUrl(project.youtube_url) ? (
-          <div className="w-full aspect-video rounded-xl overflow-hidden border border-gray-800 shadow-xl">
-            <iframe 
-              width="100%" 
-              height="100%" 
-              src={getYouTubeEmbedUrl(project.youtube_url) || ''} 
-              title="YouTube video player" 
-              frameBorder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowFullScreen
-            ></iframe>
-          </div>
-        ) : null}
+    
+    const hasVideos = project.youtube_urls && project.youtube_urls.length > 0;
+    const isMarquee = hasVideos && project.youtube_urls.length > 2;
 
-        <p className="text-gray-300 leading-relaxed">{project.description}</p>
-        <div className="flex flex-wrap gap-2">
-          {project.tags.map(tag => (
-            <span key={tag} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono text-gray-300">{tag}</span>
-          ))}
+    return (
+      <div className="flex-1 flex flex-col items-center justify-center bg-[#0a0a0a] min-h-full py-16 px-4">
+        <div className="flex flex-col items-center text-center mb-12 space-y-4 max-w-2xl">
+          <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight font-sans">
+            {project.title}
+          </h2>
+          <p className="text-gray-400 text-sm md:text-base leading-relaxed">
+            {project.description}
+          </p>
+          <p className="text-[#666] text-xs md:text-sm tracking-[0.2em] font-mono uppercase mt-4">
+            {project.category}
+          </p>
         </div>
-        <div className="flex items-center gap-4 pt-4">
-          {project.demo_link && (
-            <a href={project.demo_link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-medium transition-colors text-sm shadow-lg shadow-blue-900/20">
-              <ExternalLink className="w-4 h-4" /> Live Demo
-            </a>
-          )}
-          {project.github_link && (
-            <a href={project.github_link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-lg font-medium transition-colors border border-white/10 text-sm">
-              <Github className="w-4 h-4" /> Source Code
-            </a>
-          )}
-        </div>
+
+        {hasVideos ? (
+          <div className="w-full relative max-w-full overflow-hidden flex flex-col items-center">
+            {isMarquee && (
+              <>
+                <div className="absolute top-0 left-0 w-16 md:w-32 h-full bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute top-0 right-0 w-16 md:w-32 h-full bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none"></div>
+              </>
+            )}
+            
+            <div className={`flex px-4 py-4 ${isMarquee ? 'space-x-8 animate-[marquee_20s_linear_infinite] hover:[animation-play-state:paused]' : 'flex-wrap gap-8 justify-center'}`}>
+              {(isMarquee ? [...project.youtube_urls, ...project.youtube_urls] : project.youtube_urls).map((url, i) => {
+                const embedUrl = getYouTubeEmbedUrl(url);
+                if (!embedUrl) return null;
+                return (
+                  <div 
+                    key={i} 
+                    className="w-80 md:w-96 aspect-video flex-shrink-0 bg-[#121212] border border-[#222] rounded-2xl overflow-hidden shadow-2xl transition-all hover:scale-[1.02] hover:border-[#444]"
+                  >
+                    <iframe 
+                      width="100%" 
+                      height="100%" 
+                      src={embedUrl} 
+                      title="YouTube video player" 
+                      frameBorder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        ) : (
+          <div className="py-24 text-center text-gray-700 text-sm font-mono border border-[#222] rounded-2xl w-full max-w-2xl bg-[#121212]">
+            No videos available for this client.
+          </div>
+        )}
       </div>
     );
   };

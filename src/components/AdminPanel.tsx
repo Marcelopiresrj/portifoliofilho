@@ -255,24 +255,20 @@ function ProjectForm({
       title: "",
       category: "",
       description: "",
-      tags: [],
-      demo_link: "",
-      github_link: "",
-      youtube_url: "",
-      icon: "🚀",
+      youtube_urls: [],
       featured: false,
       order_idx: 0
     }
   );
-  const [tagsInput, setTagsInput] = useState(project?.tags?.join(", ") || "");
+  const [youtubeUrlsInput, setYoutubeUrlsInput] = useState(project?.youtube_urls?.join("\n") || "");
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const tags = tagsInput.split(",").map(t => t.trim()).filter(t => t.length > 0);
-      await onSave({ ...form, tags });
+      const youtube_urls = youtubeUrlsInput.split("\n").map(t => t.trim()).filter(t => t.length > 0);
+      await onSave({ ...form, youtube_urls });
     } finally {
       setLoading(false);
     }
@@ -308,31 +304,11 @@ function ProjectForm({
           </div>
 
           <div>
-            <label className="text-xs font-mono text-gray-500 uppercase block mb-1">Tags (comma separated)</label>
-            <input value={tagsInput} onChange={e => setTagsInput(e.target.value)} placeholder="React, TypeScript, Tailwind" className="w-full px-3 py-2 rounded-lg border border-gray-800 bg-gray-950 text-white text-sm focus:border-gray-600 outline-none" />
+            <label className="text-xs font-mono text-gray-500 uppercase block mb-1 text-red-400">YouTube Video URLs (one per line)</label>
+            <textarea rows={4} value={youtubeUrlsInput} onChange={e => setYoutubeUrlsInput(e.target.value)} placeholder="https://www.youtube.com/watch?v=..." className="w-full px-3 py-2 rounded-lg border border-gray-800 bg-gray-950 text-white text-sm focus:border-red-900 outline-none resize-none" />
           </div>
 
           <div className="grid grid-cols-2 gap-4">
-            <div>
-              <label className="text-xs font-mono text-gray-500 uppercase block mb-1">Demo Link</label>
-              <input value={form.demo_link || ""} onChange={e => setForm({...form, demo_link: e.target.value})} placeholder="https://" className="w-full px-3 py-2 rounded-lg border border-gray-800 bg-gray-950 text-white text-sm focus:border-gray-600 outline-none" />
-            </div>
-            <div>
-              <label className="text-xs font-mono text-gray-500 uppercase block mb-1">GitHub Link</label>
-              <input value={form.github_link || ""} onChange={e => setForm({...form, github_link: e.target.value})} placeholder="https://" className="w-full px-3 py-2 rounded-lg border border-gray-800 bg-gray-950 text-white text-sm focus:border-gray-600 outline-none" />
-            </div>
-          </div>
-
-          <div>
-            <label className="text-xs font-mono text-gray-500 uppercase block mb-1 text-red-400">YouTube Video URL</label>
-            <input value={form.youtube_url || ""} onChange={e => setForm({...form, youtube_url: e.target.value})} placeholder="https://www.youtube.com/watch?v=..." className="w-full px-3 py-2 rounded-lg border border-gray-800 bg-gray-950 text-white text-sm focus:border-red-900 outline-none" />
-          </div>
-
-          <div className="grid grid-cols-3 gap-4">
-            <div>
-              <label className="text-xs font-mono text-gray-500 uppercase block mb-1">Icon (Emoji)</label>
-              <input required value={form.icon} onChange={e => setForm({...form, icon: e.target.value})} className="w-full px-3 py-2 rounded-lg border border-gray-800 bg-gray-950 text-white text-sm focus:border-gray-600 outline-none" />
-            </div>
             <div>
               <label className="text-xs font-mono text-gray-500 uppercase block mb-1">Order Index</label>
               <input type="number" value={form.order_idx} onChange={e => setForm({...form, order_idx: parseInt(e.target.value)})} className="w-full px-3 py-2 rounded-lg border border-gray-800 bg-gray-950 text-white text-sm focus:border-gray-600 outline-none" />
@@ -707,15 +683,15 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
                   {projects.map((p) => (
                     <div key={p.id} className="p-4 rounded-xl border border-gray-800 bg-[#111214] flex items-center justify-between group">
                       <div className="flex items-center gap-4">
-                        <div className="w-10 h-10 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-xl">
-                          {p.icon}
+                        <div className="w-10 h-10 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-xl text-gray-400">
+                          <FolderGit2 className="w-5 h-5" />
                         </div>
                         <div>
                           <div className="flex items-center gap-2">
                             <h3 className="text-sm font-semibold text-white">{p.title}</h3>
                             {p.featured && <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-500 border border-amber-500/20">FEATURED</span>}
                           </div>
-                          <p className="text-xs text-gray-500 font-mono mt-0.5">{p.category} · {p.tags.slice(0,3).join(", ")}{p.tags.length > 3 ? "..." : ""}</p>
+                          <p className="text-xs text-gray-500 font-mono mt-0.5">{p.category} · {p.youtube_urls?.length || 0} videos</p>
                         </div>
                       </div>
                       <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
