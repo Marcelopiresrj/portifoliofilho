@@ -54,18 +54,22 @@ const Window = ({ title, isOpen, onClose, onFocus, children, noPadding, zIndex =
     >
       {/* Window Header */}
       {variant === 'finder-new' ? (
-        <div className="flex flex-col flex-shrink-0 bg-[#212121] rounded-t-xl border-b border-black/40" onPointerDown={(e) => dragControls.start(e)}>
-          <div className="h-14 flex items-center px-4">
-            <div className="flex items-center gap-2 cursor-default mr-4" onPointerDown={e => e.stopPropagation()}>
+        <div className="flex flex-col flex-shrink-0 bg-[#212121] rounded-t-xl" onPointerDown={(e) => dragControls.start(e)}>
+          {/* Top Row: Buttons and Title */}
+          <div className="h-10 flex items-center px-4 bg-[#1e1e24] rounded-t-xl border-b border-black/20 relative">
+            <div className="flex items-center gap-2 cursor-default z-10" onPointerDown={e => e.stopPropagation()}>
               <button onClick={onClose} className="w-3.5 h-3.5 rounded-full bg-[#ff5f56] hover:bg-[#ff5f56]/80 transition-colors shadow-sm" />
               <button className="w-3.5 h-3.5 rounded-full bg-[#ffbd2e] shadow-sm cursor-default" />
               <button className="w-3.5 h-3.5 rounded-full bg-[#27c93f] shadow-sm cursor-default" />
             </div>
             
-            <div className="flex font-medium text-sm text-gray-300 mr-8 pointer-events-none">
-              Finder
+            <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
+              <span className="font-medium text-[13px] text-gray-300">Portfolio</span>
             </div>
+          </div>
 
+          {/* Bottom Row: Controls */}
+          <div className="h-12 flex items-center px-4 bg-[#212121] border-b border-black/40">
             <div className="flex items-center gap-4 text-gray-400">
               <ChevronLeft className="w-4 h-4 cursor-pointer hover:text-gray-200 transition-colors" />
               <ChevronRight className="w-4 h-4 cursor-pointer hover:text-gray-200 transition-colors opacity-50" />
@@ -73,7 +77,7 @@ const Window = ({ title, isOpen, onClose, onFocus, children, noPadding, zIndex =
 
             <div className="ml-6 flex items-center text-gray-400 bg-transparent">
               <Search className="w-4 h-4 mr-2" />
-              <span className="text-sm">Pesquisar</span>
+              <span className="text-sm">Search</span>
             </div>
 
             <div className="flex-1 flex justify-center items-center pointer-events-none">
