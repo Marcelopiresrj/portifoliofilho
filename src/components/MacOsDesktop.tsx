@@ -1,5 +1,5 @@
 import { useState, useEffect, ReactNode, useRef } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence, useDragControls } from 'motion/react';
 import { Wifi, Search, SlidersHorizontal, BatteryMedium, Folder, ExternalLink, Github } from 'lucide-react';
 import About from './About';
 import Welcome from './Welcome';
@@ -31,6 +31,8 @@ interface WindowProps {
 }
 
 const Window = ({ title, isOpen, onClose, onFocus, children, noPadding, zIndex = 0 }: WindowProps) => {
+  const dragControls = useDragControls();
+
   if (!isOpen) return null;
 
   return (
@@ -39,14 +41,23 @@ const Window = ({ title, isOpen, onClose, onFocus, children, noPadding, zIndex =
       animate={{ opacity: 1, scale: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.95, y: 20 }}
       drag
+      dragListener={false}
+      dragControls={dragControls}
       dragConstraints={{ left: -300, right: 300, top: -100, bottom: 500 }}
       dragMomentum={false}
+      onDragStart={() => document.body.classList.add('is-dragging')}
+      onDragEnd={() => document.body.classList.remove('is-dragging')}
       onPointerDown={onFocus}
       className="absolute top-20 left-1/2 -translate-x-1/2 w-full max-w-4xl bg-[#1e1e1e]/95 backdrop-blur-2xl border border-white/10 rounded-xl shadow-2xl overflow-hidden z-50 flex flex-col max-h-[80vh]"
       style={{ touchAction: "none", zIndex: 50 + zIndex }}
     >
       {/* Window Header */}
-      <div className="h-12 bg-[#2d2d2d]/80 border-b border-black/20 flex items-center px-4 flex-shrink-0 cursor-grab active:cursor-grabbing">
+      <div 
+        onPointerDown={(e) => {
+          dragControls.start(e);
+        }}
+        className="h-12 bg-[#2d2d2d]/80 border-b border-black/20 flex items-center px-4 flex-shrink-0 cursor-grab active:cursor-grabbing"
+      >
         <div className="flex items-center gap-2 w-20">
           <button onClick={onClose} onPointerDown={e => e.stopPropagation()} className="cursor-pointer w-3.5 h-3.5 rounded-full bg-[#ff5f56] hover:bg-[#ff5f56]/80 flex items-center justify-center transition-colors shadow-sm" />
           <button onPointerDown={e => e.stopPropagation()} className="cursor-pointer w-3.5 h-3.5 rounded-full bg-[#ffbd2e] shadow-sm" />
@@ -350,8 +361,8 @@ const DesktopFolder = ({ name, onClick }: { key?: string | number; name: string;
       drag 
       dragMomentum={false}
       dragElastic={0}
-      onDragStart={() => { isDragging.current = true; }}
-      onDragEnd={() => { setTimeout(() => { isDragging.current = false; }, 150); }}
+      onDragStart={() => { isDragging.current = true; document.body.classList.add('is-dragging'); }}
+      onDragEnd={() => { setTimeout(() => { isDragging.current = false; document.body.classList.remove('is-dragging'); }, 150); }}
       onClick={(e) => {
         if (isDragging.current) {
           e.stopPropagation();

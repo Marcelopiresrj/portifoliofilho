@@ -40,6 +40,10 @@ a, button, [role="button"], input[type="submit"], input[type="button"], .cursor-
   cursor: url('/cursor-move.png'), grabbing !important;
 }
 
+body.is-dragging, body.is-dragging * {
+  cursor: url('/cursor-move.png'), grabbing !important;
+}
+
 /* Override tailwind default cursors to use custom images where appropriate */
 .cursor-default {
   cursor: url('/cursor.png'), default !important;
