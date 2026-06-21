@@ -207,7 +207,7 @@ export default function MacOsDesktop() {
     apple: [
       { label: 'Menu Apple', action: () => {} },
       { divider: true },
-      { label: 'Sobre este Mac', action: () => openWindow('about') },
+      { label: 'Sobre este Mac', action: () => {} },
       { label: 'Ajustes do Sistema', action: () => {} },
       { divider: true },
       { label: 'Repousar', action: () => {} },
@@ -216,10 +216,10 @@ export default function MacOsDesktop() {
     ],
     finder: [],
     arquivo: [
-      { label: 'Nova Janela', action: () => openWindow('finder') },
+      { label: 'Nova Janela', action: () => {} },
       { label: 'Nova Aba', action: () => {} },
       { label: 'Abrir...', action: () => {} },
-      { label: 'Fechar Janela', action: () => setActiveWindows([]) },
+      { label: 'Fechar Janela', action: () => {} },
       { divider: true },
       { label: 'Obter Informações', action: () => {} },
       { label: 'Duplicar', action: () => {} },
@@ -249,13 +249,13 @@ export default function MacOsDesktop() {
       { label: 'Voltar', action: () => {} },
       { label: 'Avançar', action: () => {} },
       { divider: true },
-      { label: 'Pasta Pessoal', action: () => openWindow('finder') },
-      { label: 'Área de Trabalho', action: () => setActiveWindows([]) },
-      { label: 'Downloads', action: () => openWindow('projects') },
-      { label: 'Aplicativos', action: () => openWindow('skills') },
+      { label: 'Pasta Pessoal', action: () => {} },
+      { label: 'Área de Trabalho', action: () => {} },
+      { label: 'Downloads', action: () => {} },
+      { label: 'Aplicativos', action: () => {} },
     ],
     ajuda: [
-      { label: 'Centro de Ajuda', action: () => openWindow('contact') }
+      { label: 'Centro de Ajuda', action: () => {} }
     ]
   };
 
@@ -310,7 +310,6 @@ export default function MacOsDesktop() {
           <div className="relative">
             <span 
               className="cursor-pointer px-3 py-1 rounded-lg font-semibold text-white transition-colors bg-white/10 hover:bg-white/20"
-              onClick={() => openWindow('finder')}
             >
               Finder
             </span>
@@ -461,7 +460,7 @@ export default function MacOsDesktop() {
       </main>
 
       {/* 3. Dock Inferior */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-2xl border border-white/20 rounded-2xl p-2.5 flex items-center gap-3 z-50 shadow-2xl">
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-2xl border border-white/20 rounded-2xl p-2.5 flex items-center gap-1.5 z-50 shadow-2xl">
         <DockIcon icon={<FinderIcon />} label="Portfolio" onClick={() => openWindow('finder')} />
         <DockIcon icon={<SafariIcon />} label="Safari" onClick={() => openWindow('projects')} />
         <DockIcon icon={<PhotosIcon />} label="Photos" onClick={() => openWindow('photos')} />
