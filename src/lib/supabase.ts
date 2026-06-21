@@ -192,7 +192,8 @@ export async function fetchSiteSettings(): Promise<SiteSettingsRow | null> {
 export async function updateAboutText(text: string): Promise<void> {
   const { error } = await supabase
     .from("site_settings")
-    .upsert({ id: 1, about_text: text, updated_at: new Date().toISOString() });
+    .update({ about_text: text, updated_at: new Date().toISOString() })
+    .eq('id', 1);
 
   if (error) {
     console.error("Erro ao atualizar texto sobre mim:", error);
