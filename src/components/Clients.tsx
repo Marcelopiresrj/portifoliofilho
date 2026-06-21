@@ -18,25 +18,20 @@ export default function Clients() {
       
       {/* Header Section */}
       <div className="flex flex-col items-center text-center mb-16 space-y-4 px-4">
-        <span className="px-4 py-1.5 bg-[#1e1e1e]/60 text-[#e5e7eb] border border-[#333333]/50 rounded-full text-[10px] tracking-[0.2em] font-mono uppercase shadow-[0_0_15px_rgba(255,255,255,0.05)]">
-          <span className="inline-block w-1.5 h-1.5 bg-[#e5e7eb] rounded-full mr-2 animate-pulse"></span>
-          Clients
-        </span>
-        
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight font-sans">
-          Creators who trust <span className="text-[#e5e7eb]">Marcelo</span>
+          Creators who trust <span className="text-[#e5e7eb]">me</span>
         </h2>
         
         <p className="text-[#666] text-xs md:text-sm tracking-[0.2em] font-mono uppercase mt-2">
-          Working with the best people
+          WORKING WITH THE BEST
         </p>
       </div>
 
       {/* Marquee Animation */}
       <div className="w-full relative max-w-full">
-        {/* Left and Right fade gradients for smooth edge transition */}
-        <div className="absolute top-0 left-0 w-24 md:w-48 h-full bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute top-0 right-0 w-24 md:w-48 h-full bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none"></div>
+        {/* Left and Right fade gradients for smooth edge transition (with negative margin to fix gaps) */}
+        <div className="absolute top-0 -left-2 w-32 md:w-64 h-full bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute top-0 -right-2 w-32 md:w-64 h-full bg-gradient-to-l from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent z-10 pointer-events-none"></div>
         
         <div className="flex overflow-hidden group">
           {/* We duplicate the array to allow infinite seamless scrolling */}
