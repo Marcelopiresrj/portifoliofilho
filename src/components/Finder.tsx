@@ -93,37 +93,21 @@ export default function Finder({ projects, renderContent, activeView, onViewChan
       {/* Main Content Area */}
       <div className="flex-1 overflow-y-auto bg-[#1c1c1c] p-6">
         {activeView === 'work' ? (
-          <div className="flex flex-col max-w-3xl">
+          <div className="flex flex-wrap gap-6">
             {projects.map(project => (
-              <div 
-                key={project.id} 
-                onClick={() => onViewChange(`project-${project.id}`)} 
-                className="flex items-center justify-between p-3.5 hover:bg-white/5 rounded-2xl cursor-pointer group transition-colors"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-white/[0.03] flex items-center justify-center border border-white/5 shadow-inner">
-                    <Folder className="w-6 h-6 text-blue-400" fill="currentColor" />
-                  </div>
-                  <span className="text-gray-100 font-semibold text-sm">{project.title}</span>
-                </div>
-                <ChevronRight className="w-4 h-4 text-gray-600" />
-              </div>
+              <FinderFolder 
+                key={project.id}
+                name={project.title}
+                onClick={() => onViewChange(`project-${project.id}`)}
+              />
             ))}
           </div>
         ) : activeView === 'about' ? (
-          <div className="flex flex-col max-w-3xl">
-            <div 
-              onClick={() => onOpenWindow('about-text')} 
-              className="flex items-center justify-between p-3.5 hover:bg-white/5 rounded-2xl cursor-pointer group transition-colors"
-            >
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-white/[0.03] flex items-center justify-center border border-white/5 shadow-inner">
-                  <FileText className="w-6 h-6 text-blue-400" fill="currentColor" />
-                </div>
-                <span className="text-gray-100 font-semibold text-sm">about-me.txt</span>
-              </div>
-              <ChevronRight className="w-4 h-4 text-gray-600" />
-            </div>
+          <div className="flex flex-wrap gap-6">
+            <FinderFile 
+              name="about-me.txt"
+              onClick={() => onOpenWindow('about-text')}
+            />
           </div>
         ) : activeView.startsWith('project-') ? (
           <div className="p-8">
