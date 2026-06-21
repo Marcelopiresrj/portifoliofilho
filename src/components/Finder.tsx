@@ -64,29 +64,7 @@ export default function Finder({ projects, renderContent, activeView, onViewChan
           </nav>
         </div>
 
-        <div className="h-px bg-white/5 my-4 mx-2" />
 
-        {/* Work Section */}
-        <div>
-          <h3 className="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-2 px-3">WORK</h3>
-          <nav className="space-y-0.5">
-            {projects.map(project => {
-              const isActive = activeView === `project-${project.id}`;
-              return (
-                <button 
-                  key={project.id}
-                  onClick={() => onViewChange(`project-${project.id}`)}
-                  className={`w-full flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-[13px] font-medium transition-colors text-left ${isActive ? 'bg-blue-500 text-white shadow-sm' : 'hover:bg-white/5 text-gray-200'}`}
-                >
-                  <Folder className={`w-4 h-4 flex-shrink-0 ${isActive ? 'text-white' : 'text-blue-400'}`} fill="currentColor" />
-                  <span className="truncate">{project.title}</span>
-                </button>
-              );
-            })}
-          </nav>
-        </div>
-
-        <div className="h-px bg-white/5 my-4 mx-2" />
 
         {/* Devices Section */}
         <div>
