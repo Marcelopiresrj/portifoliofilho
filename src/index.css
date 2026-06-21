@@ -32,8 +32,12 @@ a, button, [role="button"], input[type="submit"], input[type="button"], .cursor-
 }
 
 /* Dragging / Move areas */
-.cursor-move, .cursor-grab, .cursor-grabbing {
-  cursor: url('/cursor-move.png'), move !important;
+.cursor-move, .cursor-grab, [style*="cursor: grab"] {
+  cursor: url('/cursor-waiting.png'), grab !important;
+}
+
+.cursor-grabbing, [style*="cursor: grabbing"] {
+  cursor: url('/cursor-move.png'), grabbing !important;
 }
 
 /* Override tailwind default cursors to use custom images where appropriate */
