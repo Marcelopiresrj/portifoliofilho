@@ -59,9 +59,9 @@ const Window = ({ title, isOpen, onClose, onFocus, children, noPadding, zIndex =
         className="h-12 bg-[#2d2d2d]/80 border-b border-black/20 flex items-center px-4 flex-shrink-0 cursor-grab active:cursor-grabbing"
       >
         <div className="flex items-center gap-2 w-20">
-          <button onClick={onClose} onPointerDown={e => e.stopPropagation()} className="cursor-pointer w-3.5 h-3.5 rounded-full bg-[#ff5f56] hover:bg-[#ff5f56]/80 flex items-center justify-center transition-colors shadow-sm" />
-          <button onPointerDown={e => e.stopPropagation()} className="cursor-pointer w-3.5 h-3.5 rounded-full bg-[#ffbd2e] shadow-sm" />
-          <button onPointerDown={e => e.stopPropagation()} className="cursor-pointer w-3.5 h-3.5 rounded-full bg-[#27c93f] shadow-sm" />
+          <button onClick={onClose} onPointerDown={e => e.stopPropagation()} className="cursor-pointer w-3.5 h-3.5 rounded-full bg-[#ff5f56] hover:bg-[#ff5f56]/80 flex items-center justify-center transition-colors shadow-sm" style={{ clipPath: "circle(50%)" }} />
+          <button onPointerDown={e => e.stopPropagation()} className="w-3.5 h-3.5 rounded-full bg-[#ffbd2e] shadow-sm cursor-default" />
+          <button onPointerDown={e => e.stopPropagation()} className="w-3.5 h-3.5 rounded-full bg-[#27c93f] shadow-sm cursor-default" />
         </div>
         <div className="flex-1 text-center text-sm font-semibold text-gray-300 pointer-events-none">
           {title}
