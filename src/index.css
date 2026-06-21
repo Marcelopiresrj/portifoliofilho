@@ -23,6 +23,22 @@ body {
   background-color: #0d0e11;
   color: #f3f4f6;
   overflow-x: hidden;
+  cursor: url('/cursor.png'), auto;
+}
+
+/* Custom Cursor Rules */
+a, button, [role="button"], input[type="submit"], input[type="button"], .cursor-pointer {
+  cursor: url('/cursor-click.png'), pointer !important;
+}
+
+/* Dragging / Move areas */
+.cursor-move, .cursor-grab, .cursor-grabbing {
+  cursor: url('/cursor-move.png'), move !important;
+}
+
+/* Override tailwind default cursors to use custom images where appropriate */
+.cursor-default {
+  cursor: url('/cursor.png'), default !important;
 }
 
 ::selection {
