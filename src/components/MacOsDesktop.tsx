@@ -1,6 +1,6 @@
 import { useState, useEffect, ReactNode, useRef } from 'react';
 import { motion, AnimatePresence, useDragControls } from 'motion/react';
-import { Wifi, Search, SlidersHorizontal, BatteryMedium, Bell, LayoutGrid, Command } from 'lucide-react';
+import { Wifi, Search, SlidersHorizontal, BatteryMedium, Bell, LayoutGrid } from 'lucide-react';
 import About from './About';
 import Welcome from './Welcome';
 import Projects from './Projects';
@@ -86,6 +86,7 @@ export default function MacOsDesktop() {
   const [activeWindows, setActiveWindows] = useState<WindowType[]>([]);
   const [dbProjects, setDbProjects] = useState<ProjectRow[]>([]);
   const [finderView, setFinderView] = useState<string>('work');
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
 
   const openWindow = (type: WindowType) => {
     if (!type) return;
@@ -197,6 +198,94 @@ export default function MacOsDesktop() {
     );
   };
 
+  const handleMenuClick = (menu: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    setActiveMenu(activeMenu === menu ? null : menu);
+  };
+
+  const menuItems = {
+    apple: [
+      { label: 'Menu Apple', action: () => {} },
+      { divider: true },
+      { label: 'Sobre este Mac', action: () => openWindow('about') },
+      { label: 'Ajustes do Sistema', action: () => {} },
+      { divider: true },
+      { label: 'Repousar', action: () => {} },
+      { label: 'Reiniciar', action: () => {} },
+      { label: 'Desligar', action: () => {} },
+    ],
+    finder: [
+      { label: 'Nova Janela', action: () => openWindow('finder') },
+      { label: 'Nova Aba', action: () => {} },
+      { label: 'Abrir...', action: () => {} },
+      { label: 'Fechar Janela', action: () => setActiveWindows([]) },
+      { divider: true },
+      { label: 'Obter Informações', action: () => {} },
+      { label: 'Duplicar', action: () => {} },
+      { divider: true },
+      { label: 'Mover para Lixeira', action: () => {} },
+    ],
+    arquivo: [
+      { label: 'Novo Projeto', action: () => openWindow('projects') },
+      { label: 'Fechar', action: () => setActiveWindows([]) }
+    ],
+    editar: [
+      { label: 'Desfazer', action: () => {} },
+      { label: 'Refazer', action: () => {} },
+      { divider: true },
+      { label: 'Recortar', action: () => {} },
+      { label: 'Copiar', action: () => {} },
+      { label: 'Colar', action: () => {} },
+      { label: 'Selecionar Tudo', action: () => {} },
+      { divider: true },
+      { label: 'Localizar', action: () => {} },
+    ],
+    visualizar: [
+      { label: 'Como Ícones', action: () => {} },
+      { label: 'Como Lista', action: () => {} },
+      { label: 'Como Colunas', action: () => {} },
+      { divider: true },
+      { label: 'Barra de Ferramentas', action: () => {} },
+      { label: 'Barra de Status', action: () => {} },
+    ],
+    ir: [
+      { label: 'Voltar', action: () => {} },
+      { label: 'Avançar', action: () => {} },
+      { divider: true },
+      { label: 'Pasta Pessoal', action: () => openWindow('finder') },
+      { label: 'Área de Trabalho', action: () => setActiveWindows([]) },
+      { label: 'Downloads', action: () => openWindow('projects') },
+      { label: 'Aplicativos', action: () => openWindow('skills') },
+    ],
+    ajuda: [
+      { label: 'Centro de Ajuda', action: () => openWindow('contact') }
+    ]
+  };
+
+  const renderDropdown = (menuKey: keyof typeof menuItems) => {
+    if (activeMenu !== menuKey) return null;
+    return (
+      <div className="absolute top-full left-0 mt-2 min-w-[220px] bg-[#1a1f2c]/95 backdrop-blur-3xl border border-white/10 rounded-xl py-1.5 shadow-2xl z-[100] animate-in fade-in zoom-in-95 duration-100">
+        {menuItems[menuKey].map((item, idx) => {
+          if (item.divider) return <div key={idx} className="h-px bg-white/10 my-1.5 mx-3" />;
+          return (
+            <div 
+              key={idx} 
+              className="px-3 py-1.5 mx-1.5 text-[13px] text-gray-200 hover:bg-blue-600 hover:text-white rounded transition-colors cursor-default"
+              onClick={(e) => {
+                e.stopPropagation();
+                item.action?.();
+                setActiveMenu(null);
+              }}
+            >
+              {item.label}
+            </div>
+          );
+        })}
+      </div>
+    );
+  };
+
   return (
     <div className="h-screen w-full overflow-hidden flex flex-col font-sans text-white relative">
       
@@ -208,21 +297,53 @@ export default function MacOsDesktop() {
 
       {/* 1. Top Menu Bar */}
       <header className="absolute top-2 left-4 right-4 h-9 bg-[#1e2430]/70 backdrop-blur-xl border border-white/5 rounded-2xl flex justify-between items-center px-4 text-[13px] font-medium z-50 shadow-lg shadow-black/20">
-        <div className="flex items-center gap-4 text-gray-200">
-          <span className="cursor-pointer opacity-90 hover:opacity-100 flex items-center justify-center">
-            <Command className="w-4 h-4 text-gray-300" />
-          </span>
-          <span 
-            className="cursor-pointer bg-white/10 px-3 py-1 rounded-lg font-semibold text-white transition-colors hover:bg-white/20"
-            onClick={() => openWindow('finder')}
-          >
-            Toolkit
-          </span>
-          <span className="cursor-pointer hover:bg-white/10 px-2 py-0.5 rounded transition-colors" onClick={() => openWindow('projects')}>Arquivo</span>
-          <span className="cursor-pointer hover:bg-white/10 px-2 py-0.5 rounded transition-colors" onClick={() => openWindow('skills')}>Editar</span>
-          <span className="cursor-pointer hover:bg-white/10 px-2 py-0.5 rounded transition-colors" onClick={() => openWindow('photos')}>Visualizar</span>
-          <span className="cursor-pointer hover:bg-white/10 px-2 py-0.5 rounded transition-colors" onClick={() => openWindow('about')}>Histórico</span>
-          <span className="cursor-pointer hover:bg-white/10 px-2 py-0.5 rounded transition-colors" onClick={() => openWindow('contact')}>Ajuda</span>
+        <div className="flex items-center gap-2 text-gray-200">
+          <div className="relative">
+            <span 
+              className={`cursor-pointer flex items-center justify-center px-3 py-1 rounded transition-colors ${activeMenu === 'apple' ? 'bg-white/20' : 'hover:bg-white/10'}`}
+              onClick={(e) => handleMenuClick('apple', e)}
+            >
+              <svg viewBox="0 0 384 512" className="w-[14px] h-[14px] fill-current text-white mb-0.5">
+                <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
+              </svg>
+            </span>
+            {renderDropdown('apple')}
+          </div>
+          
+          <div className="relative">
+            <span 
+              className={`cursor-pointer px-3 py-1 rounded-lg font-semibold text-white transition-colors ${activeMenu === 'finder' ? 'bg-white/20' : 'bg-white/10 hover:bg-white/20'}`}
+              onClick={(e) => handleMenuClick('finder', e)}
+            >
+              Finder
+            </span>
+            {renderDropdown('finder')}
+          </div>
+
+          <div className="relative">
+            <span className={`cursor-pointer px-3 py-1 rounded transition-colors ${activeMenu === 'arquivo' ? 'bg-white/20' : 'hover:bg-white/10'}`} onClick={(e) => handleMenuClick('arquivo', e)}>Arquivo</span>
+            {renderDropdown('arquivo')}
+          </div>
+          
+          <div className="relative">
+            <span className={`cursor-pointer px-3 py-1 rounded transition-colors ${activeMenu === 'editar' ? 'bg-white/20' : 'hover:bg-white/10'}`} onClick={(e) => handleMenuClick('editar', e)}>Editar</span>
+            {renderDropdown('editar')}
+          </div>
+          
+          <div className="relative">
+            <span className={`cursor-pointer px-3 py-1 rounded transition-colors ${activeMenu === 'visualizar' ? 'bg-white/20' : 'hover:bg-white/10'}`} onClick={(e) => handleMenuClick('visualizar', e)}>Visualizar</span>
+            {renderDropdown('visualizar')}
+          </div>
+          
+          <div className="relative">
+            <span className={`cursor-pointer px-3 py-1 rounded transition-colors ${activeMenu === 'ir' ? 'bg-white/20' : 'hover:bg-white/10'}`} onClick={(e) => handleMenuClick('ir', e)}>Ir</span>
+            {renderDropdown('ir')}
+          </div>
+          
+          <div className="relative">
+            <span className={`cursor-pointer px-3 py-1 rounded transition-colors ${activeMenu === 'ajuda' ? 'bg-white/20' : 'hover:bg-white/10'}`} onClick={(e) => handleMenuClick('ajuda', e)}>Ajuda</span>
+            {renderDropdown('ajuda')}
+          </div>
         </div>
         <div className="flex items-center gap-4 text-gray-300">
           <Search className="w-4 h-4 hover:text-white cursor-pointer transition-colors" />
@@ -235,7 +356,7 @@ export default function MacOsDesktop() {
       </header>
 
       {/* 2. Desktop Area */}
-      <main className="flex-1 relative w-full" onClick={() => setActiveWindows([])}>
+      <main className="flex-1 relative w-full" onClick={() => setActiveMenu(null)}>
         
         {/* Dynamic Desktop Folders (Projects) */}
         <div className="absolute top-8 left-4 flex flex-col gap-6 z-40" onClick={e => e.stopPropagation()}>
