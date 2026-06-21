@@ -64,7 +64,7 @@ export default function Finder({ projects, renderContent, activeView, onViewChan
           </nav>
         </div>
 
-
+        <div className="h-px bg-white/5 my-4 mx-2" />
 
         {/* Devices Section */}
         <div>
