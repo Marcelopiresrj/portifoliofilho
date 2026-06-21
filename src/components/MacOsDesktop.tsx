@@ -360,25 +360,9 @@ const DesktopFolder = ({ name, onClick }: { key?: string | number; name: string;
       }}
       className="flex flex-col items-center gap-1 w-24 cursor-pointer group"
     >
-      {/* High-fidelity macOS Folder SVG */}
-    <div className="relative w-[72px] h-[56px] flex items-center justify-center">
-      <svg viewBox="0 0 100 80" className="w-full h-full drop-shadow-md group-hover:drop-shadow-xl transition-all duration-300 transform group-hover:scale-105 pointer-events-none">
-        <defs>
-          <linearGradient id="folder-back" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#4daeff" />
-            <stop offset="100%" stopColor="#007aff" />
-          </linearGradient>
-          <linearGradient id="folder-front" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#7dc3ff" />
-            <stop offset="100%" stopColor="#2c94ff" />
-          </linearGradient>
-        </defs>
-        {/* Back flat */}
-        <path d="M5,15 L35,15 L45,25 L95,25 Q100,25 100,30 L100,75 Q100,80 95,80 L5,80 Q0,80 0,75 L0,20 Q0,15 5,15 Z" fill="url(#folder-back)" />
-        {/* Front flap */}
-        <path d="M0,32 L100,32 L96,80 L4,80 Z" fill="url(#folder-front)" />
-      </svg>
-    </div>
+      <div className="relative w-[72px] h-[56px] flex items-center justify-center drop-shadow-md group-hover:drop-shadow-xl transition-all duration-300 transform group-hover:scale-105 pointer-events-none">
+        <img src="/folder-icon.png" alt="Folder" className="w-full h-full object-contain" />
+      </div>
       <span className="text-xs font-medium leading-[1.1] text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)] text-center px-1.5 py-0.5 rounded group-hover:bg-blue-600/80 transition-colors line-clamp-3">
         {name}
       </span>
