@@ -381,25 +381,25 @@ const DockIcon = ({ icon, label, onClick }: { icon: ReactNode; label: string; on
 // High-fidelity SVG icons to perfectly match macOS without relying on broken image URLs
 const FinderIcon = () => (
   <div className="w-full h-full drop-shadow-md group-hover:drop-shadow-xl transition-all duration-300 transform group-hover:scale-105 p-1">
-    <img src="/icons/finder.png" alt="Portfolio" className="w-full h-full object-contain" />
+    <img src="/portifolio.jpg" alt="Portfolio" className="w-full h-full object-contain" />
   </div>
 );
 
 const SafariIcon = () => (
   <div className="w-full h-full drop-shadow-md group-hover:drop-shadow-xl transition-all duration-300 transform group-hover:scale-105 p-1">
-    <img src="/icons/safari.png" alt="Safari" className="w-full h-full object-contain" />
+    <img src="/bussula.jpg" alt="Safari" className="w-full h-full object-contain" />
   </div>
 );
 
 const PhotosIcon = () => (
   <div className="w-full h-full drop-shadow-md group-hover:drop-shadow-xl transition-all duration-300 transform group-hover:scale-105 p-1">
-    <img src="/icons/photos.png" alt="Photos" className="w-full h-full object-contain" />
+    <img src="/fotos.jpg" alt="Photos" className="w-full h-full object-contain" />
   </div>
 );
 
 const ContactsIcon = () => (
   <div className="w-full h-full drop-shadow-md group-hover:drop-shadow-xl transition-all duration-300 transform group-hover:scale-105 p-1">
-    <img src="/icons/contacts.png" alt="Contacts" className="w-full h-full object-contain" />
+    <img src="/contacts.jpg" alt="Contacts" className="w-full h-full object-contain" />
   </div>
 );
 
@@ -411,6 +411,6 @@ const TerminalIcon = () => (
 
 const TrashIcon = () => (
   <div className="w-full h-full drop-shadow-md group-hover:drop-shadow-xl transition-all duration-300 transform group-hover:scale-105 p-1">
-    <img src="/icons/trash.png" alt="Trash" className="w-full h-full object-contain" />
+    <img src="/trash.jpg" alt="Trash" className="w-full h-full object-contain" />
   </div>
 );
