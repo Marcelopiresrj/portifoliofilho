@@ -15,6 +15,8 @@ const defaultClients: ClientRow[] = [
 export default function Clients() {
   const [clients, setClients] = useState<ClientRow[]>([]);
 
+  const isMarquee = clients.length > 4;
+
   useEffect(() => {
     fetchClients().then((data) => {
       if (data && data.length > 0) {
@@ -42,16 +44,19 @@ export default function Clients() {
         </p>
       </div>
 
-      {/* Marquee Animation */}
+      {/* Marquee Animation or Static Grid */}
       <div className="w-full relative max-w-full">
-        {/* Left and Right fade gradients for smooth edge transition (with negative margin to fix gaps) */}
-        <div className="absolute top-0 -left-2 w-32 md:w-64 h-full bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute top-0 -right-2 w-32 md:w-64 h-full bg-gradient-to-l from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent z-10 pointer-events-none"></div>
+        {/* Left and Right fade gradients for smooth edge transition - only show if marquee is active */}
+        {isMarquee && (
+          <>
+            <div className="absolute top-0 -left-2 w-32 md:w-64 h-full bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute top-0 -right-2 w-32 md:w-64 h-full bg-gradient-to-l from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent z-10 pointer-events-none"></div>
+          </>
+        )}
         
-        <div className="flex overflow-hidden group">
-          {/* We duplicate the array to allow infinite seamless scrolling */}
-          <div className="flex space-x-6 px-3 animate-marquee group-hover:[animation-play-state:paused]">
-            {[...clients, ...clients, ...clients].map((client, i) => (
+        <div className="flex overflow-hidden group justify-center">
+          <div className={`flex px-3 ${isMarquee ? 'space-x-6 animate-marquee group-hover:[animation-play-state:paused]' : 'flex-wrap gap-6 justify-center max-w-5xl'}`}>
+            {(isMarquee ? [...clients, ...clients, ...clients] : clients).map((client, i) => (
               <div 
                 key={i} 
                 className="w-40 md:w-48 flex-shrink-0 bg-[#121212] border border-[#222] rounded-2xl p-6 flex flex-col items-center hover:bg-[#161616] hover:border-[#333] transition-colors cursor-pointer group/card"
