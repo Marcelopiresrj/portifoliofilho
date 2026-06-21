@@ -1,6 +1,6 @@
 import { useState, useEffect, ReactNode, useRef } from 'react';
 import { motion, AnimatePresence, useDragControls } from 'motion/react';
-import { Wifi, Search, SlidersHorizontal, BatteryMedium, Bell, LayoutGrid } from 'lucide-react';
+import { Wifi, Search, SlidersHorizontal, BatteryMedium, Bell, LayoutGrid, ChevronLeft, ChevronRight, Shield, RotateCw, Share, Plus, Sidebar, X } from 'lucide-react';
 import About from './About';
 import Welcome from './Welcome';
 import Projects from './Projects';
@@ -28,9 +28,10 @@ interface WindowProps {
   noPadding?: boolean;
   zIndex?: number;
   key?: string;
+  variant?: 'default' | 'safari';
 }
 
-const Window = ({ title, isOpen, onClose, onFocus, children, noPadding, zIndex = 0 }: WindowProps) => {
+const Window = ({ title, isOpen, onClose, onFocus, children, noPadding, zIndex = 0, variant = 'default' }: WindowProps) => {
   const dragControls = useDragControls();
 
   if (!isOpen) return null;
@@ -52,25 +53,66 @@ const Window = ({ title, isOpen, onClose, onFocus, children, noPadding, zIndex =
       style={{ touchAction: "none", zIndex: 50 + zIndex }}
     >
       {/* Window Header */}
-      <div 
-        onPointerDown={(e) => {
-          dragControls.start(e);
-        }}
-        className="h-12 bg-[#2d2d2d]/80 border-b border-black/20 flex items-center px-4 flex-shrink-0 cursor-grab active:cursor-grabbing"
-      >
+      {variant === 'safari' ? (
+        <div className="flex flex-col flex-shrink-0 bg-[#1e1e24] border-b border-black/20" onPointerDown={(e) => dragControls.start(e)}>
+          {/* Top Nav Row */}
+          <div className="h-12 flex items-center px-4 gap-4">
+            <div className="flex items-center gap-2 cursor-default" onPointerDown={e => e.stopPropagation()}>
+              <button onClick={onClose} className="w-3.5 h-3.5 rounded-full bg-[#ff5f56] hover:bg-[#ff5f56]/80 transition-colors shadow-sm" />
+              <button className="w-3.5 h-3.5 rounded-full bg-[#ffbd2e] shadow-sm cursor-default" />
+              <button className="w-3.5 h-3.5 rounded-full bg-[#27c93f] shadow-sm cursor-default" />
+            </div>
+            
+            <div className="flex items-center gap-3 text-gray-400 ml-2">
+              <ChevronLeft className="w-4 h-4 cursor-pointer hover:text-gray-200 transition-colors" />
+              <ChevronRight className="w-4 h-4 cursor-pointer hover:text-gray-200 transition-colors opacity-50" />
+            </div>
+
+            {/* Address Bar */}
+            <div className="flex-1 max-w-2xl mx-auto flex items-center bg-[#2b2b36] rounded-md h-7 px-3 text-sm text-gray-300 border border-white/5">
+              <Shield className="w-3.5 h-3.5 text-green-500 mr-2" />
+              <div className="flex-1 text-center truncate">remoteeditorstoolkit.com</div>
+              <RotateCw className="w-3.5 h-3.5 text-gray-400 cursor-pointer hover:text-gray-200" />
+            </div>
+
+            <div className="flex items-center gap-4 text-gray-400">
+              <Share className="w-4 h-4 cursor-pointer hover:text-gray-200 transition-colors" />
+              <Plus className="w-4 h-4 cursor-pointer hover:text-gray-200 transition-colors" />
+              <Sidebar className="w-4 h-4 cursor-pointer hover:text-gray-200 transition-colors" />
+            </div>
+          </div>
+
+          {/* Tab Row */}
+          <div className="h-9 bg-[#1a1a1f] flex items-end px-2 gap-1 pt-1">
+            <div className="h-8 bg-[#2b2b36] rounded-t-md border-t border-x border-white/10 flex items-center px-3 min-w-[160px] relative group">
+              <div className="w-4 h-4 rounded-full bg-black flex items-center justify-center mr-2 text-[8px] font-bold text-white">RET</div>
+              <span className="text-xs font-semibold text-gray-200 flex-1">{title}</span>
+              <X className="w-3.5 h-3.5 text-gray-400 cursor-pointer hover:text-white rounded hover:bg-white/10 p-0.5 opacity-0 group-hover:opacity-100 transition-all" />
+            </div>
+            <div className="h-8 flex items-center px-2">
+              <Plus className="w-4 h-4 text-gray-400 hover:text-gray-200 cursor-pointer" />
+            </div>
+          </div>
+        </div>
+      ) : (
         <div 
-          className="flex items-center gap-2 w-20 h-full cursor-default"
-          onPointerDown={e => e.stopPropagation()}
+          onPointerDown={(e) => dragControls.start(e)}
+          className="h-12 bg-[#2d2d2d]/80 border-b border-black/20 flex items-center px-4 flex-shrink-0 cursor-grab active:cursor-grabbing"
         >
-          <button onClick={onClose} onPointerDown={e => e.stopPropagation()} className="cursor-pointer w-3.5 h-3.5 rounded-full bg-[#ff5f56] hover:bg-[#ff5f56]/80 flex items-center justify-center transition-colors shadow-sm" style={{ clipPath: "circle(50%)" }} />
-          <button onPointerDown={e => e.stopPropagation()} className="w-3.5 h-3.5 rounded-full bg-[#ffbd2e] shadow-sm cursor-default" />
-          <button onPointerDown={e => e.stopPropagation()} className="w-3.5 h-3.5 rounded-full bg-[#27c93f] shadow-sm cursor-default" />
+          <div 
+            className="flex items-center gap-2 w-20 h-full cursor-default"
+            onPointerDown={e => e.stopPropagation()}
+          >
+            <button onClick={onClose} onPointerDown={e => e.stopPropagation()} className="cursor-pointer w-3.5 h-3.5 rounded-full bg-[#ff5f56] hover:bg-[#ff5f56]/80 flex items-center justify-center transition-colors shadow-sm" style={{ clipPath: "circle(50%)" }} />
+            <button onPointerDown={e => e.stopPropagation()} className="w-3.5 h-3.5 rounded-full bg-[#ffbd2e] shadow-sm cursor-default" />
+            <button onPointerDown={e => e.stopPropagation()} className="w-3.5 h-3.5 rounded-full bg-[#27c93f] shadow-sm cursor-default" />
+          </div>
+          <div className="flex-1 text-center text-sm font-semibold text-gray-300 pointer-events-none">
+            {title}
+          </div>
+          <div className="w-20" /> {/* Spacer for centering */}
         </div>
-        <div className="flex-1 text-center text-sm font-semibold text-gray-300 pointer-events-none">
-          {title}
-        </div>
-        <div className="w-20" /> {/* Spacer for centering */}
-      </div>
+      )}
 
       {/* Window Content */}
       <div className={`flex-1 overflow-y-auto custom-scrollbar bg-[#1e1e1e] ${noPadding ? '' : 'p-4'}`}>
@@ -383,7 +425,7 @@ export default function MacOsDesktop() {
               </Window>
             )}
             {activeWindows.includes('projects') && (
-              <Window key="projects" title="Clients" isOpen={true} onClose={() => closeWindow('projects')} onFocus={() => bringToFront('projects')} zIndex={getZIndex('projects')}>
+              <Window key="projects" title="Toolkit" isOpen={true} onClose={() => closeWindow('projects')} onFocus={() => bringToFront('projects')} zIndex={getZIndex('projects')} variant="safari">
                 <Clients />
               </Window>
             )}
