@@ -214,7 +214,8 @@ export default function MacOsDesktop() {
       { label: 'Reiniciar', action: () => {} },
       { label: 'Desligar', action: () => {} },
     ],
-    finder: [
+    finder: [],
+    arquivo: [
       { label: 'Nova Janela', action: () => openWindow('finder') },
       { label: 'Nova Aba', action: () => {} },
       { label: 'Abrir...', action: () => {} },
@@ -224,10 +225,6 @@ export default function MacOsDesktop() {
       { label: 'Duplicar', action: () => {} },
       { divider: true },
       { label: 'Mover para Lixeira', action: () => {} },
-    ],
-    arquivo: [
-      { label: 'Novo Projeto', action: () => openWindow('projects') },
-      { label: 'Fechar', action: () => setActiveWindows([]) }
     ],
     editar: [
       { label: 'Desfazer', action: () => {} },
@@ -312,12 +309,11 @@ export default function MacOsDesktop() {
           
           <div className="relative">
             <span 
-              className={`cursor-pointer px-3 py-1 rounded-lg font-semibold text-white transition-colors ${activeMenu === 'finder' ? 'bg-white/20' : 'bg-white/10 hover:bg-white/20'}`}
-              onClick={(e) => handleMenuClick('finder', e)}
+              className="cursor-pointer px-3 py-1 rounded-lg font-semibold text-white transition-colors bg-white/10 hover:bg-white/20"
+              onClick={() => openWindow('finder')}
             >
               Finder
             </span>
-            {renderDropdown('finder')}
           </div>
 
           <div className="relative">
@@ -359,7 +355,7 @@ export default function MacOsDesktop() {
       <main className="flex-1 relative w-full" onClick={() => setActiveMenu(null)}>
         
         {/* Dynamic Desktop Folders (Projects) */}
-        <div className="absolute top-8 left-4 flex flex-col gap-6 z-40" onClick={e => e.stopPropagation()}>
+        <div className="absolute top-16 left-4 flex flex-col gap-6 z-40" onClick={e => e.stopPropagation()}>
           {dbProjects.slice(0, 5).map(project => (
             <DesktopFolder 
               key={project.id}
