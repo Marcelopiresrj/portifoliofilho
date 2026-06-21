@@ -460,14 +460,14 @@ export default function MacOsDesktop() {
       </main>
 
       {/* 3. Dock Inferior */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-2xl border border-white/20 rounded-2xl p-2.5 flex items-center gap-1.5 z-50 shadow-2xl">
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-2xl border border-white/20 rounded-2xl p-2.5 flex items-center gap-1 z-50 shadow-2xl">
         <DockIcon icon={<FinderIcon />} label="Portfolio" onClick={() => openWindow('finder')} />
         <DockIcon icon={<SafariIcon />} label="Safari" onClick={() => openWindow('projects')} />
         <DockIcon icon={<PhotosIcon />} label="Photos" onClick={() => openWindow('photos')} />
         <DockIcon icon={<ContactsIcon />} label="Contacts" onClick={() => openWindow('contact')} />
         <DockIcon icon={<TerminalIcon />} label="Terminal" onClick={() => openWindow('skills')} />
         
-        <div className="w-px h-12 bg-white/20 mx-1.5" /> {/* Divider */}
+        <div className="w-px h-10 bg-white/20 mx-1" /> {/* Divider */}
         
         <DockIcon icon={<TrashIcon />} label="Trash" onClick={() => {}} />
       </div>
@@ -510,7 +510,7 @@ const DesktopFolder = ({ name, onClick }: { key?: string | number; name: string;
 const DockIcon = ({ icon, label, onClick }: { icon: ReactNode; label: string; onClick: () => void }) => (
   <div 
     onClick={onClick}
-    className={`w-[86px] h-[86px] cursor-pointer hover:-translate-y-4 hover:scale-125 transition-all duration-300 relative group flex items-center justify-center`}
+    className={`w-[68px] h-[68px] cursor-pointer hover:-translate-y-4 hover:scale-125 transition-all duration-300 relative group flex items-center justify-center`}
   >
     <div className="w-full h-full flex items-center justify-center">
       {icon}
