@@ -384,9 +384,9 @@ const DesktopFolder = ({ name, onClick }: { key?: string | number; name: string;
 const DockIcon = ({ icon, label, onClick }: { icon: ReactNode; label: string; onClick: () => void }) => (
   <div 
     onClick={onClick}
-    className={`w-20 h-20 cursor-pointer hover:-translate-y-4 hover:scale-125 transition-all duration-300 relative group flex items-center justify-center`}
+    className={`w-16 h-16 cursor-pointer hover:-translate-y-4 hover:scale-125 transition-all duration-300 relative group flex items-center justify-center`}
   >
-    <div className="w-[68px] h-[68px] flex items-center justify-center">
+    <div className="w-full h-full flex items-center justify-center">
       {icon}
     </div>
     <span className="absolute -top-12 bg-black/60 backdrop-blur-md text-white text-xs font-medium py-1 px-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-xl border border-white/10 pointer-events-none z-50">
