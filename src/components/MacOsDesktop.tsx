@@ -460,7 +460,7 @@ export default function MacOsDesktop() {
       </main>
 
       {/* 3. Dock Inferior */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-2xl border border-white/20 rounded-2xl p-2.5 flex items-center -space-x-1 z-50 shadow-2xl">
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#28394a]/50 backdrop-blur-3xl backdrop-saturate-150 border border-white/20 shadow-[0_10px_30px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.2)] rounded-[32px] p-2.5 flex items-center -space-x-1 z-50">
         <DockIcon icon={<FinderIcon />} label="Portfolio" onClick={() => openWindow('finder')} />
         <DockIcon icon={<SafariIcon />} label="Safari" onClick={() => openWindow('projects')} />
         <DockIcon icon={<PhotosIcon />} label="Photos" onClick={() => openWindow('photos')} />
