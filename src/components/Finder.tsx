@@ -48,8 +48,8 @@ export default function Finder({ projects, renderContent, activeView, onViewChan
         <div>
           <h3 className="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-2 px-3">FAVORITES</h3>
           <nav className="space-y-0.5">
-            <button onClick={() => onViewChange('work')} className={`w-full flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-[13px] font-medium transition-colors text-left ${activeView === 'work' ? 'bg-blue-500 text-white shadow-sm' : 'hover:bg-white/5 text-gray-200'}`}>
-              <Folder className={`w-4 h-4 ${activeView === 'work' ? 'text-white' : 'text-blue-400'}`} fill="currentColor" />
+            <button onClick={() => onViewChange('work')} className={`w-full flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-[13px] font-medium transition-colors text-left ${activeView === 'work' || activeView.startsWith('project-') ? 'bg-blue-500 text-white shadow-sm' : 'hover:bg-white/5 text-gray-200'}`}>
+              <Folder className={`w-4 h-4 ${activeView === 'work' || activeView.startsWith('project-') ? 'text-white' : 'text-blue-400'}`} fill="currentColor" />
               Work
             </button>
             <button onClick={() => onViewChange('about')} className={`w-full flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-[13px] font-medium transition-colors text-left ${activeView === 'about' || activeView === 'about-text' ? 'bg-blue-500 text-white shadow-sm' : 'hover:bg-white/5 text-gray-200'}`}>
