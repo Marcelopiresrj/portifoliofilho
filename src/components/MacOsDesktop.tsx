@@ -1,6 +1,6 @@
 import { useState, useEffect, ReactNode, useRef } from 'react';
 import { motion, AnimatePresence, useDragControls } from 'motion/react';
-import { Wifi, Search, SlidersHorizontal, BatteryMedium, Folder, ExternalLink, Github } from 'lucide-react';
+import { Wifi, Search, SlidersHorizontal, BatteryMedium, Bell, LayoutGrid, Command } from 'lucide-react';
 import About from './About';
 import Welcome from './Welcome';
 import Projects from './Projects';
@@ -138,9 +138,9 @@ export default function MacOsDesktop() {
   }, []);
 
   const formatTime = (date: Date) => {
-    return date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' }) +
-      ' ' +
-      date.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+    return date.toLocaleDateString('pt-BR', { weekday: 'long', month: 'long', day: 'numeric' }) +
+      ' às ' +
+      date.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
   };
 
   // Helper to render a specific project's details inside a window
@@ -207,24 +207,30 @@ export default function MacOsDesktop() {
       />
 
       {/* 1. Top Menu Bar */}
-      <header className="w-full h-7 bg-black/30 backdrop-blur-md flex justify-between items-center px-4 text-[13px] font-medium z-50">
-        <div className="flex items-center gap-5">
+      <header className="absolute top-2 left-4 right-4 h-9 bg-[#1e2430]/70 backdrop-blur-xl border border-white/5 rounded-2xl flex justify-between items-center px-4 text-[13px] font-medium z-50 shadow-lg shadow-black/20">
+        <div className="flex items-center gap-4 text-gray-200">
           <span className="cursor-pointer opacity-90 hover:opacity-100 flex items-center justify-center">
-            <svg viewBox="0 0 384 512" className="w-[14px] h-[14px] fill-current text-white mb-0.5">
-              <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
-            </svg>
+            <Command className="w-4 h-4 text-gray-300" />
           </span>
-          <span className="font-bold cursor-pointer">Marcelo's Portfolio</span>
-          <span className="cursor-pointer hover:bg-white/10 px-2 py-0.5 rounded transition-colors" onClick={() => openWindow('projects')}>Projects</span>
-          <span className="cursor-pointer hover:bg-white/10 px-2 py-0.5 rounded transition-colors" onClick={() => openWindow('contact')}>Contact</span>
-          <span className="cursor-pointer hover:bg-white/10 px-2 py-0.5 rounded transition-colors" onClick={() => openWindow('resume')}>Resume</span>
+          <span 
+            className="cursor-pointer bg-white/10 px-3 py-1 rounded-lg font-semibold text-white transition-colors hover:bg-white/20"
+            onClick={() => openWindow('finder')}
+          >
+            Toolkit
+          </span>
+          <span className="cursor-pointer hover:bg-white/10 px-2 py-0.5 rounded transition-colors" onClick={() => openWindow('projects')}>Arquivo</span>
+          <span className="cursor-pointer hover:bg-white/10 px-2 py-0.5 rounded transition-colors" onClick={() => openWindow('skills')}>Editar</span>
+          <span className="cursor-pointer hover:bg-white/10 px-2 py-0.5 rounded transition-colors" onClick={() => openWindow('photos')}>Visualizar</span>
+          <span className="cursor-pointer hover:bg-white/10 px-2 py-0.5 rounded transition-colors" onClick={() => openWindow('about')}>Histórico</span>
+          <span className="cursor-pointer hover:bg-white/10 px-2 py-0.5 rounded transition-colors" onClick={() => openWindow('contact')}>Ajuda</span>
         </div>
-        <div className="flex items-center gap-4 opacity-90">
-          <Wifi className="w-3.5 h-3.5" />
-          <Search className="w-3.5 h-3.5" />
-          <SlidersHorizontal className="w-3 h-3" />
-          <BatteryMedium className="w-4 h-4" />
-          <span>{formatTime(time)}</span>
+        <div className="flex items-center gap-4 text-gray-300">
+          <Search className="w-4 h-4 hover:text-white cursor-pointer transition-colors" />
+          <Wifi className="w-4 h-4 hover:text-white cursor-pointer transition-colors" />
+          <BatteryMedium className="w-4 h-4 hover:text-white cursor-pointer transition-colors" />
+          <Bell className="w-4 h-4 hover:text-white cursor-pointer transition-colors" />
+          <LayoutGrid className="w-4 h-4 hover:text-white cursor-pointer transition-colors" />
+          <span className="text-gray-200">{formatTime(time)}</span>
         </div>
       </header>
 
