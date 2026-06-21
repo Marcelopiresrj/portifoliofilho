@@ -136,7 +136,7 @@ export default function MacOsDesktop() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsBooting(false);
-    }, 2500);
+    }, 1500);
     return () => clearTimeout(timer);
   }, []);
 
@@ -360,7 +360,7 @@ export default function MacOsDesktop() {
                 <motion.div 
                   initial={{ width: "0%" }}
                   animate={{ width: "100%" }}
-                  transition={{ duration: 2.0, ease: "easeInOut" }}
+                  transition={{ duration: 1.2, ease: "easeInOut" }}
                   className="h-full bg-white rounded-full"
                 />
               </div>

@@ -13,7 +13,7 @@ const defaultClients: ClientRow[] = [
 ];
 
 export default function Clients() {
-  const [clients, setClients] = useState<ClientRow[]>([]);
+  const [clients, setClients] = useState<ClientRow[]>(defaultClients);
 
   const isMarquee = clients.length > 4;
 
