@@ -70,6 +70,7 @@ export default function MacOsDesktop() {
   const [time, setTime] = useState(new Date());
   const [activeWindows, setActiveWindows] = useState<WindowType[]>([]);
   const [dbProjects, setDbProjects] = useState<ProjectRow[]>([]);
+  const [finderView, setFinderView] = useState<string>('work');
 
   const openWindow = (type: WindowType) => {
     if (!type) return;
@@ -221,7 +222,10 @@ export default function MacOsDesktop() {
             <DesktopFolder 
               key={project.id}
               name={project.title} 
-              onClick={() => openWindow(`project-${project.id}`)} 
+              onClick={() => {
+                setFinderView(`project-${project.id}`);
+                openWindow('finder');
+              }} 
             />
           ))}
         </div>
@@ -265,6 +269,8 @@ export default function MacOsDesktop() {
               <Window key="finder" title="Portfolio" isOpen={true} onClose={() => closeWindow('finder')} onFocus={() => bringToFront('finder')} noPadding zIndex={getZIndex('finder')}>
                 <Finder 
                   projects={dbProjects} 
+                  activeView={finderView}
+                  onViewChange={setFinderView}
                   renderContent={(view) => {
                     if (view === 'about') return <About />;
                     if (view === 'resume') return (

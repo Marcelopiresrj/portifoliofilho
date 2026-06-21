@@ -5,6 +5,8 @@ import { type ProjectRow } from '../lib/supabase';
 interface FinderProps {
   projects: ProjectRow[];
   renderContent: (view: string) => ReactNode;
+  activeView: string;
+  onViewChange: (view: string) => void;
 }
 
 const FinderFolder = ({ name, onClick }: { name: string; onClick: () => void; key?: string }) => (
@@ -32,8 +34,7 @@ const FinderFolder = ({ name, onClick }: { name: string; onClick: () => void; ke
   </div>
 );
 
-export default function Finder({ projects, renderContent }: FinderProps) {
-  const [activeView, setActiveView] = useState<string>('work');
+export default function Finder({ projects, renderContent, activeView, onViewChange }: FinderProps) {
 
   const navItemClass = (view: string) => 
     `w-full flex items-center gap-2.5 px-2 py-1.5 rounded-md text-sm font-medium transition-colors text-left ` +
@@ -47,15 +48,15 @@ export default function Finder({ projects, renderContent }: FinderProps) {
         <div>
           <h3 className="text-[11px] font-semibold text-gray-500 uppercase tracking-wider mb-2 px-2">Favorites</h3>
           <nav className="space-y-0.5">
-            <button onClick={() => setActiveView('work')} className={navItemClass('work')}>
+            <button onClick={() => onViewChange('work')} className={navItemClass('work')}>
               <Folder className="w-4 h-4 text-blue-400" fill="currentColor" />
               Work
             </button>
-            <button onClick={() => setActiveView('about')} className={navItemClass('about')}>
+            <button onClick={() => onViewChange('about')} className={navItemClass('about')}>
               <Info className="w-4 h-4 text-blue-400" />
               About me
             </button>
-            <button onClick={() => setActiveView('resume')} className={navItemClass('resume')}>
+            <button onClick={() => onViewChange('resume')} className={navItemClass('resume')}>
               <FileText className="w-4 h-4 text-blue-400" />
               Resume
             </button>
@@ -73,7 +74,7 @@ export default function Finder({ projects, renderContent }: FinderProps) {
             {projects.map(project => (
               <button 
                 key={project.id}
-                onClick={() => setActiveView(`project-${project.id}`)}
+                onClick={() => onViewChange(`project-${project.id}`)}
                 className={navItemClass(`project-${project.id}`)}
               >
                 <Folder className="w-4 h-4 text-blue-400 flex-shrink-0" fill="currentColor" />
@@ -92,7 +93,7 @@ export default function Finder({ projects, renderContent }: FinderProps) {
               <FinderFolder 
                 key={project.id}
                 name={project.title}
-                onClick={() => setActiveView(`project-${project.id}`)}
+                onClick={() => onViewChange(`project-${project.id}`)}
               />
             ))}
           </div>
