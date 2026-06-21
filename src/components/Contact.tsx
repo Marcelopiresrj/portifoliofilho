@@ -1,11 +1,11 @@
-import { Github, Atom, Twitter, Linkedin } from 'lucide-react';
+import { Mail, Twitter, Youtube, MessageSquare } from 'lucide-react';
 
 export default function Contact() {
   const links = [
-    { name: "Github", icon: Github, bg: "bg-[#e56b6b]", hover: "hover:bg-[#d65f5f]", href: "https://github.com/marcelopires" },
-    { name: "Platform", icon: Atom, bg: "bg-[#59c36a]", hover: "hover:bg-[#4db25d]", href: "#" },
-    { name: "Twitter/X", icon: Twitter, bg: "bg-[#ff8b60]", hover: "hover:bg-[#ef7a50]", href: "#" },
-    { name: "LinkedIn", icon: Linkedin, bg: "bg-[#2ebdf4]", hover: "hover:bg-[#25a9df]", href: "https://linkedin.com/in/marcelopires" },
+    { name: "Email", icon: Mail, bg: "bg-[#e56b6b]", hover: "hover:bg-[#d65f5f]", href: "mailto:contact@marcelo.com" },
+    { name: "Twitter/X", icon: Twitter, bg: "bg-[#59c36a]", hover: "hover:bg-[#4db25d]", href: "#" },
+    { name: "Youtube", icon: Youtube, bg: "bg-[#ff8b60]", hover: "hover:bg-[#ef7a50]", href: "#" },
+    { name: "Discord", icon: MessageSquare, bg: "bg-[#2ebdf4]", hover: "hover:bg-[#25a9df]", href: "#" },
   ];
 
   return (
@@ -23,9 +23,9 @@ export default function Contact() {
 
       {/* Text Content */}
       <div className="mb-8 space-y-2">
-        <h2 className="text-2xl font-bold tracking-tight">Let's Connect</h2>
+        <h2 className="text-2xl font-bold tracking-tight">Let's Work Together</h2>
         <p className="text-gray-400 text-[15px] leading-relaxed">
-          Got an idea? A bug to squash? Or just wanna talk tech? I'm in.
+          Got an idea? A raw video needing editing? I'm in.
         </p>
       </div>
 
