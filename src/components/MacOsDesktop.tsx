@@ -1,6 +1,6 @@
 import { useState, useEffect, ReactNode, useRef } from 'react';
 import { motion, AnimatePresence, useDragControls } from 'motion/react';
-import { Wifi, Search, SlidersHorizontal, BatteryMedium, Bell, LayoutGrid, ChevronLeft, ChevronRight, Shield, RotateCw, Share, Plus, Sidebar, X, User } from 'lucide-react';
+import { Wifi, Search, SlidersHorizontal, BatteryMedium, Bell, LayoutGrid, ChevronLeft, ChevronRight, Shield, RotateCw, Share, Plus, Sidebar, X, User, Home } from 'lucide-react';
 import About from './About';
 import Welcome from './Welcome';
 import Projects from './Projects';
@@ -28,7 +28,7 @@ interface WindowProps {
   noPadding?: boolean;
   zIndex?: number;
   key?: string;
-  variant?: 'default' | 'safari';
+  variant?: 'default' | 'safari' | 'finder-new';
 }
 
 const Window = ({ title, isOpen, onClose, onFocus, children, noPadding, zIndex = 0, variant = 'default' }: WindowProps) => {
@@ -53,7 +53,39 @@ const Window = ({ title, isOpen, onClose, onFocus, children, noPadding, zIndex =
       style={{ touchAction: "none", zIndex: 50 + zIndex }}
     >
       {/* Window Header */}
-      {variant === 'safari' ? (
+      {variant === 'finder-new' ? (
+        <div className="flex flex-col flex-shrink-0 bg-[#212121] rounded-t-xl border-b border-black/40" onPointerDown={(e) => dragControls.start(e)}>
+          <div className="h-14 flex items-center px-4">
+            <div className="flex items-center gap-2 cursor-default mr-4" onPointerDown={e => e.stopPropagation()}>
+              <button onClick={onClose} className="w-3.5 h-3.5 rounded-full bg-[#ff5f56] hover:bg-[#ff5f56]/80 transition-colors shadow-sm" />
+              <button className="w-3.5 h-3.5 rounded-full bg-[#ffbd2e] shadow-sm cursor-default" />
+              <button className="w-3.5 h-3.5 rounded-full bg-[#27c93f] shadow-sm cursor-default" />
+            </div>
+            
+            <div className="flex font-medium text-sm text-gray-300 mr-8 pointer-events-none">
+              Finder
+            </div>
+
+            <div className="flex items-center gap-4 text-gray-400">
+              <ChevronLeft className="w-4 h-4 cursor-pointer hover:text-gray-200 transition-colors" />
+              <ChevronRight className="w-4 h-4 cursor-pointer hover:text-gray-200 transition-colors opacity-50" />
+            </div>
+
+            <div className="ml-6 flex items-center text-gray-400 bg-transparent">
+              <Search className="w-4 h-4 mr-2" />
+              <span className="text-sm">Pesquisar</span>
+            </div>
+
+            <div className="flex-1 flex justify-center items-center pointer-events-none">
+              <span className="text-sm font-semibold text-gray-200">Home</span>
+            </div>
+
+            <div className="flex items-center text-gray-400 ml-auto">
+              <Home className="w-4 h-4 cursor-pointer hover:text-gray-200" />
+            </div>
+          </div>
+        </div>
+      ) : variant === 'safari' ? (
         <div className="flex flex-col flex-shrink-0 bg-[#1e1e24] border-b border-black/20" onPointerDown={(e) => dragControls.start(e)}>
           {/* Top Nav Row */}
           <div className="h-12 flex items-center px-4 gap-4">
@@ -491,7 +523,7 @@ export default function MacOsDesktop() {
               </Window>
             )}
             {activeWindows.includes('finder') && (
-              <Window key="finder" title="Portfolio" isOpen={true} onClose={() => closeWindow('finder')} onFocus={() => bringToFront('finder')} noPadding zIndex={getZIndex('finder')}>
+              <Window key="finder" title="Portfolio" isOpen={true} onClose={() => closeWindow('finder')} onFocus={() => bringToFront('finder')} noPadding zIndex={getZIndex('finder')} variant="finder-new">
                 <Finder 
                   projects={dbProjects} 
                   activeView={finderView}
