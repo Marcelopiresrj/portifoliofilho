@@ -34,42 +34,6 @@ const FinderFile = ({ name, onClick }: { name: string; onClick: () => void }) =>
 
 export default function Finder({ projects, renderContent, activeView, onViewChange, onOpenWindow }: FinderProps) {
 
-import { useState, ReactNode } from 'react';
-import { Folder, Info, FileText, Trash2, ChevronRight } from 'lucide-react';
-import { type ProjectRow } from '../lib/supabase';
-
-interface FinderProps {
-  projects: ProjectRow[];
-  renderContent: (view: string) => ReactNode;
-  activeView: string;
-  onViewChange: (view: string) => void;
-  onOpenWindow: (view: string) => void;
-}
-
-const FinderFolder = ({ name, onClick }: { name: string; onClick: () => void; key?: string }) => (
-  <div onClick={onClick} className="flex flex-col items-center gap-2 w-28 cursor-pointer group p-2 rounded-xl hover:bg-white/5 transition-colors">
-    <div className="relative w-[72px] h-[56px] flex items-center justify-center drop-shadow-md group-hover:drop-shadow-xl transition-all duration-300 transform group-hover:scale-105">
-      <img src="/folder-icon.png" alt="Folder" className="w-full h-full object-contain pointer-events-none" />
-    </div>
-    <span className="text-xs font-medium leading-[1.2] text-white text-center px-1 rounded group-hover:bg-blue-600/80 transition-colors line-clamp-3">
-      {name}
-    </span>
-  </div>
-);
-
-const FinderFile = ({ name, onClick }: { name: string; onClick: () => void }) => (
-  <div onClick={onClick} className="flex flex-col items-center gap-2 w-28 cursor-pointer group p-2 rounded-xl hover:bg-white/5 transition-colors">
-    <div className="relative w-[56px] h-[72px] flex items-center justify-center drop-shadow-md group-hover:drop-shadow-xl transition-all duration-300 transform group-hover:scale-105">
-      <img src="/about-me-icon.png" alt="File Icon" className="w-full h-full object-contain" />
-    </div>
-    <span className="text-xs font-medium leading-[1.2] text-white text-center px-1 rounded transition-colors line-clamp-3">
-      {name}
-    </span>
-  </div>
-);
-
-export default function Finder({ projects, renderContent, activeView, onViewChange, onOpenWindow }: FinderProps) {
-
   const navItemClass = (view: string | string[]) => {
     const isActive = Array.isArray(view) ? view.includes(activeView) : activeView === view;
     return `w-full flex items-center gap-2.5 px-2 py-1.5 rounded-md text-sm font-medium transition-colors text-left ` +
