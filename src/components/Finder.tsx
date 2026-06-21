@@ -38,13 +38,7 @@ const FinderFolder = ({ name, onClick }: { name: string; onClick: () => void; ke
 const FinderFile = ({ name, onClick }: { name: string; onClick: () => void }) => (
   <div onClick={onClick} className="flex flex-col items-center gap-2 w-28 cursor-pointer group p-2 rounded-xl hover:bg-white/5 transition-colors">
     <div className="relative w-[56px] h-[72px] flex items-center justify-center drop-shadow-md group-hover:drop-shadow-xl transition-all duration-300 transform group-hover:scale-105">
-      <svg viewBox="0 0 48 64" className="w-full h-full drop-shadow-md group-hover:drop-shadow-xl transition-all duration-300 transform group-hover:scale-105">
-        <path d="M4 0C1.79086 0 0 1.79086 0 4V60C0 62.2091 1.79086 64 4 64H44C46.2091 64 48 62.2091 48 60V16L32 0H4Z" fill="#ffffff" />
-        <path d="M32 0V16H48L32 0Z" fill="#e2e8f0" />
-      </svg>
-      <div className="absolute inset-0 flex items-center justify-center pt-2">
-        <span className="text-[10px] font-bold text-gray-500 font-mono">TXT</span>
-      </div>
+      <img src="/about-me-icon.png" alt="File Icon" className="w-full h-full object-contain" />
     </div>
     <span className="text-xs font-medium leading-[1.2] text-white text-center px-1 rounded transition-colors line-clamp-3">
       {name}
