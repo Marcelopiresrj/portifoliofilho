@@ -4,6 +4,7 @@ import { Wifi, Search, SlidersHorizontal, BatteryMedium, Folder, ExternalLink, G
 import About from './About';
 import Welcome from './Welcome';
 import Projects from './Projects';
+import Clients from './Clients';
 import Skills from './Skills';
 import Contact from './Contact';
 import Photos from './Photos';
@@ -246,8 +247,8 @@ export default function MacOsDesktop() {
               </Window>
             )}
             {activeWindows.includes('projects') && (
-              <Window key="projects" title="All Projects" isOpen={true} onClose={() => closeWindow('projects')} onFocus={() => bringToFront('projects')} zIndex={getZIndex('projects')}>
-                <Projects />
+              <Window key="projects" title="Clients" isOpen={true} onClose={() => closeWindow('projects')} onFocus={() => bringToFront('projects')} zIndex={getZIndex('projects')}>
+                <Clients />
               </Window>
             )}
             {activeWindows.includes('skills') && (
