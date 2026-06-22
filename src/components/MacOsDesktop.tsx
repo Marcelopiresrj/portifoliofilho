@@ -175,6 +175,7 @@ export default function MacOsDesktop() {
   const [finderView, setFinderView] = useState<string>('work');
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [isBooting, setIsBooting] = useState<boolean>(true);
+  const constraintsRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -486,7 +487,7 @@ export default function MacOsDesktop() {
       </header>
 
       {/* 2. Desktop Area */}
-      <main className="flex-1 relative w-full" onClick={() => setActiveMenu(null)}>
+      <main ref={constraintsRef} className="flex-1 relative w-full" onClick={() => setActiveMenu(null)}>
         
         {/* Dynamic Desktop Folders (Projects) */}
         <div className="absolute top-16 left-4 flex flex-col gap-6 z-40" onClick={e => e.stopPropagation()}>
@@ -494,6 +495,7 @@ export default function MacOsDesktop() {
             <DesktopFolder 
               key={project.id}
               name={project.title} 
+              constraintsRef={constraintsRef}
               onClick={() => {
                 setFinderView(`project-${project.id}`);
                 openWindow('finder');
@@ -630,12 +632,13 @@ export default function MacOsDesktop() {
 
 // ── Helper Components ────────────────────────────────────────────────────────
 
-const DesktopFolder = ({ name, onClick }: { key?: string | number; name: string; onClick: () => void }) => {
+const DesktopFolder = ({ name, onClick, constraintsRef }: { key?: string | number; name: string; onClick: () => void; constraintsRef?: React.RefObject<HTMLElement> }) => {
   const isDragging = useRef(false);
 
   return (
     <motion.div 
       drag 
+      dragConstraints={constraintsRef}
       dragMomentum={false}
       dragElastic={0}
       onDragStart={() => { isDragging.current = true; document.body.classList.add('is-dragging'); }}
