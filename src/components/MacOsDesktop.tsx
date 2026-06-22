@@ -51,7 +51,7 @@ const Window = ({ title, subtitle, isOpen, onClose, onFocus, children, noPadding
       onDragEnd={() => document.body.classList.remove('is-dragging')}
       onPointerDown={onFocus}
       className="absolute top-20 left-1/2 -translate-x-1/2 w-full max-w-4xl bg-[#1e1e1e]/95 backdrop-blur-2xl border border-white/10 rounded-xl shadow-2xl overflow-hidden z-50 flex flex-col max-h-[80vh]"
-      style={{ touchAction: "none", zIndex: 50 + zIndex }}
+      style={{ touchAction: "none", zIndex: 50 + zIndex, willChange: "transform" }}
     >
       {/* Window Header */}
       {variant === 'finder-new' ? (
@@ -639,8 +639,6 @@ const DesktopFolder = ({ name, onClick, constraintsRef }: { key?: string | numbe
     <motion.div 
       drag 
       dragConstraints={constraintsRef}
-      dragMomentum={false}
-      dragElastic={0}
       onDragStart={() => { isDragging.current = true; document.body.classList.add('is-dragging'); }}
       onDragEnd={() => { setTimeout(() => { isDragging.current = false; document.body.classList.remove('is-dragging'); }, 150); }}
       onClick={(e) => {
@@ -651,6 +649,7 @@ const DesktopFolder = ({ name, onClick, constraintsRef }: { key?: string | numbe
         onClick();
       }}
       className="flex flex-col items-center gap-1 w-24 cursor-pointer group"
+      style={{ willChange: "transform" }}
     >
       <div className="relative w-[72px] h-[56px] flex items-center justify-center drop-shadow-md group-hover:drop-shadow-xl transition-all duration-300 transform group-hover:scale-105 pointer-events-none">
         <img src="/folder-icon.png" alt="Folder" className="w-full h-full object-contain" />
