@@ -58,8 +58,10 @@ const Window = ({ title, subtitle, isOpen, onClose, onFocus, children, noPadding
         <div className="flex flex-col flex-shrink-0 bg-[#212121] rounded-t-xl" onPointerDown={(e) => dragControls.start(e)}>
           {/* Top Row: Buttons and Title */}
           <div className="h-10 flex items-center px-4 bg-[#1e1e24] rounded-t-xl border-b border-black/20 relative">
-            <div className="flex items-center gap-2 cursor-default z-10" onPointerDown={e => e.stopPropagation()}>
-              <button onClick={onClose} className="w-3.5 h-3.5 rounded-full bg-[#ff5f56] hover:bg-[#ff5f56]/80 transition-colors shadow-sm" />
+            <div className="flex items-center gap-2 cursor-default z-10 group/controls" onPointerDown={e => e.stopPropagation()}>
+              <button onClick={onClose} className="relative w-3.5 h-3.5 rounded-full bg-[#ff5f56] hover:bg-[#ff5f56]/80 transition-colors shadow-sm flex items-center justify-center">
+                <X className="w-2.5 h-2.5 text-black/60 opacity-0 group-hover/controls:opacity-100 transition-opacity absolute" />
+              </button>
               <button className="w-3.5 h-3.5 rounded-full bg-[#ffbd2e] shadow-sm cursor-default" />
               <button className="w-3.5 h-3.5 rounded-full bg-[#27c93f] shadow-sm cursor-default" />
             </div>
@@ -94,8 +96,10 @@ const Window = ({ title, subtitle, isOpen, onClose, onFocus, children, noPadding
         <div className="flex flex-col flex-shrink-0 bg-[#1e1e24] border-b border-black/20" onPointerDown={(e) => dragControls.start(e)}>
           {/* Top Nav Row */}
           <div className="h-12 flex items-center px-4 gap-4">
-            <div className="flex items-center gap-2 cursor-default" onPointerDown={e => e.stopPropagation()}>
-              <button onClick={onClose} className="w-3.5 h-3.5 rounded-full bg-[#ff5f56] hover:bg-[#ff5f56]/80 transition-colors shadow-sm" />
+            <div className="flex items-center gap-2 cursor-default group/controls" onPointerDown={e => e.stopPropagation()}>
+              <button onClick={onClose} className="relative w-3.5 h-3.5 rounded-full bg-[#ff5f56] hover:bg-[#ff5f56]/80 transition-colors shadow-sm flex items-center justify-center">
+                <X className="w-2.5 h-2.5 text-black/60 opacity-0 group-hover/controls:opacity-100 transition-opacity absolute" />
+              </button>
               <button className="w-3.5 h-3.5 rounded-full bg-[#ffbd2e] shadow-sm cursor-default" />
               <button className="w-3.5 h-3.5 rounded-full bg-[#27c93f] shadow-sm cursor-default" />
             </div>
@@ -139,10 +143,12 @@ const Window = ({ title, subtitle, isOpen, onClose, onFocus, children, noPadding
           className="h-12 bg-[#2d2d2d]/80 border-b border-black/20 flex items-center px-4 flex-shrink-0 cursor-grab active:cursor-grabbing"
         >
           <div 
-            className="flex items-center gap-2 w-20 h-full cursor-default"
+            className="flex items-center gap-2 w-20 h-full cursor-default group/controls"
             onPointerDown={e => e.stopPropagation()}
           >
-            <button onClick={onClose} onPointerDown={e => e.stopPropagation()} className="cursor-pointer w-3.5 h-3.5 rounded-full bg-[#ff5f56] hover:bg-[#ff5f56]/80 flex items-center justify-center transition-colors shadow-sm" style={{ clipPath: "circle(50%)" }} />
+            <button onClick={onClose} onPointerDown={e => e.stopPropagation()} className="relative cursor-pointer w-3.5 h-3.5 rounded-full bg-[#ff5f56] hover:bg-[#ff5f56]/80 flex items-center justify-center transition-colors shadow-sm" style={{ clipPath: "circle(50%)" }}>
+              <X className="w-2.5 h-2.5 text-black/60 opacity-0 group-hover/controls:opacity-100 transition-opacity absolute" />
+            </button>
             <button onPointerDown={e => e.stopPropagation()} className="w-3.5 h-3.5 rounded-full bg-[#ffbd2e] shadow-sm cursor-default" />
             <button onPointerDown={e => e.stopPropagation()} className="w-3.5 h-3.5 rounded-full bg-[#27c93f] shadow-sm cursor-default" />
           </div>
