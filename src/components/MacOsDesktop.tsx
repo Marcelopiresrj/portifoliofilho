@@ -37,21 +37,22 @@ const Window = ({ title, subtitle, isOpen, onClose, onFocus, children, noPadding
 
   if (!isOpen) return null;
 
-  return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.95, y: 20 }}
+      initial={{ opacity: 0, scale: 0.97, y: 10 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
-      exit={{ opacity: 0, scale: 0.95, y: 20 }}
+      exit={{ opacity: 0, scale: 0.97, y: 10 }}
+      transition={{ duration: 0.15, ease: [0.2, 0, 0, 1] }}
       drag
       dragListener={false}
       dragControls={dragControls}
       dragConstraints={{ left: -300, right: 300, top: -100, bottom: 500 }}
       dragMomentum={false}
+      dragElastic={0.1}
       onDragStart={() => document.body.classList.add('is-dragging')}
       onDragEnd={() => document.body.classList.remove('is-dragging')}
       onPointerDown={onFocus}
-      className="absolute top-20 left-1/2 -translate-x-1/2 w-full max-w-4xl bg-[#1e1e1e]/95 backdrop-blur-2xl border border-white/10 rounded-xl shadow-2xl overflow-hidden z-50 flex flex-col max-h-[80vh]"
-      style={{ touchAction: "none", zIndex: 50 + zIndex }}
+      className="absolute top-20 left-1/2 -translate-x-1/2 w-full max-w-4xl bg-[#1e1e1e]/[0.98] backdrop-blur-md border border-white/10 rounded-xl shadow-2xl overflow-hidden z-50 flex flex-col max-h-[80vh]"
+      style={{ touchAction: "none", zIndex: 50 + zIndex, transform: "translateZ(0)" }}
     >
       {/* Window Header */}
       {variant === 'finder-new' ? (
