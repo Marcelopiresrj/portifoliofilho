@@ -640,7 +640,6 @@ const DesktopFolder = ({ name, onClick, constraintsRef }: { key?: string | numbe
       drag 
       dragConstraints={constraintsRef}
       dragMomentum={false}
-      dragElastic={0}
       onDragStart={() => { isDragging.current = true; document.body.classList.add('is-dragging'); }}
       onDragEnd={() => { setTimeout(() => { isDragging.current = false; document.body.classList.remove('is-dragging'); }, 150); }}
       onClick={(e) => {
@@ -651,6 +650,7 @@ const DesktopFolder = ({ name, onClick, constraintsRef }: { key?: string | numbe
         onClick();
       }}
       className="flex flex-col items-center gap-1 w-24 cursor-pointer group"
+      style={{ willChange: "transform" }}
     >
       <div className="relative w-[72px] h-[56px] flex items-center justify-center drop-shadow-md group-hover:drop-shadow-xl transition-all duration-300 transform group-hover:scale-105 pointer-events-none">
         <img src="/folder-icon.png" alt="Folder" className="w-full h-full object-contain" />
