@@ -42,6 +42,8 @@ a, button, [role="button"], input[type="submit"], input[type="button"], .cursor-
 
 body.is-dragging, body.is-dragging * {
   cursor: url('/cursor-move.png'), grabbing !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
 }
 
 /* Override tailwind default cursors to use custom images where appropriate */

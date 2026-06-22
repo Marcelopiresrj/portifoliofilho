@@ -42,6 +42,7 @@ const Window = ({ title, subtitle, isOpen, onClose, onFocus, children, noPadding
       initial={{ opacity: 0, scale: 0.95, y: 20 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.95, y: 20 }}
+      transition={{ type: "spring", stiffness: 300, damping: 25, mass: 0.5 }}
       drag
       dragListener={false}
       dragControls={dragControls}
@@ -639,6 +640,7 @@ const DesktopFolder = ({ name, onClick, constraintsRef }: { key?: string | numbe
     <motion.div 
       drag 
       dragConstraints={constraintsRef}
+      dragMomentum={false}
       onDragStart={() => { isDragging.current = true; document.body.classList.add('is-dragging'); }}
       onDragEnd={() => { setTimeout(() => { isDragging.current = false; document.body.classList.remove('is-dragging'); }, 150); }}
       onClick={(e) => {
