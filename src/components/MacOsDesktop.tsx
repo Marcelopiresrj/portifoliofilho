@@ -422,10 +422,13 @@ export default function MacOsDesktop() {
       </AnimatePresence>
 
       {/* Real macOS Background Image */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url('${wallpaperUrl}')` }}
-      />
+      <div className="absolute inset-0 z-0 bg-black">
+        <img 
+          src={wallpaperUrl}
+          alt="Desktop Wallpaper"
+          className="w-full h-full object-cover object-center"
+        />
+      </div>
 
       {/* 1. Top Menu Bar */}
       <header className="absolute top-2 left-4 right-4 h-9 bg-[#1e2430]/70 backdrop-blur-xl border border-white/5 rounded-2xl flex justify-between items-center px-4 text-[13px] font-medium z-50 shadow-lg shadow-black/20">
