@@ -25,7 +25,7 @@ export default function Clients() {
     <div className="bg-[#0a0a0a] min-h-full w-full py-16 flex flex-col items-center overflow-hidden">
       
       {/* Header Section */}
-      {(!isLoading && clients.length === 0) ? null : (
+      {(!isLoading && clients.length > 0) && (
         <div className="flex flex-col items-center text-center mb-16 space-y-4 px-4">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight font-sans">
             Creators who trust <span className="text-[#e5e7eb]">me</span>
@@ -52,9 +52,10 @@ export default function Clients() {
              <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-white/20"></div>
           </div>
         ) : clients.length === 0 ? (
-          <div className="flex flex-col items-center justify-center py-32 opacity-40">
-            <h3 className="text-8xl md:text-9xl font-black text-[#333] tracking-tighter mb-6">404</h3>
-            <p className="text-[#888] font-mono text-sm md:text-base tracking-[0.3em] uppercase">no clients at the moment</p>
+          <div className="flex flex-col items-center justify-center py-32 px-4">
+            <p className="text-gray-300 font-sans text-[17px] leading-relaxed text-center max-w-[300px]">
+              Safari cannot open the page because I don't have any clients yet.
+            </p>
           </div>
         ) : (
           <div className="flex overflow-hidden group justify-center">
