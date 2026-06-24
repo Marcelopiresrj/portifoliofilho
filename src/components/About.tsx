@@ -3,12 +3,14 @@ import { fetchSiteSettings } from "../lib/supabase";
 
 export default function About() {
   const [aboutText, setAboutText] = useState<string | null>(null);
+  const [profilePhotoUrl, setProfilePhotoUrl] = useState<string>("https://github.com/Marcelopiresrj.png");
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchSiteSettings().then(data => {
-      if (data && data.about_text) {
-        setAboutText(data.about_text);
+      if (data) {
+        if (data.about_text) setAboutText(data.about_text);
+        if (data.profile_photo_url) setProfilePhotoUrl(data.profile_photo_url);
       }
       setIsLoading(false);
     }).catch(err => {
@@ -22,7 +24,7 @@ export default function About() {
       {/* Profile Image */}
       <div className="mb-8">
         <img 
-          src="https://github.com/Marcelopiresrj.png" 
+          src={profilePhotoUrl} 
           alt="Marcelo Pires" 
           className="w-24 h-24 rounded-full object-cover border-2 border-white/10 shadow-lg"
         />

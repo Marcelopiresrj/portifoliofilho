@@ -1,6 +1,18 @@
+import { useState, useEffect } from 'react';
 import { Mail, Twitter, Youtube, MessageSquare } from 'lucide-react';
+import { fetchSiteSettings } from '../lib/supabase';
 
 export default function Contact() {
+  const [profilePhotoUrl, setProfilePhotoUrl] = useState<string>("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&auto=format&fit=crop&q=60");
+
+  useEffect(() => {
+    fetchSiteSettings().then(data => {
+      if (data && data.profile_photo_url) {
+        setProfilePhotoUrl(data.profile_photo_url);
+      }
+    }).catch(console.error);
+  }, []);
+
   const links = [
     { name: "Email", icon: Mail, bg: "bg-[#e56b6b]", hover: "hover:bg-[#d65f5f]", href: "mailto:contact@marcelo.com" },
     { name: "Twitter/X", icon: Twitter, bg: "bg-[#59c36a]", hover: "hover:bg-[#4db25d]", href: "#" },
@@ -14,7 +26,7 @@ export default function Contact() {
       <div className="mb-6">
         <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white/10 shadow-lg">
           <img 
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&auto=format&fit=crop&q=60" 
+            src={profilePhotoUrl} 
             alt="Profile" 
             className="w-full h-full object-cover"
           />

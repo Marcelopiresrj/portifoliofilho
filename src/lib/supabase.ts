@@ -52,6 +52,8 @@ export interface ClientRow {
 export interface SiteSettingsRow {
   id: number;
   about_text: string;
+  profile_photo_url: string;
+  photos_urls: string[];
   updated_at: string;
 }
 
@@ -187,16 +189,16 @@ export async function fetchSiteSettings(): Promise<SiteSettingsRow | null> {
 }
 
 /**
- * Atualiza o texto do 'Sobre mim'
+ * Atualiza as configurações do site
  */
-export async function updateAboutText(text: string): Promise<void> {
+export async function updateSiteSettings(updates: Partial<SiteSettingsRow>): Promise<void> {
   const { error } = await supabase
     .from("site_settings")
-    .update({ about_text: text, updated_at: new Date().toISOString() })
+    .update({ ...updates, updated_at: new Date().toISOString() })
     .eq('id', 1);
 
   if (error) {
-    console.error("Erro ao atualizar texto sobre mim:", error);
+    console.error("Erro ao atualizar configurações:", error);
     throw error;
   }
 }

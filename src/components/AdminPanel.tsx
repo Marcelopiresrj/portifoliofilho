@@ -31,7 +31,7 @@ import {
   signOut,
   getSession,
   fetchSiteSettings,
-  updateAboutText,
+  updateSiteSettings,
   fetchClients,
   createClientRow,
   updateClientRow,
@@ -434,6 +434,8 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
 
   // Settings State
   const [aboutText, setAboutText] = useState("");
+  const [profilePhotoUrl, setProfilePhotoUrl] = useState("");
+  const [photosUrlsInput, setPhotosUrlsInput] = useState("");
 
 
   const [loading, setLoading] = useState(false);
@@ -460,7 +462,11 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
         setClients(data);
       } else if (activeTab === 'settings') {
         const data = await fetchSiteSettings();
-        if (data) setAboutText(data.about_text);
+        if (data) {
+          setAboutText(data.about_text);
+          if (data.profile_photo_url) setProfilePhotoUrl(data.profile_photo_url);
+          if (data.photos_urls) setPhotosUrlsInput(data.photos_urls.join("\n"));
+        }
       }
     } catch (err) {
       setError(err instanceof Error ? err.message : "Erro ao carregar dados.");
@@ -550,8 +556,13 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
     setLoading(true);
     setError(null);
     try {
-      await updateAboutText(aboutText);
-      alert("Texto salvo com sucesso!");
+      const photos_urls = photosUrlsInput.split("\n").map(t => t.trim()).filter(t => t.length > 0);
+      await updateSiteSettings({ 
+        about_text: aboutText,
+        profile_photo_url: profilePhotoUrl,
+        photos_urls
+      });
+      alert("Configurações salvas com sucesso!");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Erro ao salvar configurações.");
     } finally {
@@ -750,9 +761,30 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
                     <textarea 
                       value={aboutText}
                       onChange={e => setAboutText(e.target.value)}
-                      rows={12}
+                      rows={8}
                       className="w-full bg-black border border-gray-800 rounded-lg p-3 text-sm text-white font-sans focus:border-gray-600 focus:outline-none transition-colors leading-relaxed"
                       placeholder="Escreva sobre você aqui... Pressione Enter para novos parágrafos."
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-mono text-gray-500 mb-2">FOTO DE PERFIL (PROFILE PHOTO URL)</label>
+                    <input 
+                      value={profilePhotoUrl}
+                      onChange={e => setProfilePhotoUrl(e.target.value)}
+                      className="w-full bg-black border border-gray-800 rounded-lg p-3 text-sm text-white font-sans focus:border-gray-600 focus:outline-none transition-colors"
+                      placeholder="https://github.com/SeuUser.png"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-mono text-gray-500 mb-2">FOTOS DA GALERIA (UMA URL POR LINHA)</label>
+                    <textarea 
+                      value={photosUrlsInput}
+                      onChange={e => setPhotosUrlsInput(e.target.value)}
+                      rows={4}
+                      className="w-full bg-black border border-gray-800 rounded-lg p-3 text-sm text-white font-sans focus:border-gray-600 focus:outline-none transition-colors leading-relaxed"
+                      placeholder="https://..."
                     />
                   </div>
                   
