@@ -25,18 +25,20 @@ export default function Clients() {
     <div className="bg-[#0a0a0a] min-h-full w-full py-16 flex flex-col items-center overflow-hidden">
       
       {/* Header Section */}
-      <div className="flex flex-col items-center text-center mb-16 space-y-4 px-4">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight font-sans">
-          Creators who trust <span className="text-[#e5e7eb]">me</span>
-        </h2>
-        
-        <p className="text-[#666] text-xs md:text-sm tracking-[0.2em] font-mono uppercase mt-2">
-          WORKING WITH THE BEST
-        </p>
-      </div>
+      {(!isLoading && clients.length === 0) ? null : (
+        <div className="flex flex-col items-center text-center mb-16 space-y-4 px-4">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight font-sans">
+            Creators who trust <span className="text-[#e5e7eb]">me</span>
+          </h2>
+          
+          <p className="text-[#666] text-xs md:text-sm tracking-[0.2em] font-mono uppercase mt-2">
+            WORKING WITH THE BEST
+          </p>
+        </div>
+      )}
 
       {/* Marquee Animation or Static Grid */}
-      <div className="w-full relative max-w-full">
+      <div className="w-full relative max-w-full flex-1 flex flex-col justify-center">
         {/* Left and Right fade gradients for smooth edge transition - only show if marquee is active */}
         {isMarquee && (
           <>
@@ -50,9 +52,9 @@ export default function Clients() {
              <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-white/20"></div>
           </div>
         ) : clients.length === 0 ? (
-          <div className="flex flex-col items-center justify-center py-20 opacity-60">
-            <h3 className="text-6xl font-black text-[#222] tracking-tighter mb-4">404</h3>
-            <p className="text-[#666] font-mono text-sm tracking-widest uppercase">no clients at the moment</p>
+          <div className="flex flex-col items-center justify-center py-32 opacity-40">
+            <h3 className="text-8xl md:text-9xl font-black text-[#333] tracking-tighter mb-6">404</h3>
+            <p className="text-[#888] font-mono text-sm md:text-base tracking-[0.3em] uppercase">no clients at the moment</p>
           </div>
         ) : (
           <div className="flex overflow-hidden group justify-center">
