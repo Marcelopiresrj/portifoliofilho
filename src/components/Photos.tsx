@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Image as ImageIcon, Clock, MapPin, Users, Heart } from 'lucide-react';
 import { fetchSiteSettings } from '../lib/supabase';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -50,34 +49,6 @@ export default function Photos() {
 
   return (
     <div className="flex h-full w-full bg-[#1e1e1e] text-gray-200 overflow-hidden">
-      {/* Sidebar */}
-      <div className="w-[220px] bg-[#262626] border-r border-black/40 p-4 flex flex-col gap-6 flex-shrink-0 z-10">
-        <div>
-          <h3 className="text-[11px] font-semibold text-gray-500 uppercase tracking-wider mb-2 px-2">Photos</h3>
-          <nav className="space-y-0.5">
-            <a href="#" className="flex items-center gap-2.5 px-2 py-1.5 bg-white/10 rounded-md text-sm font-medium text-white transition-colors">
-              <ImageIcon className="w-4 h-4 text-blue-400" />
-              Library
-            </a>
-            <a href="#" className="flex items-center gap-2.5 px-2 py-1.5 hover:bg-white/5 rounded-md text-sm font-medium text-gray-300 transition-colors">
-              <Clock className="w-4 h-4 text-blue-400" />
-              Memories
-            </a>
-            <a href="#" className="flex items-center gap-2.5 px-2 py-1.5 hover:bg-white/5 rounded-md text-sm font-medium text-gray-300 transition-colors">
-              <MapPin className="w-4 h-4 text-blue-400" />
-              Places
-            </a>
-            <a href="#" className="flex items-center gap-2.5 px-2 py-1.5 hover:bg-white/5 rounded-md text-sm font-medium text-gray-300 transition-colors">
-              <Users className="w-4 h-4 text-blue-400" />
-              People
-            </a>
-            <a href="#" className="flex items-center gap-2.5 px-2 py-1.5 hover:bg-white/5 rounded-md text-sm font-medium text-gray-300 transition-colors">
-              <Heart className="w-4 h-4 text-blue-400" />
-              Favorites
-            </a>
-          </nav>
-        </div>
-      </div>
 
       {/* Main Content Area - 3D Carousel */}
       <div 
@@ -100,10 +71,10 @@ export default function Photos() {
                 const isCenter = offset === 0;
                 const zIndex = 50 - absOffset;
                 
-                const x = offset * 160; 
-                const z = -absOffset * 100; 
-                const rotateY = offset === 0 ? 0 : offset > 0 ? -35 : 35;
-                const scale = offset === 0 ? 1 : 1 - (absOffset * 0.1);
+                const x = offset * 110; 
+                const z = -absOffset * 150; 
+                const rotateY = offset === 0 ? 0 : offset > 0 ? -60 : 60;
+                const scale = offset === 0 ? 1 : 1 - (absOffset * 0.05);
                 
                 if (absOffset > 5) return null;
 
@@ -129,11 +100,11 @@ export default function Photos() {
                       damping: 30,
                       mass: 0.8
                     }}
-                    className={`absolute w-[280px] h-[380px] md:w-[320px] md:h-[450px] rounded-2xl overflow-hidden shadow-2xl border flex-shrink-0 origin-center ${!isCenter ? 'cursor-pointer border-white/10' : 'cursor-grab active:cursor-grabbing border-white/30'}`}
+                    className={`absolute w-[300px] h-[400px] md:w-[350px] md:h-[480px] rounded-2xl overflow-hidden shadow-2xl border flex-shrink-0 origin-center ${!isCenter ? 'cursor-pointer border-white/10' : 'cursor-grab active:cursor-grabbing border-white/30'}`}
                     style={{
                       transformStyle: "preserve-3d",
                       boxShadow: isCenter 
-                        ? "0 30px 60px -12px rgba(0,0,0,0.9), 0 0 40px rgba(255,255,255,0.1)" 
+                        ? "0 30px 60px -12px rgba(0,0,0,0.9), 0 0 40px rgba(255,255,255,0.2)" 
                         : "0 20px 25px -5px rgba(0,0,0,0.8)",
                     }}
                   >
