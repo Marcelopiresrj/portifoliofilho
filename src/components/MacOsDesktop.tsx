@@ -216,23 +216,11 @@ export default function MacOsDesktop() {
 
   useEffect(() => {
     fetchProjects().then(data => {
-      if (data && data.length > 0) {
+      if (data) {
         setDbProjects(data);
-      } else {
-        // Fallback data in case Supabase is paused or empty
-        setDbProjects([
-          { id: '1', title: 'Nike Ecommerce Website Application', category: 'Web App', description: 'Nike clone.', tags: [], demo_link: null, github_link: null, icon: '👟', featured: true, order_idx: 1 },
-          { id: '2', title: 'AI Resume Analyzer', category: 'AI', description: 'AI analyzer.', tags: [], demo_link: null, github_link: null, icon: '📄', featured: true, order_idx: 2 },
-          { id: '3', title: 'Food Delivery App', category: 'Mobile App', description: 'Food delivery.', tags: [], demo_link: null, github_link: null, icon: '🍔', featured: true, order_idx: 3 },
-        ]);
       }
     }).catch(err => {
       console.error(err);
-      setDbProjects([
-        { id: '1', title: 'Nike Ecommerce Website Application', category: 'Web App', description: 'Nike clone.', tags: [], demo_link: null, github_link: null, icon: '👟', featured: true, order_idx: 1 },
-        { id: '2', title: 'AI Resume Analyzer', category: 'AI', description: 'AI analyzer.', tags: [], demo_link: null, github_link: null, icon: '📄', featured: true, order_idx: 2 },
-        { id: '3', title: 'Food Delivery App', category: 'Mobile App', description: 'Food delivery.', tags: [], demo_link: null, github_link: null, icon: '🍔', featured: true, order_idx: 3 },
-      ]);
     });
   }, []);
 
