@@ -229,14 +229,14 @@ export default function MacOsDesktop() {
         if (data.wallpaper_url) {
           setWallpaperUrl(data.wallpaper_url);
         }
-        if (data.profile_photo_url) {
+        if (data.favicon_url) {
           let link = document.querySelector("link[rel~='icon']") as HTMLLinkElement;
           if (!link) {
             link = document.createElement('link');
             link.rel = 'icon';
             document.head.appendChild(link);
           }
-          link.href = data.profile_photo_url;
+          link.href = data.favicon_url;
         }
       }
     }).catch(err => {

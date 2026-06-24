@@ -463,6 +463,7 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
   const [contactYoutube, setContactYoutube] = useState("");
   const [contactDiscord, setContactDiscord] = useState("");
   const [wallpaperUrl, setWallpaperUrl] = useState("");
+  const [faviconUrl, setFaviconUrl] = useState("");
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -497,6 +498,7 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
           if (data.contact_youtube) setContactYoutube(data.contact_youtube);
           if (data.contact_discord) setContactDiscord(data.contact_discord);
           if (data.wallpaper_url) setWallpaperUrl(data.wallpaper_url);
+          if (data.favicon_url) setFaviconUrl(data.favicon_url);
         }
       }
     } catch (err) {
@@ -596,7 +598,8 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
         contact_twitter: contactTwitter,
         contact_youtube: contactYoutube,
         contact_discord: contactDiscord,
-        wallpaper_url: wallpaperUrl
+        wallpaper_url: wallpaperUrl,
+        favicon_url: faviconUrl
       });
       alert("Configurações salvas com sucesso!");
     } catch (err) {
@@ -825,6 +828,31 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
                     />
                     {profilePhotoUrl && (
                       <img src={profilePhotoUrl} alt="Profile Preview" className="mt-2 w-16 h-16 rounded-full object-cover border border-gray-700" />
+                    )}
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-mono text-gray-500 mb-2">FAVICON (ÍCONE DA ABA DO NAVEGADOR)</label>
+                    <input 
+                      type="file" 
+                      accept="image/*"
+                      onChange={async e => {
+                        if (e.target.files && e.target.files.length > 0) {
+                          setLoading(true);
+                          try {
+                            const url = await uploadImage(e.target.files[0]);
+                            setFaviconUrl(url);
+                          } catch (err) {
+                            alert("Error uploading image");
+                          } finally {
+                            setLoading(false);
+                          }
+                        }
+                      }}
+                      className="w-full px-3 py-2 rounded-lg border border-gray-800 bg-gray-950 text-gray-400 text-sm focus:border-gray-600 outline-none file:mr-4 file:py-1 file:px-3 file:rounded-md file:border-0 file:text-xs file:bg-white/10 file:text-white hover:file:bg-white/20"
+                    />
+                    {faviconUrl && (
+                      <img src={faviconUrl} alt="Favicon Preview" className="mt-2 w-8 h-8 rounded object-cover border border-gray-700 bg-white/5" />
                     )}
                   </div>
 
