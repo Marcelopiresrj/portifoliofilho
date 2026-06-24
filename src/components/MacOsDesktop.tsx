@@ -37,6 +37,7 @@ const Window = ({ title, subtitle, isOpen, onClose, onFocus, children, noPadding
 
   if (!isOpen) return null;
 
+  return (
     <motion.div
       initial={{ opacity: 0, scale: 0.97, y: 10 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
