@@ -30,10 +30,9 @@ interface WindowProps {
   key?: string;
   variant?: 'default' | 'safari' | 'finder-new';
   subtitle?: string;
-  className?: string;
 }
 
-const Window = ({ title, subtitle, isOpen, onClose, onFocus, children, noPadding, zIndex = 0, variant = 'default', className = '' }: WindowProps) => {
+const Window = ({ title, subtitle, isOpen, onClose, onFocus, children, noPadding, zIndex = 0, variant = 'default' }: WindowProps) => {
   const dragControls = useDragControls();
 
   if (!isOpen) return null;
@@ -53,7 +52,7 @@ const Window = ({ title, subtitle, isOpen, onClose, onFocus, children, noPadding
       onDragStart={() => document.body.classList.add('is-dragging')}
       onDragEnd={() => document.body.classList.remove('is-dragging')}
       onPointerDown={onFocus}
-      className={`absolute top-20 left-1/2 -translate-x-1/2 w-full max-w-4xl bg-[#1e1e1e]/[0.98] backdrop-blur-md border border-white/10 rounded-xl shadow-2xl overflow-hidden z-50 flex flex-col max-h-[80vh] ${className}`}
+      className="absolute top-20 left-1/2 -translate-x-1/2 w-full max-w-4xl bg-[#1e1e1e]/[0.98] backdrop-blur-md border border-white/10 rounded-xl shadow-2xl overflow-hidden z-50 flex flex-col max-h-[80vh]"
       style={{ touchAction: "none", zIndex: 50 + zIndex, transform: "translateZ(0)" }}
     >
       {/* Window Header */}
@@ -547,16 +546,7 @@ export default function MacOsDesktop() {
               </Window>
             )}
             {activeWindows.includes('photos') && (
-              <Window 
-                key="photos" 
-                title="Photos" 
-                isOpen={true} 
-                onClose={() => closeWindow('photos')} 
-                onFocus={() => bringToFront('photos')} 
-                noPadding 
-                zIndex={getZIndex('photos')}
-                className="!max-w-5xl h-[70vh] !w-[80vw]"
-              >
+              <Window key="photos" title="Photos" isOpen={true} onClose={() => closeWindow('photos')} onFocus={() => bringToFront('photos')} noPadding zIndex={getZIndex('photos')}>
                 <Photos />
               </Window>
             )}
