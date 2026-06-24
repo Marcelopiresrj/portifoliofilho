@@ -426,7 +426,7 @@ export default function MacOsDesktop() {
         <img 
           src={wallpaperUrl}
           alt="Desktop Wallpaper"
-          className="w-full h-full object-contain object-center"
+          className="w-full h-full object-cover object-center"
         />
       </div>
 
