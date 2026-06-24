@@ -54,6 +54,10 @@ export interface SiteSettingsRow {
   about_text: string;
   profile_photo_url: string;
   photos_urls: string[];
+  contact_email?: string;
+  contact_twitter?: string;
+  contact_youtube?: string;
+  contact_discord?: string;
   updated_at: string;
 }
 

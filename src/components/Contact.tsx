@@ -5,11 +5,25 @@ import { fetchSiteSettings } from '../lib/supabase';
 export default function Contact() {
   const [profilePhotoUrl, setProfilePhotoUrl] = useState<string>("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&auto=format&fit=crop&q=60");
   const [isLoading, setIsLoading] = useState(true);
+  const [copiedField, setCopiedField] = useState<string | null>(null);
+
+  const [contactInfo, setContactInfo] = useState({
+    email: "",
+    twitter: "",
+    youtube: "",
+    discord: ""
+  });
 
   useEffect(() => {
     fetchSiteSettings().then(data => {
-      if (data && data.profile_photo_url) {
-        setProfilePhotoUrl(data.profile_photo_url);
+      if (data) {
+        if (data.profile_photo_url) setProfilePhotoUrl(data.profile_photo_url);
+        setContactInfo({
+          email: data.contact_email || "",
+          twitter: data.contact_twitter || "",
+          youtube: data.contact_youtube || "",
+          discord: data.contact_discord || ""
+        });
       }
       setIsLoading(false);
     }).catch(err => {
@@ -18,11 +32,18 @@ export default function Contact() {
     });
   }, []);
 
+  const handleCopy = (field: string, text: string) => {
+    if (!text) return;
+    navigator.clipboard.writeText(text);
+    setCopiedField(field);
+    setTimeout(() => setCopiedField(null), 2000);
+  };
+
   const links = [
-    { name: "Email", icon: Mail, bg: "bg-[#e56b6b]", hover: "hover:bg-[#d65f5f]", href: "mailto:contact@marcelo.com" },
-    { name: "Twitter/X", icon: Twitter, bg: "bg-[#59c36a]", hover: "hover:bg-[#4db25d]", href: "#" },
-    { name: "Youtube", icon: Youtube, bg: "bg-[#ff8b60]", hover: "hover:bg-[#ef7a50]", href: "#" },
-    { name: "Discord", icon: MessageSquare, bg: "bg-[#2ebdf4]", hover: "hover:bg-[#25a9df]", href: "#" },
+    { name: "Email", icon: Mail, bg: "bg-[#e56b6b]", hover: "hover:bg-[#d65f5f]", isCopy: true, copyText: contactInfo.email },
+    { name: "Twitter/X", icon: Twitter, bg: "bg-[#59c36a]", hover: "hover:bg-[#4db25d]", isCopy: false, href: contactInfo.twitter },
+    { name: "Youtube", icon: Youtube, bg: "bg-[#ff8b60]", hover: "hover:bg-[#ef7a50]", isCopy: false, href: contactInfo.youtube },
+    { name: "Discord", icon: MessageSquare, bg: "bg-[#2ebdf4]", hover: "hover:bg-[#25a9df]", isCopy: true, copyText: contactInfo.discord },
   ];
 
   return (
@@ -54,10 +75,25 @@ export default function Contact() {
       <div className="grid grid-cols-4 gap-4">
         {links.map((link) => {
           const Icon = link.icon;
+          const isCopied = copiedField === link.name;
+          
+          if (link.isCopy) {
+            return (
+              <button 
+                key={link.name}
+                onClick={() => handleCopy(link.name, link.copyText || '')}
+                className={`${link.bg} ${link.hover} rounded-2xl p-4 h-28 flex flex-col justify-between transition-transform duration-300 hover:scale-105 active:scale-95 shadow-md text-left`}
+              >
+                <Icon className="w-6 h-6 text-white" />
+                <span className="text-white font-medium text-sm transition-all">{isCopied ? "Copied" : link.name}</span>
+              </button>
+            );
+          }
+
           return (
             <a 
               key={link.name}
-              href={link.href}
+              href={link.href || '#'}
               target="_blank"
               rel="noopener noreferrer"
               className={`${link.bg} ${link.hover} rounded-2xl p-4 h-28 flex flex-col justify-between transition-transform duration-300 hover:scale-105 active:scale-95 shadow-md`}

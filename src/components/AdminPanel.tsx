@@ -436,7 +436,11 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
   const [aboutText, setAboutText] = useState("");
   const [profilePhotoUrl, setProfilePhotoUrl] = useState("");
   const [photosUrlsInput, setPhotosUrlsInput] = useState("");
-
+  
+  const [contactEmail, setContactEmail] = useState("");
+  const [contactTwitter, setContactTwitter] = useState("");
+  const [contactYoutube, setContactYoutube] = useState("");
+  const [contactDiscord, setContactDiscord] = useState("");
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -466,6 +470,10 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
           setAboutText(data.about_text);
           if (data.profile_photo_url) setProfilePhotoUrl(data.profile_photo_url);
           if (data.photos_urls) setPhotosUrlsInput(data.photos_urls.join("\n"));
+          if (data.contact_email) setContactEmail(data.contact_email);
+          if (data.contact_twitter) setContactTwitter(data.contact_twitter);
+          if (data.contact_youtube) setContactYoutube(data.contact_youtube);
+          if (data.contact_discord) setContactDiscord(data.contact_discord);
         }
       }
     } catch (err) {
@@ -560,7 +568,11 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
       await updateSiteSettings({ 
         about_text: aboutText,
         profile_photo_url: profilePhotoUrl,
-        photos_urls
+        photos_urls,
+        contact_email: contactEmail,
+        contact_twitter: contactTwitter,
+        contact_youtube: contactYoutube,
+        contact_discord: contactDiscord
       });
       alert("Configurações salvas com sucesso!");
     } catch (err) {
@@ -787,6 +799,46 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
                       placeholder="https://..."
                     />
                   </div>
+
+                  <div>
+                    <label className="block text-xs font-mono text-gray-500 mb-2">TEXTO P/ COPIAR NO EMAIL (CONTACT EMAIL)</label>
+                    <input 
+                      value={contactEmail}
+                      onChange={e => setContactEmail(e.target.value)}
+                      className="w-full bg-black border border-gray-800 rounded-lg p-3 text-sm text-white font-sans focus:border-gray-600 focus:outline-none transition-colors"
+                      placeholder="email@exemplo.com"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-mono text-gray-500 mb-2">URL TWITTER/X</label>
+                    <input 
+                      value={contactTwitter}
+                      onChange={e => setContactTwitter(e.target.value)}
+                      className="w-full bg-black border border-gray-800 rounded-lg p-3 text-sm text-white font-sans focus:border-gray-600 focus:outline-none transition-colors"
+                      placeholder="https://twitter.com/seuperfil"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-mono text-gray-500 mb-2">URL YOUTUBE</label>
+                    <input 
+                      value={contactYoutube}
+                      onChange={e => setContactYoutube(e.target.value)}
+                      className="w-full bg-black border border-gray-800 rounded-lg p-3 text-sm text-white font-sans focus:border-gray-600 focus:outline-none transition-colors"
+                      placeholder="https://youtube.com/c/seucanal"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-mono text-gray-500 mb-2">TEXTO P/ COPIAR NO DISCORD (CONTACT DISCORD)</label>
+                    <input 
+                      value={contactDiscord}
+                      onChange={e => setContactDiscord(e.target.value)}
+                      className="w-full bg-black border border-gray-800 rounded-lg p-3 text-sm text-white font-sans focus:border-gray-600 focus:outline-none transition-colors"
+                      placeholder="seu_user_discord"
+                    />
+                  </div>
                   
                   <div className="flex justify-end pt-2">
                     <button 
@@ -795,7 +847,7 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
                       className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white text-black text-sm font-medium hover:bg-gray-200 active:scale-95 transition-all disabled:opacity-50"
                     >
                       {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
-                      Salvar Texto
+                      Salvar Configurações
                     </button>
                   </div>
                 </div>
