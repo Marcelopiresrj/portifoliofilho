@@ -3,13 +3,18 @@ import { fetchSiteSettings } from "../lib/supabase";
 
 export default function About() {
   const [aboutText, setAboutText] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchSiteSettings().then(data => {
       if (data && data.about_text) {
         setAboutText(data.about_text);
       }
-    }).catch(console.error);
+      setIsLoading(false);
+    }).catch(err => {
+      console.error(err);
+      setIsLoading(false);
+    });
   }, []);
 
   return (
@@ -30,7 +35,14 @@ export default function About() {
 
       {/* Text Content from Supabase */}
       <div className="space-y-6 text-[15px] leading-relaxed text-gray-300">
-        {aboutText ? (
+        {isLoading ? (
+          <div className="animate-pulse space-y-4">
+            <div className="h-4 bg-white/10 rounded w-3/4"></div>
+            <div className="h-4 bg-white/10 rounded w-full"></div>
+            <div className="h-4 bg-white/10 rounded w-5/6"></div>
+            <div className="h-4 bg-white/10 rounded w-full"></div>
+          </div>
+        ) : aboutText ? (
           aboutText.split('\n').map((paragraph, index) => (
             paragraph.trim() ? <p key={index}>{paragraph}</p> : null
           ))
