@@ -225,8 +225,19 @@ export default function MacOsDesktop() {
     });
 
     fetchSiteSettings().then(data => {
-      if (data && data.wallpaper_url) {
-        setWallpaperUrl(data.wallpaper_url);
+      if (data) {
+        if (data.wallpaper_url) {
+          setWallpaperUrl(data.wallpaper_url);
+        }
+        if (data.profile_photo_url) {
+          let link = document.querySelector("link[rel~='icon']") as HTMLLinkElement;
+          if (!link) {
+            link = document.createElement('link');
+            link.rel = 'icon';
+            document.head.appendChild(link);
+          }
+          link.href = data.profile_photo_url;
+        }
       }
     }).catch(err => {
       console.error(err);
