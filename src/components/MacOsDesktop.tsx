@@ -555,7 +555,7 @@ export default function MacOsDesktop() {
                 onFocus={() => bringToFront('photos')} 
                 noPadding 
                 zIndex={getZIndex('photos')}
-                className="!max-w-6xl h-[85vh] !w-[90vw]"
+                className="!max-w-5xl h-[70vh] !w-[80vw]"
               >
                 <Photos />
               </Window>

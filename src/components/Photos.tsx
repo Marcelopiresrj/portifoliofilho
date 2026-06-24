@@ -71,10 +71,10 @@ export default function Photos() {
                 const isCenter = offset === 0;
                 const zIndex = 50 - absOffset;
                 
-                const x = offset * 110; 
-                const z = -absOffset * 150; 
-                const rotateY = offset === 0 ? 0 : offset > 0 ? -60 : 60;
-                const scale = offset === 0 ? 1 : 1 - (absOffset * 0.05);
+                const x = offset === 0 ? 0 : offset < 0 ? offset * 60 - 220 : offset * 60 + 220; 
+                const z = offset === 0 ? 150 : -250; 
+                const rotateY = offset === 0 ? 0 : offset < 0 ? 55 : -55;
+                const scale = 1;
                 
                 if (absOffset > 5) return null;
 
@@ -91,16 +91,16 @@ export default function Photos() {
                       z,
                       rotateY,
                       scale,
-                      opacity: 1 - (absOffset * 0.15),
+                      opacity: 1,
                       zIndex
                     }}
                     transition={{
                       type: "spring",
-                      stiffness: 300,
-                      damping: 30,
+                      stiffness: 400,
+                      damping: 40,
                       mass: 0.8
                     }}
-                    className={`absolute w-[300px] h-[400px] md:w-[350px] md:h-[480px] rounded-2xl overflow-hidden shadow-2xl border flex-shrink-0 origin-center ${!isCenter ? 'cursor-pointer border-white/10' : 'cursor-grab active:cursor-grabbing border-white/30'}`}
+                    className={`absolute w-[450px] h-[300px] md:w-[600px] md:h-[400px] rounded-xl overflow-hidden shadow-2xl border flex-shrink-0 origin-center ${!isCenter ? 'cursor-pointer border-white/5' : 'cursor-grab active:cursor-grabbing border-white/20'}`}
                     style={{
                       transformStyle: "preserve-3d",
                       boxShadow: isCenter 
@@ -122,17 +122,6 @@ export default function Photos() {
                 );
               })}
             </AnimatePresence>
-            
-            {/* Pagination Dots */}
-            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-2 z-50">
-              {photos.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setActiveIndex(idx)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${activeIndex === idx ? 'bg-white w-4' : 'bg-white/30 hover:bg-white/50'}`}
-                />
-              ))}
-            </div>
           </div>
         )}
       </div>
