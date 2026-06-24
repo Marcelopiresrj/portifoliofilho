@@ -449,7 +449,7 @@ export default function MacOsDesktop() {
             <span 
               className="cursor-pointer px-3 py-1 rounded-lg font-semibold text-white transition-colors bg-white/10 hover:bg-white/20"
             >
-              Finder
+              Marcelo's Portfolio
             </span>
           </div>
 
