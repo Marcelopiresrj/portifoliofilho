@@ -232,3 +232,31 @@ export async function getSession() {
   const { data } = await supabase.auth.getSession();
   return data.session;
 }
+
+/**
+ * UPLOAD FUNCTIONS
+ */
+
+export async function uploadImage(file: File): Promise<string> {
+  const fileExt = file.name.split('.').pop();
+  const fileName = `${Math.random().toString(36).substring(2, 15)}_${Date.now()}.${fileExt}`;
+  const filePath = `${fileName}`;
+
+  const { error: uploadError } = await supabase.storage
+    .from('portfolio-images')
+    .upload(filePath, file, {
+      cacheControl: '3600',
+      upsert: false
+    });
+
+  if (uploadError) {
+    console.error("Erro ao fazer upload da imagem:", uploadError);
+    throw new Error(uploadError.message);
+  }
+
+  const { data } = supabase.storage
+    .from('portfolio-images')
+    .getPublicUrl(filePath);
+
+  return data.publicUrl;
+}

@@ -39,6 +39,7 @@ import {
   type ContactMessageRow,
   type ProjectRow,
   type ClientRow,
+  uploadImage,
 } from "../lib/supabase";
 
 // ── Login Modal ──────────────────────────────────────────────────────────────
@@ -394,8 +395,28 @@ function ClientForm({
             <input required value={form.category} onChange={e => setForm({...form, category: e.target.value})} placeholder="e.g. GAMING" className="w-full px-3 py-2 rounded-lg border border-gray-800 bg-gray-950 text-white text-sm focus:border-gray-600 outline-none" />
           </div>
           <div>
-            <label className="text-xs font-mono text-gray-500 uppercase block mb-1">Avatar URL</label>
-            <input required value={form.avatar} onChange={e => setForm({...form, avatar: e.target.value})} className="w-full px-3 py-2 rounded-lg border border-gray-800 bg-gray-950 text-white text-sm focus:border-gray-600 outline-none" />
+            <label className="text-xs font-mono text-gray-500 uppercase block mb-1">Avatar Image</label>
+            <input 
+              type="file" 
+              accept="image/*"
+              onChange={async e => {
+                if (e.target.files && e.target.files.length > 0) {
+                  setLoading(true);
+                  try {
+                    const url = await uploadImage(e.target.files[0]);
+                    setForm({...form, avatar: url});
+                  } catch (err) {
+                    alert("Error uploading image");
+                  } finally {
+                    setLoading(false);
+                  }
+                }
+              }} 
+              className="w-full px-3 py-2 rounded-lg border border-gray-800 bg-gray-950 text-gray-400 text-sm focus:border-gray-600 outline-none file:mr-4 file:py-1 file:px-3 file:rounded-md file:border-0 file:text-xs file:bg-white/10 file:text-white hover:file:bg-white/20" 
+            />
+            {form.avatar && form.avatar !== "https://i.pravatar.cc/150?u=temp" && (
+              <img src={form.avatar} alt="Avatar Preview" className="mt-2 w-10 h-10 rounded-full object-cover border border-gray-700" />
+            )}
           </div>
           <div>
             <label className="text-xs font-mono text-gray-500 uppercase block mb-1">Order Index</label>
@@ -783,23 +804,62 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono text-gray-500 mb-2">FOTO DE PERFIL (PROFILE PHOTO URL)</label>
+                    <label className="block text-xs font-mono text-gray-500 mb-2">FOTO DE PERFIL (PROFILE PHOTO)</label>
                     <input 
-                      value={profilePhotoUrl}
-                      onChange={e => setProfilePhotoUrl(e.target.value)}
-                      className="w-full bg-black border border-gray-800 rounded-lg p-3 text-sm text-white font-sans focus:border-gray-600 focus:outline-none transition-colors"
-                      placeholder="https://github.com/SeuUser.png"
+                      type="file" 
+                      accept="image/*"
+                      onChange={async e => {
+                        if (e.target.files && e.target.files.length > 0) {
+                          setLoading(true);
+                          try {
+                            const url = await uploadImage(e.target.files[0]);
+                            setProfilePhotoUrl(url);
+                          } catch (err) {
+                            alert("Error uploading image");
+                          } finally {
+                            setLoading(false);
+                          }
+                        }
+                      }}
+                      className="w-full px-3 py-2 rounded-lg border border-gray-800 bg-gray-950 text-gray-400 text-sm focus:border-gray-600 outline-none file:mr-4 file:py-1 file:px-3 file:rounded-md file:border-0 file:text-xs file:bg-white/10 file:text-white hover:file:bg-white/20"
                     />
+                    {profilePhotoUrl && (
+                      <img src={profilePhotoUrl} alt="Profile Preview" className="mt-2 w-16 h-16 rounded-full object-cover border border-gray-700" />
+                    )}
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono text-gray-500 mb-2">FOTOS DA GALERIA (UMA URL POR LINHA)</label>
+                    <label className="block text-xs font-mono text-gray-500 mb-2">FOTOS DA GALERIA (ADICIONE MAIS IMAGENS)</label>
+                    <input 
+                      type="file" 
+                      accept="image/*"
+                      multiple
+                      onChange={async e => {
+                        if (e.target.files && e.target.files.length > 0) {
+                          setLoading(true);
+                          try {
+                            const newUrls = [];
+                            for (let i = 0; i < e.target.files.length; i++) {
+                              const url = await uploadImage(e.target.files[i]);
+                              newUrls.push(url);
+                            }
+                            const existing = photosUrlsInput ? photosUrlsInput.split('\n').filter(u => u.trim()) : [];
+                            setPhotosUrlsInput([...existing, ...newUrls].join('\n'));
+                          } catch (err) {
+                            alert("Error uploading images");
+                          } finally {
+                            setLoading(false);
+                          }
+                        }
+                      }}
+                      className="w-full px-3 py-2 rounded-lg border border-gray-800 bg-gray-950 text-gray-400 text-sm focus:border-gray-600 outline-none file:mr-4 file:py-1 file:px-3 file:rounded-md file:border-0 file:text-xs file:bg-white/10 file:text-white hover:file:bg-white/20"
+                    />
                     <textarea 
                       value={photosUrlsInput}
                       onChange={e => setPhotosUrlsInput(e.target.value)}
                       rows={4}
-                      className="w-full bg-black border border-gray-800 rounded-lg p-3 text-sm text-white font-sans focus:border-gray-600 focus:outline-none transition-colors leading-relaxed"
-                      placeholder="https://..."
+                      className="mt-2 w-full bg-black border border-gray-800 rounded-lg p-3 text-sm text-white font-sans focus:border-gray-600 focus:outline-none transition-colors leading-relaxed"
+                      placeholder="As URLs das imagens aparecerão aqui. Você pode apagar linhas para remover."
                     />
                   </div>
 
@@ -844,13 +904,28 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
                   </div>
                   
                   <div>
-                    <label className="block text-xs font-mono text-gray-500 mb-2">URL DO WALLPAPER DA ÁREA DE TRABALHO</label>
+                    <label className="block text-xs font-mono text-gray-500 mb-2">WALLPAPER DA ÁREA DE TRABALHO</label>
                     <input 
-                      value={wallpaperUrl}
-                      onChange={e => setWallpaperUrl(e.target.value)}
-                      className="w-full bg-black border border-gray-800 rounded-lg p-3 text-sm text-white font-sans focus:border-gray-600 focus:outline-none transition-colors"
-                      placeholder="https://..."
+                      type="file" 
+                      accept="image/*"
+                      onChange={async e => {
+                        if (e.target.files && e.target.files.length > 0) {
+                          setLoading(true);
+                          try {
+                            const url = await uploadImage(e.target.files[0]);
+                            setWallpaperUrl(url);
+                          } catch (err) {
+                            alert("Error uploading image");
+                          } finally {
+                            setLoading(false);
+                          }
+                        }
+                      }}
+                      className="w-full px-3 py-2 rounded-lg border border-gray-800 bg-gray-950 text-gray-400 text-sm focus:border-gray-600 outline-none file:mr-4 file:py-1 file:px-3 file:rounded-md file:border-0 file:text-xs file:bg-white/10 file:text-white hover:file:bg-white/20"
                     />
+                    {wallpaperUrl && (
+                      <img src={wallpaperUrl} alt="Wallpaper Preview" className="mt-2 w-32 h-20 rounded-lg object-cover border border-gray-700" />
+                    )}
                   </div>
                   
                   <div className="flex justify-end pt-2">
