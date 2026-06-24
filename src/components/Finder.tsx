@@ -81,15 +81,22 @@ export default function Finder({ projects, renderContent, activeView, onViewChan
       {/* Main Content Area */}
       <div className="flex-1 overflow-y-auto bg-[#1c1c1c] p-6">
         {activeView === 'work' ? (
-          <div className="flex flex-wrap gap-6">
-            {projects.map(project => (
-              <FinderFolder 
-                key={project.id}
-                name={project.title}
-                onClick={() => onViewChange(`project-${project.id}`)}
-              />
-            ))}
-          </div>
+          projects.length > 0 ? (
+            <div className="flex flex-wrap gap-6">
+              {projects.map(project => (
+                <FinderFolder 
+                  key={project.id}
+                  name={project.title}
+                  onClick={() => onViewChange(`project-${project.id}`)}
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="flex flex-col items-center justify-center h-full opacity-50 mt-10">
+              <Folder className="w-16 h-16 text-gray-400 mb-4" strokeWidth={1} />
+              <p className="text-gray-400 font-medium">This folder is empty</p>
+            </div>
+          )
         ) : activeView === 'about' ? (
           <div className="flex flex-wrap gap-6">
             <FinderFile 
