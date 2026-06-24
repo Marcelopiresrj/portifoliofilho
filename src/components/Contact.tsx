@@ -4,13 +4,18 @@ import { fetchSiteSettings } from '../lib/supabase';
 
 export default function Contact() {
   const [profilePhotoUrl, setProfilePhotoUrl] = useState<string>("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&auto=format&fit=crop&q=60");
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchSiteSettings().then(data => {
       if (data && data.profile_photo_url) {
         setProfilePhotoUrl(data.profile_photo_url);
       }
-    }).catch(console.error);
+      setIsLoading(false);
+    }).catch(err => {
+      console.error(err);
+      setIsLoading(false);
+    });
   }, []);
 
   const links = [
@@ -25,11 +30,15 @@ export default function Contact() {
       {/* Profile Image */}
       <div className="mb-6">
         <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white/10 shadow-lg">
-          <img 
-            src={profilePhotoUrl} 
-            alt="Profile" 
-            className="w-full h-full object-cover"
-          />
+          {isLoading ? (
+            <div className="w-full h-full bg-white/10 animate-pulse" />
+          ) : (
+            <img 
+              src={profilePhotoUrl} 
+              alt="Profile" 
+              className="w-full h-full object-cover"
+            />
+          )}
         </div>
       </div>
 

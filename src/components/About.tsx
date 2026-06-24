@@ -23,11 +23,15 @@ export default function About() {
     <div className="p-8 text-gray-200 bg-[#1e1e1e] min-h-full font-sans max-w-3xl mx-auto">
       {/* Profile Image */}
       <div className="mb-8">
-        <img 
-          src={profilePhotoUrl} 
-          alt="Marcelo Pires" 
-          className="w-24 h-24 rounded-full object-cover border-2 border-white/10 shadow-lg"
-        />
+        {isLoading ? (
+          <div className="w-24 h-24 rounded-full bg-white/10 animate-pulse border-2 border-white/5" />
+        ) : (
+          <img 
+            src={profilePhotoUrl} 
+            alt="Marcelo Pires" 
+            className="w-24 h-24 rounded-full object-cover border-2 border-white/10 shadow-lg"
+          />
+        )}
       </div>
 
       {/* Heading */}
