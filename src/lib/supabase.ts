@@ -59,7 +59,6 @@ export interface SiteSettingsRow {
   contact_youtube?: string;
   contact_discord?: string;
   wallpaper_url?: string;
-  favicon_url?: string;
   updated_at: string;
 }
 
