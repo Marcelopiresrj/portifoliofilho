@@ -198,7 +198,7 @@ function MessageModal({ msg, onClose, onMarkRead }: { msg: ContactMessageRow; on
   const date = new Date(msg.created_at).toLocaleString("pt-BR", { dateStyle: "full", timeStyle: "short" });
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-60 flex items-center justify-center bg-black/70 backdrop-blur-sm px-4" onClick={onClose}>
+      <div className="fixed inset-0 z-[10000] flex items-center justify-center bg-black/70 backdrop-blur-sm px-4" onClick={onClose}>
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 16 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -276,7 +276,7 @@ function ProjectForm({
   };
 
   return (
-    <div className="fixed inset-0 z-60 flex items-center justify-center bg-black/70 backdrop-blur-sm px-4">
+    <div className="fixed inset-0 z-[10000] flex items-center justify-center bg-black/70 backdrop-blur-sm px-4">
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -370,7 +370,7 @@ function ClientForm({
   };
 
   return (
-    <div className="fixed inset-0 z-60 flex items-center justify-center bg-black/70 backdrop-blur-sm px-4">
+    <div className="fixed inset-0 z-[10000] flex items-center justify-center bg-black/70 backdrop-blur-sm px-4">
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -616,7 +616,7 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
 
   return (
     <>
-      <div className="fixed inset-0 z-50 flex flex-col bg-[#0a0b0d]">
+      <div className="fixed inset-0 z-[9999] flex flex-col bg-[#0a0b0d]">
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-gray-900 bg-[#0d0e11]">
           <div className="flex items-center gap-3">
