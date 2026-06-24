@@ -441,6 +441,7 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
   const [contactTwitter, setContactTwitter] = useState("");
   const [contactYoutube, setContactYoutube] = useState("");
   const [contactDiscord, setContactDiscord] = useState("");
+  const [wallpaperUrl, setWallpaperUrl] = useState("");
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -474,6 +475,7 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
           if (data.contact_twitter) setContactTwitter(data.contact_twitter);
           if (data.contact_youtube) setContactYoutube(data.contact_youtube);
           if (data.contact_discord) setContactDiscord(data.contact_discord);
+          if (data.wallpaper_url) setWallpaperUrl(data.wallpaper_url);
         }
       }
     } catch (err) {
@@ -572,7 +574,8 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
         contact_email: contactEmail,
         contact_twitter: contactTwitter,
         contact_youtube: contactYoutube,
-        contact_discord: contactDiscord
+        contact_discord: contactDiscord,
+        wallpaper_url: wallpaperUrl
       });
       alert("Configurações salvas com sucesso!");
     } catch (err) {
@@ -837,6 +840,16 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
                       onChange={e => setContactDiscord(e.target.value)}
                       className="w-full bg-black border border-gray-800 rounded-lg p-3 text-sm text-white font-sans focus:border-gray-600 focus:outline-none transition-colors"
                       placeholder="seu_user_discord"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-xs font-mono text-gray-500 mb-2">URL DO WALLPAPER DA ÁREA DE TRABALHO</label>
+                    <input 
+                      value={wallpaperUrl}
+                      onChange={e => setWallpaperUrl(e.target.value)}
+                      className="w-full bg-black border border-gray-800 rounded-lg p-3 text-sm text-white font-sans focus:border-gray-600 focus:outline-none transition-colors"
+                      placeholder="https://..."
                     />
                   </div>
                   

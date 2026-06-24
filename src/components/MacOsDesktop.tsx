@@ -9,7 +9,7 @@ import Skills from './Skills';
 import Contact from './Contact';
 import Photos from './Photos';
 import Finder from './Finder';
-import { fetchProjects, type ProjectRow } from "../lib/supabase";
+import { fetchProjects, fetchSiteSettings, type ProjectRow } from "../lib/supabase";
 
 function getYouTubeEmbedUrl(url: string) {
   const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^&]{11})/);
@@ -177,6 +177,7 @@ export default function MacOsDesktop() {
   const [finderView, setFinderView] = useState<string>('work');
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [isBooting, setIsBooting] = useState<boolean>(true);
+  const [wallpaperUrl, setWallpaperUrl] = useState<string>('https://cdn.jsdelivr.net/gh/Renovamen/playground-macos@main/public/img/ui/wallpaper-night.jpg');
   const constraintsRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -218,6 +219,14 @@ export default function MacOsDesktop() {
     fetchProjects().then(data => {
       if (data) {
         setDbProjects(data);
+      }
+    }).catch(err => {
+      console.error(err);
+    });
+
+    fetchSiteSettings().then(data => {
+      if (data && data.wallpaper_url) {
+        setWallpaperUrl(data.wallpaper_url);
       }
     }).catch(err => {
       console.error(err);
@@ -415,7 +424,7 @@ export default function MacOsDesktop() {
       {/* Real macOS Background Image */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url('https://cdn.jsdelivr.net/gh/Renovamen/playground-macos@main/public/img/ui/wallpaper-night.jpg')` }}
+        style={{ backgroundImage: `url('${wallpaperUrl}')` }}
       />
 
       {/* 1. Top Menu Bar */}
