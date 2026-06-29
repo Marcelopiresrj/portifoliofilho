@@ -76,25 +76,25 @@ export default function Photos() {
           <div className="grid grid-cols-3 gap-3 auto-rows-[200px]">
             {/* Top Left - Large */}
             <div className="col-span-2 row-span-1 rounded-xl overflow-hidden bg-gray-800 group relative shadow-md border border-white/5">
-              <img src={photos[0] || defaultPhotos[0]} alt="Gallery Item 1" className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
+              <img src={photos[0] || defaultPhotos[0]} alt="Gallery Item 1" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
             
             {/* Top Right - Square */}
             <div className="col-span-1 row-span-1 rounded-xl overflow-hidden bg-gray-800 group relative shadow-md border border-white/5">
-              <img src={photos[1] || defaultPhotos[1]} alt="Gallery Item 2" className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
+              <img src={photos[1] || defaultPhotos[1]} alt="Gallery Item 2" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
 
             {/* Bottom Left */}
             <div className="col-span-1 row-span-1 rounded-xl overflow-hidden bg-gray-800 group relative shadow-md border border-white/5">
-              <img src={photos[2] || defaultPhotos[2]} alt="Gallery Item 3" className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
+              <img src={photos[2] || defaultPhotos[2]} alt="Gallery Item 3" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
 
             {/* Bottom Middle/Right */}
             <div className="col-span-2 row-span-1 rounded-xl overflow-hidden bg-gray-800 group relative shadow-md border border-white/5">
-              <img src={photos[3] || defaultPhotos[3]} alt="Gallery Item 4" className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
+              <img src={photos[3] || defaultPhotos[3]} alt="Gallery Item 4" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
           </div>
