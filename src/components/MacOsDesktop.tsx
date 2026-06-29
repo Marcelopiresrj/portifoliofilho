@@ -177,7 +177,7 @@ export default function MacOsDesktop() {
   const [finderView, setFinderView] = useState<string>('work');
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [isBooting, setIsBooting] = useState<boolean>(true);
-  const [wallpaperUrl, setWallpaperUrl] = useState<string>('https://cdn.jsdelivr.net/gh/Renovamen/playground-macos@main/public/img/ui/wallpaper-night.jpg');
+  const [wallpaperUrl, setWallpaperUrl] = useState<string>(() => localStorage.getItem('portfolio_wallpaper') || 'https://cdn.jsdelivr.net/gh/Renovamen/playground-macos@main/public/img/ui/wallpaper-night.jpg');
   const constraintsRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -226,7 +226,10 @@ export default function MacOsDesktop() {
 
     fetchSiteSettings().then(data => {
       if (data) {
-        if (data.wallpaper_url) setWallpaperUrl(data.wallpaper_url);
+        if (data.wallpaper_url) {
+          setWallpaperUrl(data.wallpaper_url);
+          localStorage.setItem('portfolio_wallpaper', data.wallpaper_url);
+        }
         if (data.favicon_url) {
           let link = document.querySelector("link[rel~='icon']") as HTMLLinkElement;
           if (!link) {

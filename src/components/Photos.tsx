@@ -10,13 +10,16 @@ export default function Photos() {
     "https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?w=800&auto=format&fit=crop&q=60"
   ];
 
-  const [photos, setPhotos] = useState<string[]>(defaultPhotos);
-  const [isLoading, setIsLoading] = useState(true);
+  const cachedPhotos = localStorage.getItem('portfolio_photos');
+  const initialPhotos = cachedPhotos ? JSON.parse(cachedPhotos) : defaultPhotos;
+  const [photos, setPhotos] = useState<string[]>(initialPhotos);
+  const [isLoading, setIsLoading] = useState(!cachedPhotos);
 
   useEffect(() => {
     fetchSiteSettings().then(data => {
       if (data && data.photos_urls && data.photos_urls.length >= 4) {
         setPhotos(data.photos_urls);
+        localStorage.setItem('portfolio_photos', JSON.stringify(data.photos_urls));
       }
       setIsLoading(false);
     }).catch(err => {
@@ -73,25 +76,25 @@ export default function Photos() {
           <div className="grid grid-cols-3 gap-3 auto-rows-[200px]">
             {/* Top Left - Large */}
             <div className="col-span-2 row-span-1 rounded-xl overflow-hidden bg-gray-800 group relative shadow-md border border-white/5">
-              <img src={photos[0] || defaultPhotos[0]} alt="Gallery Item 1" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <img src={photos[0] || defaultPhotos[0]} alt="Gallery Item 1" className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
             
             {/* Top Right - Square */}
             <div className="col-span-1 row-span-1 rounded-xl overflow-hidden bg-gray-800 group relative shadow-md border border-white/5">
-              <img src={photos[1] || defaultPhotos[1]} alt="Gallery Item 2" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <img src={photos[1] || defaultPhotos[1]} alt="Gallery Item 2" className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
 
             {/* Bottom Left */}
             <div className="col-span-1 row-span-1 rounded-xl overflow-hidden bg-gray-800 group relative shadow-md border border-white/5">
-              <img src={photos[2] || defaultPhotos[2]} alt="Gallery Item 3" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <img src={photos[2] || defaultPhotos[2]} alt="Gallery Item 3" className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
 
             {/* Bottom Middle/Right */}
             <div className="col-span-2 row-span-1 rounded-xl overflow-hidden bg-gray-800 group relative shadow-md border border-white/5">
-              <img src={photos[3] || defaultPhotos[3]} alt="Gallery Item 4" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <img src={photos[3] || defaultPhotos[3]} alt="Gallery Item 4" className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
           </div>
