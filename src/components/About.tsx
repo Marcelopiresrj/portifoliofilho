@@ -36,7 +36,7 @@ export default function About() {
 
       {/* Heading */}
       <h1 className="text-xl font-bold text-white mb-8">
-        Meet the Developer Behind the Code
+        Meet The Editor Behind The Timeline
       </h1>
 
       {/* Text Content from Supabase */}
